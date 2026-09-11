@@ -38,6 +38,8 @@ export async function render(mount, { t, i18n, navigate }) {
     return best;
   }
 
+  const petName = (p) => (lang === 'ru' && p.name_ru) || p.name;
+
   function drawLeaders() {
     clear(leaders);
     for (const a of ATTRS) {
@@ -47,24 +49,24 @@ export async function render(mount, { t, i18n, navigate }) {
           h('img', { src: `/static/img/warpets/attributes/${a}.png`, alt: '', loading: 'lazy' }),
           t('attr.' + a)),
         h('div', { class: 'kc-tile-value' }, num(top['max' + a], lang)),
-        h('small', { class: 'kc-tile-note' }, top.name)));
+        h('small', { class: 'kc-tile-note' }, petName(top))));
     }
   }
 
   function draw() {
     let rows = pets;
-    if (q) rows = rows.filter((p) => p.name.toLowerCase().includes(q));
+    if (q) rows = rows.filter((p) => p.name.toLowerCase().includes(q) || (p.name_ru || '').toLowerCase().includes(q));
     if (unit) rows = rows.filter((p) => p.unit === unit);
     if (dmg) rows = rows.filter((p) => p.type === dmg);
-    rows = sortBy(rows, sort, dir, (p) => (sort === 'Total' ? p.total : sort === 'name' ? p.name : p['max' + sort]));
+    rows = sortBy(rows, sort, dir, (p) => (sort === 'Total' ? p.total : sort === 'name' ? petName(p) : p['max' + sort]));
 
     const columns = [
       { key: '__i', label: t('common.rank'), sortable: false, width: '52px', render: (_r, i) => h('span', { class: 'rank' }, String(i + 1)) },
       {
         key: 'name', label: t('common.name'),
         render: (p) => h('div', { class: 'kc-petcell' },
-          h('img', { src: '/static/img/warpets/' + p.portrait, alt: p.name, loading: 'lazy' }),
-          h('div', {}, h('div', { style: { fontWeight: '700' } }, p.name),
+          h('img', { src: '/static/img/warpets/' + p.portrait, alt: petName(p), loading: 'lazy' }),
+          h('div', {}, h('div', { style: { fontWeight: '700' } }, petName(p)),
             h('small', { style: { color: 'var(--muted)' } }, t('pets.top.best') + ': ' + t('attr.' + bestAttr(p))))),
       },
       { key: 'type', label: t('pets.top.damageType'), value: (p) => t('dmg.' + p.type, p.type) },

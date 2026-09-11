@@ -93,7 +93,7 @@ export const DICT = {
 
     /* -------------------------------------------------------------- attrs */
     'attr.Strength': 'Сила',
-    'attr.Agility': 'Ловкость',
+    'attr.Agility': 'Проворство',
     'attr.Intelligence': 'Интеллект',
     'attr.Endurance': 'Выносливость',
     'attr.Spirit': 'Дух',
