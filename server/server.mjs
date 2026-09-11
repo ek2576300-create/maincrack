@@ -199,7 +199,10 @@ const server = http.createServer(async (req, res) => {
     // Static assets of the unified SPA.
     if (p.startsWith('/static/') || p.startsWith('/data/')) {
       const abs = safeJoin(PUBLIC, p);
-      if (abs && await sendFile(req, res, abs, { cache: p.startsWith('/data/') ? 'public, max-age=300' : 'public, max-age=86400' })) return;
+      // 'no-cache' (not 'no-store') still lets the browser keep a local copy,
+      // but it must revalidate with the server (ETag → 304) before reusing
+      // it, so a deploy is never masked behind a day-old cached bundle.
+      if (abs && await sendFile(req, res, abs, { cache: p.startsWith('/data/') ? 'public, max-age=300' : 'no-cache' })) return;
       return send(res, 404, 'Not found');
     }
 
