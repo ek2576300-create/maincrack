@@ -91,7 +91,8 @@ async function loadShell() { SHELL = await fsp.readFile(path.join(PUBLIC, 'index
 function renderShell(pathname, lang) {
   const key = SEO[pathname] ? pathname
     : (pathname.startsWith('/stats/player/') ? '/stats/player'
-      : pathname.startsWith('/stats/alliance/') ? '/stats/alliance' : '/');
+      : pathname.startsWith('/stats/alliance/') ? '/stats/alliance'
+        : pathname.startsWith('/news/') ? '/news/post' : '/');
   const meta = seoFor(SEO[key] ? key : '/', lang);
   const canonical = ORIGIN + (pathname === '/' ? '/' : pathname);
   const alt = lang === 'ru' ? 'en' : 'ru';
@@ -155,8 +156,16 @@ function renderShell(pathname, lang) {
     .replace(/__LANG__/g, lang);
 }
 
+function publishedNewsSlugs() {
+  try {
+    const data = JSON.parse(fs.readFileSync(path.join(PUBLIC, 'data', 'site', 'news.json'), 'utf8'));
+    return (data.items || []).filter((it) => it.published && it.slug).map((it) => `/news/${it.slug}`);
+  } catch { return []; }
+}
+
 function sitemap() {
-  const urls = publicRoutes().map((p) => `  <url>
+  const paths = [...publicRoutes(), ...publishedNewsSlugs()];
+  const urls = paths.map((p) => `  <url>
     <loc>${ORIGIN}${p}</loc>
     <changefreq>${p === '/' ? 'daily' : 'weekly'}</changefreq>
     <priority>${p === '/' ? '1.0' : p === '/pets/builder' ? '0.9' : '0.7'}</priority>
@@ -221,7 +230,7 @@ const server = http.createServer(async (req, res) => {
         : url.searchParams.get('lang') === 'ru' ? 'ru'
           : (cookies.kc_lang === 'en' ? 'en' : user?.lang === 'en' ? 'en' : 'ru');
       const html = renderShell(p, lang);
-      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/') ? 200 : 404;
+      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/') || p.startsWith('/news/') ? 200 : 404;
       if (req.method === 'GET' && !p.startsWith('/admin')) {
         try { Visits.add({ path: p, userId: user?.id, guestId: cookies.kc_guest, ip: ctx.ip, ua: req.headers['user-agent'] || '', ref: req.headers.referer || '' }); } catch { /* analytics must never break a page */ }
       }
