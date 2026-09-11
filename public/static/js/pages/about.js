@@ -1,13 +1,44 @@
-import { h, getJSON, num } from '../util.js';
+import { h, getJSON, num, empty } from '../util.js';
 import { SITE } from '../routes.js';
 
 export async function render(mount, { t, i18n, link }) {
   const lang = i18n.lang;
-  const [pets, skills, heroes, m] = await Promise.all([
+  const [project, pets, skills, heroes, m] = await Promise.all([
+    getJSON('/data/content/project.json'),
     getJSON('/data/pets.json'), getJSON('/data/pet-skills.json'),
     getJSON('/data/heroes.json'), getJSON('/data/webdata/manifest.json'),
   ]);
 
+  const history = project.history || {};
+  const milestones = (history.milestones || []).slice(0, 3);
+
+  mount.append(
+    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('about.title')),
+
+    h('section', { class: 'kc-panel' },
+      h('div', { class: 'kc-panel-head' }, h('div', {}, h('h2', {}, t('about.title')), h('p', {}, SITE.tagline[lang]))),
+      h('div', { class: 'kc-panel-body' },
+        h('p', { class: 'kc-prose', style: { color: 'var(--text-dim)' } }, i18n.pick(project.description)))),
+
+    h('section', { class: 'kc-panel', id: 'history' },
+      h('div', { class: 'kc-panel-head' }, h('div', {}, h('h2', {}, t('about.historyTeaser')))),
+      h('div', { class: 'kc-panel-body' },
+        milestones.length
+          ? h('div', { class: 'kc-grid auto-lg' }, ...milestones.map((mi) => h('div', { class: 'kc-card' },
+            h('span', { class: 'kc-badge is-gold' }, mi.date),
+            h('h3', { style: { margin: '9px 0 4px' } }, i18n.pick(mi.title)),
+            h('p', { class: 'kc-note', style: { margin: 0, color: 'var(--text-dim)' } }, i18n.pick(mi.text)))))
+          : empty(t('history.empty'), i18n.pick(history.note) || t('history.emptyHint'))),
+      h('div', { class: 'kc-panel-body', style: { paddingTop: 0, textAlign: 'center' } },
+        h('a', { class: 'kc-btn is-primary', href: '/about/history', onclick: link('/about/history') }, '📜 ' + t('about.historyCta')))),
+
+    aboutTech(t, lang, link, { pets, skills, heroes, m }));
+}
+
+/* The original merge-report content (which of the four source sites survived
+   the mirror and how). Kept for transparency, moved below the community
+   intro so the project story leads the page. */
+function aboutTech(t, lang, link, { pets, skills, heroes, m }) {
   const SOURCES = [
     {
       name: 'coddb.app / warpets',
@@ -53,17 +84,12 @@ export async function render(mount, { t, i18n, link }) {
       ? h('span', { class: 'kc-badge is-gold' }, lang === 'ru' ? 'частично' : 'partial')
       : h('span', { class: 'kc-badge is-danger' }, lang === 'ru' ? 'пусто' : 'empty'));
 
-  mount.append(
-    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('about.title')),
-
+  return h('div', {},
     h('section', { class: 'kc-panel' },
-      h('div', { class: 'kc-panel-head' }, h('div', {}, h('h2', {}, t('about.title')), h('p', {}, SITE.tagline[lang]))),
+      h('div', { class: 'kc-panel-head' },
+        h('div', {}, h('h2', {}, t('about.techTitle')), h('p', {}, t('about.techNote')))),
       h('div', { class: 'kc-panel-body' },
-        h('p', { class: 'kc-prose', style: { color: 'var(--text-dim)' } },
-          lang === 'ru'
-            ? 'Этот сайт — объединение четырёх источников в один. За основу дизайна и логики взят конструктор питомцев (Kraken-стиль из optimizer.js v6): его палитра, панели, баннер и элементы управления распространены на все вкладки.'
-            : 'This site merges four sources into one. The design and logic base is the War Pet Builder (the Kraken style from optimizer.js v6): its palette, panels, banner and controls carry across every tab.'),
-        h('div', { class: 'kc-grid auto-lg', style: { marginTop: '14px' } },
+        h('div', { class: 'kc-grid auto-lg' },
           ...SOURCES.map((s) => h('div', { class: 'kc-card' },
             h('div', { style: { display: 'flex', alignItems: 'center', gap: '9px', flexWrap: 'wrap' } },
               h('strong', { style: { color: 'var(--gold-soft)', fontSize: '14px' } }, s.name), badge(s.status)),
@@ -82,7 +108,7 @@ export async function render(mount, { t, i18n, link }) {
           h('h3', {}, '3. Данные'),
           h('p', { class: 'kc-note' }, 'Конструктор держит данные питомцев внутри JS-бандла. Tamaris раньше грузил гигантские CSV в браузер, а в этой версии уже перешёл на предсобранные JSON-чанки по серверам. Объединённый сайт использует вторую схему для всего: статичные JSON в /data, ничего тяжёлого в браузер не тянется.'),
           h('h3', {}, '4. Навигация'),
-          h('p', { class: 'kc-note' }, 'У конструктора была своя мини-навигация на два вида (Builder / TOP) внутри страницы. У Tamaris — плоский список из 7 пунктов. У coddb.app — боковое меню, которое optimizer.js принудительно скрывал. Здесь всё сведено в один навбар с шестью категориями.'),
+          h('p', { class: 'kc-note' }, 'У конструктора была своя мини-навигация на два вида (Builder / TOP) внутри страницы. У Tamaris — плоский список из 7 пунктов. У coddb.app — боковое меню, которое optimizer.js принудительно скрывал. Здесь всё сведено в один навбар с категориями по назначению.'),
           h('h3', {}, '5. Калькуляторы'),
           h('p', { class: 'kc-note' }, 'Единственное место, где поведение может отличаться от оригинала: формулы coddb.app не сохранились, и калькуляторы написаны заново по открытым формулам игры. Все коэффициенты вынесены в поля ввода — их можно подогнать под свою версию.'),
         ] : [
@@ -93,7 +119,7 @@ export async function render(mount, { t, i18n, link }) {
           h('h3', {}, '3. Data'),
           h('p', { class: 'kc-note' }, 'The builder keeps pet data inside its JS bundle. Tamaris used to load huge CSVs into the browser and had already moved to pre-built per-server JSON chunks in this version. The merged site uses that second scheme throughout: static JSON under /data, nothing heavy pulled into the browser.'),
           h('h3', {}, '4. Navigation'),
-          h('p', { class: 'kc-note' }, 'The builder had its own two-view mini nav (Builder / TOP) inside the page. Tamaris had a flat list of 7 items. coddb.app had a sidebar that optimizer.js force-hid. Everything is now one nav bar with six categories.'),
+          h('p', { class: 'kc-note' }, 'The builder had its own two-view mini nav (Builder / TOP) inside the page. Tamaris had a flat list of 7 items. coddb.app had a sidebar that optimizer.js force-hid. Everything is now one nav bar grouped by purpose.'),
           h('h3', {}, '5. Calculators'),
           h('p', { class: 'kc-note' }, 'The one place where behaviour may differ from the original: coddb.app\'s formulas did not survive, so the calculators were rewritten from the published game formulas. Every coefficient is an editable input, so you can match your own version.'),
         ]))),

@@ -88,11 +88,37 @@ const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replac
 let SHELL = '';
 async function loadShell() { SHELL = await fsp.readFile(path.join(PUBLIC, 'index.html'), 'utf8'); }
 
-function renderShell(pathname, lang) {
+/* News posts live in editable JSON, not code — see docs/CONTENT-EDITING.md.
+   Re-read on demand (mtime-checked) so edits show up without a restart. */
+const NEWS_JSON = path.join(PUBLIC, 'data', 'content', 'news.json');
+let newsCache = { mtimeMs: 0, posts: [] };
+async function loadNewsPosts() {
+  try {
+    const st = await fsp.stat(NEWS_JSON);
+    if (st.mtimeMs !== newsCache.mtimeMs) {
+      const raw = JSON.parse(await fsp.readFile(NEWS_JSON, 'utf8'));
+      newsCache = { mtimeMs: st.mtimeMs, posts: Array.isArray(raw.posts) ? raw.posts : [] };
+    }
+  } catch { newsCache = { mtimeMs: 0, posts: [] }; }
+  return newsCache.posts;
+}
+
+function renderShell(pathname, lang, newsPosts = []) {
+  const newsSlug = pathname.startsWith('/news/') ? decodeURIComponent(pathname.slice('/news/'.length)) : null;
+  const newsPost = newsSlug ? newsPosts.find((p) => p.slug === newsSlug && !p.draft) : null;
+
   const key = SEO[pathname] ? pathname
     : (pathname.startsWith('/stats/player/') ? '/stats/player'
-      : pathname.startsWith('/stats/alliance/') ? '/stats/alliance' : '/');
-  const meta = seoFor(SEO[key] ? key : '/', lang);
+      : pathname.startsWith('/stats/alliance/') ? '/stats/alliance'
+      : newsSlug ? '/news' : '/');
+  const meta = newsPost
+    ? {
+      ...seoFor('/news', lang),
+      title: `${newsPost.title?.[lang] || newsPost.title?.ru || newsSlug} — ${SITE.name[lang]}`,
+      description: newsPost.excerpt?.[lang] || newsPost.excerpt?.ru || seoFor('/news', lang).description,
+      noindex: false,
+    }
+    : seoFor(SEO[key] ? key : '/', lang);
   const canonical = ORIGIN + (pathname === '/' ? '/' : pathname);
   const alt = lang === 'ru' ? 'en' : 'ru';
 
@@ -146,7 +172,7 @@ function renderShell(pathname, lang) {
   // Crawlable nav + an H1, so the page carries real text before JS runs.
   const navHtml = NAV.map((g) =>
     `<li>${esc(g.label[lang])}<ul>${g.items.filter((i) => !i.hidden && !i.adminOnly)
-      .map((i) => `<li><a href="${i.path}">${esc(i.label[lang])}</a></li>`).join('')}</ul></li>`).join('');
+      .map((i) => `<li><a href="${esc(i.path || i.external)}"${i.external ? ' rel="noopener" target="_blank"' : ''}>${esc(i.label[lang])}</a></li>`).join('')}</ul></li>`).join('');
 
   return SHELL
     .replace('<!--HEAD-->', head)
@@ -155,8 +181,10 @@ function renderShell(pathname, lang) {
     .replace(/__LANG__/g, lang);
 }
 
-function sitemap() {
-  const urls = publicRoutes().map((p) => `  <url>
+async function sitemap() {
+  const newsPaths = (await loadNewsPosts()).filter((p) => !p.draft).map((p) => `/news/${p.slug}`);
+  const paths = [...publicRoutes(), ...newsPaths];
+  const urls = paths.map((p) => `  <url>
     <loc>${ORIGIN}${p}</loc>
     <changefreq>${p === '/' ? 'daily' : 'weekly'}</changefreq>
     <priority>${p === '/' ? '1.0' : p === '/pets/builder' ? '0.9' : '0.7'}</priority>
@@ -185,7 +213,7 @@ const server = http.createServer(async (req, res) => {
     if (p === '/robots.txt') {
       return send(res, 200, `User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\nDisallow: /profile\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
     }
-    if (p === '/sitemap.xml') return send(res, 200, sitemap(), MIME['.xml']);
+    if (p === '/sitemap.xml') return send(res, 200, await sitemap(), MIME['.xml']);
 
     // Static assets of the unified SPA.
     if (p.startsWith('/static/') || p.startsWith('/data/')) {
@@ -220,8 +248,10 @@ const server = http.createServer(async (req, res) => {
       const lang = url.searchParams.get('lang') === 'en' ? 'en'
         : url.searchParams.get('lang') === 'ru' ? 'ru'
           : (cookies.kc_lang === 'en' ? 'en' : user?.lang === 'en' ? 'en' : 'ru');
-      const html = renderShell(p, lang);
-      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/') ? 200 : 404;
+      const newsPosts = p.startsWith('/news/') ? await loadNewsPosts() : [];
+      const html = renderShell(p, lang, newsPosts);
+      const knownNewsSlug = p.startsWith('/news/') && newsPosts.some((post) => post.slug === decodeURIComponent(p.slice('/news/'.length)) && !post.draft);
+      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/') || knownNewsSlug ? 200 : 404;
       if (req.method === 'GET' && !p.startsWith('/admin')) {
         try { Visits.add({ path: p, userId: user?.id, guestId: cookies.kc_guest, ip: ctx.ip, ua: req.headers['user-agent'] || '', ref: req.headers.referer || '' }); } catch { /* analytics must never break a page */ }
       }

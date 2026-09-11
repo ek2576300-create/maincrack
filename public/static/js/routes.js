@@ -30,8 +30,26 @@ export const SITE = {
   defaultLocale: 'ru',
 };
 
+export const SOCIAL = {
+  youtube: 'https://www.youtube.com/@Kraken_Chronicles',
+};
+
 /** Nav categories → tabs. `id` doubles as the i18n key namespace. */
 export const NAV = [
+  {
+    id: 'project',
+    icon: '📖',
+    label: { ru: 'О проекте', en: 'About' },
+    items: [
+      { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About the project' } },
+      { path: '/about/history', id: 'history', label: { ru: 'История сервера 888', en: 'Server 888 history' } },
+      { path: '/news', id: 'news', label: { ru: 'Новости', en: 'News' } },
+      { path: '/achievements', id: 'achievements', label: { ru: 'Достижения 888', en: 'Achievements' } },
+      { path: '/team', id: 'team', label: { ru: 'Команда 888', en: 'Team 888' } },
+      { path: '/hall-of-fame', id: 'hallOfFame', label: { ru: 'Легенды 888', en: 'Legends of 888' } },
+      { path: '/tournament', id: 'tournament', label: { ru: 'Турнир «Хроники Кракена»', en: 'Kraken Chronicles Tournament' } },
+    ],
+  },
   {
     id: 'pets',
     icon: '🐉',
@@ -87,7 +105,7 @@ export const NAV = [
     items: [
       { path: '/guides', id: 'guides', label: { ru: 'Гайды', en: 'Guides' } },
       { path: '/calendar', id: 'calendar', label: { ru: 'Календарь', en: 'Calendar' } },
-      { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About' } },
+      { external: SOCIAL.youtube, id: 'youtube', label: { ru: 'Наш YouTube', en: 'Our YouTube' } },
     ],
   },
   {
@@ -219,8 +237,54 @@ export const SEO = {
     description: { ru: 'Недельный цикл событий, дни KvK, армейские и строительные дни.', en: 'Weekly event cycle, KvK days, army and construction days.' },
   },
   '/about': {
-    title: { ru: 'О проекте Хроники Кракена 888', en: 'About Kraken Chronicles 888' },
-    description: { ru: 'Что объединено в этом проекте и откуда взяты данные.', en: 'What this project merges and where its data comes from.' },
+    title: { ru: 'О проекте — Хроники Кракена 888', en: 'About the project — Kraken Chronicles 888' },
+    description: {
+      ru: 'Хроники Кракена — сообщество альянса Kraken на сервере 888 в Call of Dragons: история, руководство, достижения и игровые инструменты в одном месте.',
+      en: 'Kraken Chronicles — the Kraken alliance community on Call of Dragons server 888: history, leadership, achievements and game tools in one place.',
+    },
+    keywords: ['хроники кракена', 'альянс кракен 888', 'о проекте', 'kraken chronicles about'],
+  },
+  '/about/history': {
+    title: { ru: 'История сервера 888 — Хроники Кракена', en: 'Server 888 history — Kraken Chronicles' },
+    description: {
+      ru: 'История создания и ключевые вехи сервера 888 и альянса Kraken в Call of Dragons.',
+      en: 'The founding history and key milestones of server 888 and the Kraken alliance in Call of Dragons.',
+    },
+  },
+  '/news': {
+    title: { ru: 'Новости — Хроники Кракена 888', en: 'News — Kraken Chronicles 888' },
+    description: {
+      ru: 'Новости проекта «Хроники Кракена» и сервера 888: обновления, турниры, события сообщества.',
+      en: 'News from the Kraken Chronicles project and server 888: updates, tournaments, community events.',
+    },
+  },
+  '/achievements': {
+    title: { ru: 'Достижения 888 — Хроники Кракена', en: 'Achievements — Kraken Chronicles 888' },
+    description: {
+      ru: 'Кубки, победы в сезонах и другие подтверждённые достижения альянса Kraken на сервере 888.',
+      en: 'Cups, season wins and other confirmed achievements of the Kraken alliance on server 888.',
+    },
+  },
+  '/team': {
+    title: { ru: 'Команда 888 — руководство альянса Kraken', en: 'Team 888 — Kraken alliance leadership' },
+    description: {
+      ru: 'Глава и офицеры альянса Kraken на сервере 888: роли, зоны ответственности и способы связи.',
+      en: 'The Kraken alliance leader and officers on server 888: roles, areas of responsibility and how to reach them.',
+    },
+  },
+  '/hall-of-fame': {
+    title: { ru: 'Легенды 888 — зал славы Хроник Кракена', en: 'Legends of 888 — Kraken Chronicles hall of fame' },
+    description: {
+      ru: 'Бывшие участники альянса Kraken, внёсшие вклад в развитие сервера 888.',
+      en: 'Former Kraken alliance members who contributed to the development of server 888.',
+    },
+  },
+  '/tournament': {
+    title: { ru: 'Турнир «Хроники Кракена»', en: 'The Kraken Chronicles Tournament' },
+    description: {
+      ru: 'Турнир «Хроники Кракена» переезжает на основной сайт проекта.',
+      en: 'The Kraken Chronicles tournament is moving to the project’s main site.',
+    },
   },
   '/login': { title: { ru: 'Вход и регистрация | Хроники Кракена 888', en: 'Sign in | Kraken Chronicles 888' }, description: { ru: 'Войдите, чтобы сохранять билды питомцев и писать в поддержку.', en: 'Sign in to save pet builds and message support.' }, noindex: true },
   '/profile': { title: { ru: 'Профиль | Хроники Кракена 888', en: 'Profile | Kraken Chronicles 888' }, noindex: true },

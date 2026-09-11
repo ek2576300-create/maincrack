@@ -43,6 +43,15 @@
 * { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
+/* So an anchor jump (e.g. a hero button to #about) doesn't land the target
+   section under the sticky header. */
+[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
+
+/* Keyboard focus must stay visible everywhere except inputs (which draw
+   their own ring via box-shadow). */
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--gold); outline-offset: 2px; border-radius: 4px;
+}
 
 body {
   min-height: 100vh;
@@ -415,11 +424,19 @@ input[type="range"] { accent-color: var(--gold); width: 100%; }
 .kc-footer-note { max-width: 1480px; margin: 20px auto 0; padding-top: 16px; border-top: 1px solid rgba(216,180,93,.1); color: var(--muted-2); font-size: 11px; line-height: 1.6; }
 
 /* ------------------------------------------------------------ responsive */
+/* Just above the burger breakpoint, the category row plus the lang switcher
+   and account chip is still tight with full padding and icons — trim both
+   rather than let them overlap. */
+@media (min-width: 1301px) and (max-width: 1500px) {
+  .kc-nav { gap: 2px; }
+  .kc-cat-btn { padding: 0 8px; gap: 4px; }
+  .kc-cat-btn > span:first-child { display: none; }
+}
 @media (max-width: 1180px) {
   .kc-grid.c6 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .kc-admin-layout { grid-template-columns: 1fr; }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1300px) {
   .kc-nav { display: none; }
   .kc-burger { display: block; }
   .kc-nav.is-mobile-open {
@@ -457,7 +474,13 @@ input[type="range"] { accent-color: var(--gold); width: 100%; }
 }
 @media (max-width: 460px) {
   .kc-grid.c2, .kc-grid.c3, .kc-grid.c4, .kc-grid.c6 { grid-template-columns: 1fr; }
-  .kc-userchip { max-width: 100px; }
+  .kc-userchip { max-width: 68px; }
+  /* The brand name plus the always-visible lang switcher and burger no
+     longer fit on one row below ~460px without this — ellipsis the name
+     and shrink the lang buttons instead of letting the header overflow. */
+  .kc-header-inner { padding: 0 10px; gap: 8px; }
+  .kc-brand-name { max-width: 26vw; overflow: hidden; text-overflow: ellipsis; }
+  .kc-lang button { width: 28px; }
 }
 
 @media print {

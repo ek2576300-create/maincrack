@@ -65,6 +65,13 @@ export function dateTime(iso, lang = 'ru') {
   return d.toLocaleString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
 
+export function dateOnly(iso, lang = 'ru') {
+  if (!iso) return '—';
+  const d = new Date(String(iso).length <= 10 ? iso + 'T00:00:00Z' : iso);
+  if (Number.isNaN(+d)) return String(iso);
+  return d.toLocaleDateString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+}
+
 export function timeShort(iso, lang = 'ru') {
   if (!iso) return '';
   const d = new Date(iso);

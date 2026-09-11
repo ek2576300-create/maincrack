@@ -50,6 +50,13 @@ const PAGES = {
   '/guides':             () => import('./pages/guides.js'),
   '/calendar':           () => import('./pages/calendar.js'),
   '/about':              () => import('./pages/about.js'),
+  '/about/history':      () => import('./pages/about-history.js'),
+  '/news':               () => import('./pages/news.js'),
+  '/news/post':          () => import('./pages/news-post.js'),
+  '/achievements':       () => import('./pages/achievements.js'),
+  '/team':               () => import('./pages/team.js'),
+  '/hall-of-fame':       () => import('./pages/hall-of-fame.js'),
+  '/tournament':         () => import('./pages/tournament.js'),
   '/login':              () => import('./pages/login.js'),
   '/profile':            () => import('./pages/profile.js'),
   '/admin':              () => import('./pages/admin.js'),
@@ -60,6 +67,8 @@ function resolve(pathname) {
   if (PAGES[pathname]) return { key: pathname, params: {} };
   const m = pathname.match(/^\/stats\/(player|alliance)\/([^/]+)$/);
   if (m) return { key: `/stats/${m[1]}`, params: { id: decodeURIComponent(m[2]) } };
+  const n = pathname.match(/^\/news\/([^/]+)$/);
+  if (n) return { key: '/news/post', params: { slug: decodeURIComponent(n[1]) } };
   return { key: null, params: {} };
 }
 
@@ -69,14 +78,32 @@ let mainEl, navEl, headerRightEl;
 let currentPath = null;
 let disposePage = null;
 
+function closeMobileNav() {
+  if (!navEl?.classList.contains('is-mobile-open')) return;
+  navEl.classList.remove('is-mobile-open');
+  navEl.querySelectorAll('.kc-cat').forEach((c) => c.classList.remove('is-open'));
+  burgerEl?.setAttribute('aria-expanded', 'false');
+  if (burgerEl) burgerEl.textContent = '☰';
+}
+
+let burgerEl;
 function buildHeader() {
   navEl = h('nav', { class: 'kc-nav', id: 'kc-nav' });
   headerRightEl = h('div', { class: 'kc-header-right' });
 
-  const burger = h('button', {
-    class: 'kc-burger', type: 'button', 'aria-label': t('nav.menu'),
-    onclick: () => navEl.classList.toggle('is-mobile-open'),
+  burgerEl = h('button', {
+    class: 'kc-burger', type: 'button', 'aria-label': t('nav.menu'), 'aria-expanded': 'false', 'aria-controls': 'kc-nav',
+    onclick: () => {
+      const willOpen = !navEl.classList.contains('is-mobile-open');
+      if (willOpen) { navEl.classList.add('is-mobile-open'); burgerEl.setAttribute('aria-expanded', 'true'); burgerEl.textContent = '✕'; }
+      else closeMobileNav();
+    },
   }, '☰');
+
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMobileNav(); });
+  // A link anywhere in the mobile menu — including an external one that
+  // doesn't trigger a route change — should close the menu behind it.
+  navEl.addEventListener('click', (e) => { if (e.target.closest?.('a')) closeMobileNav(); });
 
   const header = h('header', { class: 'kc-header' },
     h('div', { class: 'kc-header-inner' },
@@ -85,7 +112,7 @@ function buildHeader() {
         h('div', { class: 'kc-brand-text' },
           h('div', { class: 'kc-brand-name', id: 'kc-brand-name' }, SITE.name[i18n.lang]),
           h('div', { class: 'kc-brand-sub', id: 'kc-brand-sub' }, SITE.short[i18n.lang]))),
-      burger, navEl, headerRightEl));
+      burgerEl, navEl, headerRightEl));
 
   renderNav();
   renderHeaderRight();
@@ -112,10 +139,25 @@ function renderNav() {
     const items = group.items.filter((it) => !it.hidden && (!it.adminOnly || store.user?.role === 'admin'));
     if (!items.length) continue;
 
-    const menu = h('div', { class: 'kc-menu' }, ...items.map((it) =>
-      h('a', {
+    // A group with a single item is a plain link, not a dropdown — matches
+    // the flat top-level menu the homepage spec asks for (О проекте, Новости…).
+    if (items.length === 1) {
+      const it = items[0];
+      navEl.append(it.external
+        ? h('a', { class: 'kc-cat-btn', href: it.external, target: '_blank', rel: 'noopener' },
+          h('span', {}, group.icon), group.label[i18n.lang])
+        : h('a', {
+          class: 'kc-cat-btn' + (it.path === currentPath ? ' is-active' : ''),
+          href: it.path, onclick: linkHandler(it.path),
+        }, h('span', {}, group.icon), group.label[i18n.lang]));
+      continue;
+    }
+
+    const menu = h('div', { class: 'kc-menu' }, ...items.map((it) => (it.external
+      ? h('a', { href: it.external, target: '_blank', rel: 'noopener' }, it.label[i18n.lang])
+      : h('a', {
         href: it.path, class: it.path === currentPath ? 'is-active' : '', onclick: linkHandler(it.path),
-      }, it.label[i18n.lang], it.primary && h('span', { class: 'kc-menu-tag' }, i18n.lang === 'ru' ? 'основа' : 'core'))));
+      }, it.label[i18n.lang], it.primary && h('span', { class: 'kc-menu-tag' }, i18n.lang === 'ru' ? 'основа' : 'core')))));
 
     const btn = h('button', { class: 'kc-cat-btn', type: 'button' },
       h('span', {}, group.icon), group.label[i18n.lang], h('span', { class: 'kc-caret' }, '▼'));
@@ -174,7 +216,9 @@ function buildFooter() {
   const cols = NAV.map((g) => h('div', {},
     h('h4', {}, g.label[i18n.lang]),
     h('ul', {}, ...g.items.filter((i) => !i.hidden && !i.adminOnly)
-      .map((i) => h('li', {}, h('a', { href: i.path, onclick: linkHandler(i.path) }, i.label[i18n.lang]))))));
+      .map((i) => h('li', {}, i.external
+        ? h('a', { href: i.external, target: '_blank', rel: 'noopener' }, i.label[i18n.lang])
+        : h('a', { href: i.path, onclick: linkHandler(i.path) }, i.label[i18n.lang]))))));
 
   return h('footer', { class: 'kc-footer', id: 'kc-footer' },
     h('div', { class: 'kc-footer-inner' }, ...cols),
@@ -191,8 +235,7 @@ async function render({ force = false } = {}) {
   if (!force && pathname === currentPath) return;
   currentPath = pathname;
 
-  navEl?.querySelectorAll('.kc-cat').forEach((c) => c.classList.remove('is-open'));
-  navEl?.classList.remove('is-mobile-open');
+  closeMobileNav();
   renderNav();
 
   const { key, params } = resolve(pathname);

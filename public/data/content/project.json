@@ -1,0 +1,14 @@
+{
+  "description": {
+    "ru": "«Хроники Кракена» — сообщество альянса Kraken на сервере 888 в Call of Dragons. Проект объединяет историю и людей альянса с игровыми инструментами сайта: конструктором питомцев, базой данных и статистикой сервера.",
+    "en": "Kraken Chronicles is the community of the Kraken alliance on Call of Dragons server 888. The project brings the alliance's history and people together with the site's game tools: the war pet builder, the database and server analytics."
+  },
+  "history": {
+    "status": "pending",
+    "note": {
+      "ru": "История создания сервера 888 уточняется у Катаны. Здесь появятся подтверждённые вехи, как только материалы будут получены и согласованы.",
+      "en": "The history of server 888 is being confirmed with Katana. Verified milestones will appear here once the material is received and approved."
+    },
+    "milestones": []
+  }
+}

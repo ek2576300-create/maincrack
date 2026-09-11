@@ -1,0 +1,12 @@
+{
+  "status": "preparing",
+  "name": {
+    "ru": "Турнир «Хроники Кракена»",
+    "en": "The Kraken Chronicles Tournament"
+  },
+  "description": {
+    "ru": "Первый турнир проекта переносится на этот сайт с прежнего ресурса. Раздел откроется после проверки страниц, данных и медиафайлов оригинального турнира.",
+    "en": "The project's first tournament is being migrated to this site from its previous host. The section opens once the original tournament's pages, data and media have been verified."
+  },
+  "cover": null
+}
