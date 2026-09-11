@@ -83,6 +83,16 @@ def iter_csv_rows(path):
         yield from csv.DictReader(f)
 
 
+def first_truthy(*values):
+    """Первое непустое значение — так более полная карточка игрока
+    (например, из rank_player.csv) не затирается пустыми полями из
+    rank_immigrate.csv, где identity-поля часто не заполнены."""
+    for v in values:
+        if v:
+            return v
+    return values[-1] if values else None
+
+
 class Command(BaseCommand):
     help = (
         "Импортирует данные серверов/альянсов/игроков/рейтингов из CSV, "
@@ -226,11 +236,23 @@ class Command(BaseCommand):
         )
         return len(objs), len(entries)
 
+    def _load_existing_players(self, pids):
+        return {
+            p.player_id: p
+            for p in Player.objects.filter(player_id__in=pids).only(
+                "player_id", "name", "alliance_id", "alliance_name", "alliance_abbr", "town_center_lvl", "ori_server_id"
+            )
+        }
+
     def _import_players_and_ranks(self, path, known_alliance_ids):
+        rows = list(iter_csv_rows(path))
+        pids = {pid for pid in (parse_int(r.get("playerId")) for r in rows) if pid is not None}
+        existing = self._load_existing_players(pids)
+
         players = {}
         entries = []
         new_alliances = {}
-        for row in iter_csv_rows(path):
+        for row in rows:
             pid = parse_int(row.get("playerId"))
             sid = parse_int(row.get("serverId"))
             if pid is None or not sid:
@@ -244,15 +266,16 @@ class Command(BaseCommand):
                     abbr=row.get("allianceAbbr") or "",
                 )
                 known_alliance_ids.add(aid)
+            prior = players.get(pid) or existing.get(pid)
             players[pid] = Player(
                 player_id=pid,
                 server_id=sid,
-                name=row.get("playerName") or "",
-                alliance_id=aid,
-                alliance_name=row.get("allianceName") or "",
-                alliance_abbr=row.get("allianceAbbr") or "",
-                town_center_lvl=parse_int(row.get("townCenterLvl")),
-                ori_server_id=parse_int(row.get("oriServerId")),
+                name=first_truthy(row.get("playerName"), prior and prior.name, ""),
+                alliance_id=first_truthy(aid, prior and prior.alliance_id, None),
+                alliance_name=first_truthy(row.get("allianceName"), prior and prior.alliance_name, ""),
+                alliance_abbr=first_truthy(row.get("allianceAbbr"), prior and prior.alliance_abbr, ""),
+                town_center_lvl=first_truthy(parse_int(row.get("townCenterLvl")), prior and prior.town_center_lvl, None),
+                ori_server_id=first_truthy(parse_int(row.get("oriServerId")), prior and prior.ori_server_id, None),
             )
             entries.append(
                 PlayerRankEntry(
@@ -283,10 +306,14 @@ class Command(BaseCommand):
         return len(objs), len(entries)
 
     def _import_immigrate(self, path, known_alliance_ids):
+        rows = list(iter_csv_rows(path))
+        pids = {pid for pid in (parse_int(r.get("playerId")) for r in rows) if pid is not None}
+        existing = self._load_existing_players(pids)
+
         players = {}
         entries = []
         new_alliances = {}
-        for row in iter_csv_rows(path):
+        for row in rows:
             pid = parse_int(row.get("playerId"))
             sid = parse_int(row.get("serverId"))
             if pid is None or not sid:
@@ -300,15 +327,16 @@ class Command(BaseCommand):
                     abbr=row.get("allianceAbbr") or "",
                 )
                 known_alliance_ids.add(aid)
+            prior = players.get(pid) or existing.get(pid)
             players[pid] = Player(
                 player_id=pid,
                 server_id=sid,
-                name=row.get("playerName") or "",
-                alliance_id=aid,
-                alliance_name=row.get("allianceName") or "",
-                alliance_abbr=row.get("allianceAbbr") or "",
-                town_center_lvl=parse_int(row.get("townCenterLvl")),
-                ori_server_id=parse_int(row.get("oriServerId")),
+                name=first_truthy(row.get("playerName"), prior and prior.name, ""),
+                alliance_id=first_truthy(aid, prior and prior.alliance_id, None),
+                alliance_name=first_truthy(row.get("allianceName"), prior and prior.alliance_name, ""),
+                alliance_abbr=first_truthy(row.get("allianceAbbr"), prior and prior.alliance_abbr, ""),
+                town_center_lvl=first_truthy(parse_int(row.get("townCenterLvl")), prior and prior.town_center_lvl, None),
+                ori_server_id=first_truthy(parse_int(row.get("oriServerId")), prior and prior.ori_server_id, None),
             )
             entries.append(
                 PlayerImmigrateEntry(
