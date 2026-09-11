@@ -1,0 +1,3611 @@
+{
+"generatedAt": "from coddb.app warpets bundle",
+"count": 123,
+"items": [
+{
+"name": "Advanced Moonrage",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Moonbear",
+"dependency": "Moonrage",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+30,
+50,
+84,
+140
+],
+"icon": "skills/Advanced Moonrage.png"
+},
+{
+"name": "Advanced Arrogance",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Berserk Faedrake",
+"dependency": "Arrogance",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Advanced Arrogance.png"
+},
+{
+"name": "Advanced Barbarism",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Shadow Manticore",
+"type": "Physical",
+"category": "Warpet",
+"dependency": "Barbarism",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4,
+7,
+12,
+20
+],
+"conditionalFields": [
+{
+"key": "advancedBarbarismMaggrat",
+"label": "Maggrat in your Legion ?",
+"type": "boolean",
+"default": true
+}
+],
+"icon": "skills/Advanced Barbarism.png"
+},
+{
+"name": "Advanced Chain Strike",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"dependency": "Chain Strike",
+"type": "Physical",
+"costs": [
+3,
+3,
+3,
+3
+],
+"values": [
+7.2,
+12,
+20,
+33.33
+],
+"category": "Warpet",
+"icon": "skills/Advanced Chain Strike.png"
+},
+{
+"name": "Advanced Concentration",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Snowpeak Roc",
+"dependency": "Concentration",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+1.4,
+2.4,
+4,
+6.7
+],
+"icon": "skills/Advanced Concentration.png"
+},
+{
+"name": "Advanced Counterstrike",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"dependency": "Counterstrike",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+3,
+3,
+3,
+3
+],
+"values": [
+4,
+7,
+11,
+18
+],
+"icon": "skills/Advanced Counterstrike.png"
+},
+{
+"name": "Advanced Exuberance",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Golden Roc",
+"dependency": "Exuberance",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Advanced Exuberance.png"
+},
+{
+"name": "Advanced Fierce Attack",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"dependency": "Fierce Attack",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+3,
+3,
+3,
+3
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"icon": "skills/Advanced Fierce Attack.png"
+},
+{
+"name": "Advanced Follow-Up",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "",
+"dependency": "Follow-Up",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+3,
+3,
+3,
+3
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Advanced Follow-Up.png"
+},
+{
+"name": "Advanced Gleaming Blade",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Blade Manticore",
+"dependency": "Gleaming Blade",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+5,
+6.7,
+9,
+15
+],
+"icon": "skills/Advanced Gleaming Blade.png"
+},
+{
+"name": "Advanced Icecore",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Ice Lizard",
+"dependency": "Icecore",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+320,
+250,
+200,
+150
+],
+"icon": "skills/Advanced Icecore.png"
+},
+{
+"name": "Advanced Infection",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Venomous Lizard",
+"dependency": "Infection",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+0.4,
+0.7,
+1.2,
+2
+],
+"icon": "skills/Advanced Infection.png"
+},
+{
+"name": "Advanced Painbloom",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Sapphire Faedrake",
+"dependency": "Painbloom",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+320,
+250,
+200,
+155
+],
+"icon": "skills/Advanced Painbloom.png"
+},
+{
+"name": "Advanced Quickening",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Bruinbear",
+"dependency": "Quickening",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+250,
+200,
+145,
+97
+],
+"icon": "skills/Advanced Quickening.png"
+},
+{
+"name": "Advanced Ravage",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Night Roc",
+"dependency": "Ravage",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"icon": "skills/Advanced Ravage.png"
+},
+{
+"name": "Advanced Shadow Hunter",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Shadow Faedrake",
+"dependency": "Shadow Hunter",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+250,
+150,
+100,
+75
+],
+"icon": "skills/Advanced Shadow Hunter.png"
+},
+{
+"name": "Advanced Soul Source",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Seraphic Faedrake",
+"dependency": "Soul Source",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Advanced Soul Source.png"
+},
+{
+"name": "Advanced Stone Aura",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Sand Lizard",
+"dependency": "Stone Aura",
+"type": "Overall",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+250,
+200,
+165,
+135
+],
+"icon": "skills/Advanced Stone Aura.png"
+},
+{
+"name": "Advanced Tempest",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Thunder Lizard",
+"dependency": "Tempest",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Advanced Tempest.png"
+},
+{
+"name": "Advanced Puncture",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Barbed Manticore",
+"dependency": "Puncture",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Advanced Puncture.png"
+},
+{
+"name": "Angry Roar",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+485,
+3124,
+27300,
+136500
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"apply": null,
+"icon": "skills/Angry Roar.png"
+},
+{
+"name": "Arrogance",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Berserk Faedrake",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"conditionalFields": [
+{
+"key": "arroganceExpectedStack",
+"label": "Expected debuff/cycle",
+"type": "number",
+"default": 4
+},
+{
+"key": "arroganceIsForondil",
+"label": "Forondil in Legion ?",
+"type": "boolean",
+"default": true
+}
+],
+"values": [
+6,
+9,
+16,
+26
+],
+"apply": null,
+"icon": "skills/Arrogance.png"
+},
+{
+"name": "Barbarism",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Shadow Manticore",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+36,
+60,
+100
+],
+"apply": null,
+"icon": "skills/Barbarism.png"
+},
+{
+"name": "Blood Roar",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "",
+"category": "Warpet",
+"type": "Physical",
+"costs": [
+648,
+3844,
+27300,
+136500
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"apply": null,
+"icon": "skills/Blood Roar.png"
+},
+{
+"name": "Chain Strike",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"category": "Warpet",
+"type": "Physical",
+"costs": [
+187,
+1411,
+7195,
+35975
+],
+"values": [
+4,
+6,
+10,
+17
+],
+"apply": null,
+"icon": "skills/Chain Strike.png"
+},
+{
+"name": "Concentration",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Snowpeak Roc",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+36,
+60,
+100
+],
+"values2": [
+0.4,
+0.6,
+1,
+1.7
+],
+"conditionalFields": [
+{
+"key": "concentrationExpectedDefBreak",
+"label": "Expected DEF Break per cycle",
+"type": "number",
+"default": 2
+}
+],
+"apply": null,
+"icon": "skills/Concentration.png"
+},
+{
+"name": "Counterstrike",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+88,
+1051,
+7200,
+36000
+],
+"values": [
+4,
+7,
+11,
+18
+],
+"apply": null,
+"icon": "skills/Counterstrike.png"
+},
+{
+"name": "Dauntless",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+60,
+360,
+1800,
+9000
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Dauntless.png"
+},
+{
+"name": "Determined Heart",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+60,
+360,
+1800,
+9000
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Determined Heart.png"
+},
+{
+"name": "Divine Blessing",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+60,
+373,
+4902,
+24510
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Divine Blessing.png"
+},
+{
+"name": "Elemental Harmony",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+240,
+1450,
+14671,
+73355
+],
+"values": [
+7.2,
+12,
+20,
+33.33
+],
+"apply": null,
+"icon": "skills/Elemental Harmony.png"
+},
+{
+"name": "Exuberance",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Golden Roc",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+35,
+58,
+96,
+160
+],
+"conditionalFields": [],
+"apply": null,
+"icon": "skills/Exuberance.png"
+},
+{
+"name": "Fatal Bite",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+960,
+5357,
+27266,
+136330
+],
+"values": [
+7.2,
+12,
+20,
+33.33
+],
+"apply": null,
+"icon": "skills/Fatal Bite.png"
+},
+{
+"name": "Fierce Attack",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+126,
+984,
+6466,
+32330
+],
+"values": [
+35,
+58,
+96,
+160
+],
+"apply": null,
+"icon": "skills/Fierce Attack.png"
+},
+{
+"name": "Follow-Up",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+177,
+1356,
+7200,
+36000
+],
+"values": [
+5.4,
+9,
+15,
+25
+],
+"lateApply": true,
+"apply": null,
+"icon": "skills/Follow-Up.png"
+},
+{
+"name": "Gleaming Blade",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Blade Manticore",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+15,
+25,
+42,
+70
+],
+"lateApply": true,
+"conditionalFields": [
+{
+"key": "bladeManticoreHero",
+"label": "Hero",
+"type": "hero",
+"default": "Urag",
+"filter": [
+"Urag",
+"Mu Hsiang",
+"Lieh-Shan Yen",
+"Bahorn",
+"Alistair"
+]
+}
+],
+"apply": null,
+"icon": "skills/Gleaming Blade.png"
+},
+{
+"name": "Great Care",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+20,
+120,
+1339,
+6695
+],
+"values": [
+17,
+27,
+42,
+67
+],
+"apply": null,
+"icon": "skills/Great Care.png"
+},
+{
+"name": "Heart Wall",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+20,
+120,
+785,
+3925
+],
+"values": [
+17,
+27,
+42,
+67
+],
+"apply": null,
+"icon": "skills/Heart Wall.png"
+},
+{
+"name": "Icecore",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Ice Lizard",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+7,
+12,
+20,
+33
+],
+"apply": null,
+"icon": "skills/Icecore.png"
+},
+{
+"name": "Infection",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Venomous Lizard",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+8,
+13,
+21,
+35
+],
+"apply": null,
+"icon": "skills/Infection.png"
+},
+{
+"name": "Intense Arrogance",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Berserk Faedrake",
+"dependency": "Arrogance",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+557,
+3926,
+18412,
+92060
+],
+"values": [
+250,
+200,
+150,
+97
+],
+"icon": "skills/Intense Arrogance.png"
+},
+{
+"name": "Intense Barbarism",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Shadow Manticore",
+"type": "Physical",
+"category": "Warpet",
+"dependency": "Barbarism",
+"costs": [
+960,
+5771,
+28000,
+140000
+],
+"values": [
+7.6,
+12.6,
+21,
+35
+],
+"icon": "skills/Intense Barbarism.png"
+},
+{
+"name": "Intense Chain Strike",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "",
+"dependency": "Chain Strike",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+96,
+1411,
+7195,
+35975
+],
+"values": [
+18,
+30,
+50,
+83
+],
+"icon": "skills/Intense Chain Strike.png"
+},
+{
+"name": "Intense Concentration",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Snowpeak Roc",
+"dependency": "Concentration",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+625,
+5031,
+17618,
+88090
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Intense Concentration.png"
+},
+{
+"name": "Intense Counterstrike",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "",
+"dependency": "Counterstrike",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+60,
+444,
+3446,
+17230
+],
+"values": [
+0.4,
+0.6,
+1,
+1.66
+],
+"icon": "skills/Intense Counterstrike.png"
+},
+{
+"name": "Intense Exuberance",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Golden Roc",
+"dependency": "Exuberance",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+697,
+4606,
+16665,
+83325
+],
+"values": [
+7,
+12,
+20,
+33
+],
+"icon": "skills/Intense Exuberance.png"
+},
+{
+"name": "Intense Fierce Attack",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "",
+"dependency": "Fierce Attack",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+67,
+984,
+6466,
+32330
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Intense Fierce Attack.png"
+},
+{
+"name": "Intense Follow-Up",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "",
+"dependency": "Follow-Up",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+62,
+1356,
+7200,
+36000
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"icon": "skills/Intense Follow-Up.png"
+},
+{
+"name": "Intense Gleaming Blade",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Blade Manticore",
+"dependency": "Gleaming Blade",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+717,
+5800,
+24009,
+120045
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"icon": "skills/Intense Gleaming Blade.png"
+},
+{
+"name": "Intense Icecore",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Ice Lizard",
+"dependency": "Icecore",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+466,
+2393,
+9384,
+46920
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Intense Icecore.png"
+},
+{
+"name": "Intense Infection",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Venomous Lizard",
+"dependency": "Infection",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+755,
+5800,
+28000,
+140000
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Intense Infection.png"
+},
+{
+"name": "Intense Moonrage",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "Moonbear",
+"dependency": "Moonrage",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+985,
+5683,
+27249,
+136245
+],
+"values": [
+5.4,
+9,
+15,
+25
+],
+"icon": "skills/Intense Moonrage.png"
+},
+{
+"name": "Intense Painbloom",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Sapphire Faedrake",
+"dependency": "Painbloom",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+960,
+5800,
+26618,
+133090
+],
+"values": [
+0.6,
+1,
+1.6,
+2.7
+],
+"conditionalFields": [
+{
+"key": "painbloomDebuff",
+"label": "Painbloom Buff / Cycle",
+"type": "number",
+"default": 1
+}
+],
+"icon": "skills/Intense Painbloom.png"
+},
+{
+"name": "Intense Puncture",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Barbed Manticore",
+"dependency": "Puncture",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+615,
+4823,
+22381,
+111905
+],
+"values": [
+1.1,
+1.8,
+3,
+5
+],
+"icon": "skills/Intense Puncture.png"
+},
+{
+"name": "Intense Quickening",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "Bruinbear",
+"dependency": "Quickening",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+949,
+5796,
+27181,
+135905
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Intense Quickening.png"
+},
+{
+"name": "Intense Ravage",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Night Roc",
+"dependency": "Ravage",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+650,
+5246,
+20826,
+104130
+],
+"values": [
+2.9,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Intense Ravage.png"
+},
+{
+"name": "Intense Shadow Hunter",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Shadow Faedrake",
+"dependency": "Shadow Hunter",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+862,
+5741,
+27079,
+135395
+],
+"values": [
+4.3,
+7.2,
+12,
+20
+],
+"icon": "skills/Intense Shadow Hunter.png"
+},
+{
+"name": "Intense Soul Source",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Seraphic Faedrake",
+"dependency": "Soul Source",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+960,
+5713,
+27982,
+139910
+],
+"values": [
+125,
+94,
+63,
+40
+],
+"icon": "skills/Intense Soul Source.png"
+},
+{
+"name": "Intense Stone Aura",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Sand Lizard",
+"dependency": "Stone Aura",
+"type": "Overall",
+"category": "Warpet",
+"costs": [
+680,
+4140,
+21957,
+109785
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"icon": "skills/Intense Stone Aura.png"
+},
+{
+"name": "Magic Fortune",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+391,
+2317,
+22738,
+113690
+],
+"values": [
+3.6,
+6,
+10,
+16.7
+],
+"apply": null,
+"icon": "skills/Magic Fortune.png"
+},
+{
+"name": "Magic Spirits",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+699,
+2971,
+26601,
+133005
+],
+"values": [
+7.2,
+12,
+20,
+33.33
+],
+"apply": null,
+"icon": "skills/Magic Spirits.png"
+},
+{
+"name": "Moonrage",
+"attribute": "Strength",
+"talent": true,
+"petExclusive": "Moonbear",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+0.0043,
+0.007,
+0.012,
+0.02
+],
+"conditionalFields": [
+{
+"key": "moonrageHero1",
+"label": "Main Hero",
+"type": "hero",
+"default": "Mogro",
+"filter": [
+"Danfel",
+"Garwood",
+"Goresh",
+"Madeline",
+"Mogro",
+"Nika",
+"Skogul",
+"Bakshi",
+"Emrys",
+"Theodore",
+"Tobin",
+"Urag",
+"Kuma",
+"Lei Kuan"
+]
+},
+{
+"key": "moonrageHero2",
+"label": "Deputy Hero",
+"type": "hero",
+"default": "Danfel",
+"filter": [
+"Danfel",
+"Garwood",
+"Goresh",
+"Madeline",
+"Mogro",
+"Nika",
+"Skogul",
+"Bakshi",
+"Emrys",
+"Theodore",
+"Tobin",
+"Urag",
+"Kuma",
+"Lei Kuan"
+]
+},
+{
+"key": "moonrageInfantryLegion",
+"label": "Is a infantry Legion ?",
+"type": "boolean",
+"default": true
+},
+{
+"key": "moonrageHPBonus",
+"label": "HP Bonus",
+"type": "number",
+"maxValue": 250,
+"default": 50,
+"tooltip": "Apply the following formula to Lei Kuan's Rage Skill: DF * (1 + HPBonus/100)",
+"hide": null
+}
+],
+"apply": null,
+"icon": "skills/Moonrage.png"
+},
+{
+"name": "Painbloom",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Sapphire Faedrake",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+30,
+50,
+84,
+140
+],
+"apply": null,
+"icon": "skills/Painbloom.png"
+},
+{
+"name": "Puncture",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Barbed Manticore",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+36,
+60,
+100
+],
+"values2": [
+0.3,
+0.6,
+1,
+1.6
+],
+"lateApply": true,
+"conditionalFields": [
+{
+"key": "barbedManticoreHero1",
+"label": "Main Hero",
+"type": "hero",
+"default": "Falgrim",
+"filter": [
+"Syndrion",
+"Maggrat",
+"Zayda",
+"Ffraegar",
+"Nico",
+"Kinnara",
+"Gwanwyn",
+"Kregg",
+"Falgrim",
+"Sibyl"
+]
+},
+{
+"key": "barbedManticoreHero2",
+"label": "Deputy Hero",
+"type": "hero",
+"default": "Sibyl",
+"filter": [
+"Syndrion",
+"Maggrat",
+"Zayda",
+"Ffraegar",
+"Nico",
+"Kinnara",
+"Gwanwyn",
+"Kregg",
+"Falgrim",
+"Sibyl"
+]
+}
+],
+"apply": null,
+"icon": "skills/Puncture.png"
+},
+{
+"name": "Quickening",
+"attribute": "Strength",
+"talent": true,
+"petExclusive": "Bruinbear",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"conditionalFields": [
+{
+"key": "quickeningSkogul",
+"label": "Skogul in your Legion ?",
+"type": "boolean",
+"default": true,
+"tooltip": "Skogul allow you to spread counterattack damage around you, even if thoses target doesn't attack you directly\nElse, you need to have attackers >= targetCount"
+}
+],
+"values": [
+5,
+9,
+15,
+25
+],
+"apply": null,
+"icon": "skills/Quickening.png"
+},
+{
+"name": "Ravage",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Night Roc",
+"type": "Physical",
+"lateApply": true,
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+13,
+22,
+36,
+60
+],
+"values2": [
+0.4,
+0.6,
+1,
+1.7
+],
+"conditionalFields": [
+{
+"key": "ravageHero1",
+"label": "Main Hero",
+"type": "hero",
+"default": "Syndrion",
+"filter": [
+"Syndrion",
+"Maggrat",
+"Zayda",
+"Ffraegar",
+"Bahorn",
+"Falgrim",
+"Sibyl",
+"Nico",
+"Kinnara"
+]
+},
+{
+"key": "ravageHero2",
+"label": "Deputy Hero",
+"type": "hero",
+"default": "Ffraegar",
+"filter": [
+"Syndrion",
+"Maggrat",
+"Zayda",
+"Ffraegar",
+"Bahorn",
+"Falgrim",
+"Sibyl",
+"Nico",
+"Kinnara"
+]
+},
+{
+"key": "ravageExpectedCritRateFromTalent",
+"label": "Expected Crit Rate from talent",
+"type": "number",
+"default": 2,
+"maxValue": 20,
+"step": ".1",
+"tooltip": "Feel free to use our talent builder (there is a stats recap)\nUse , for decimal."
+}
+],
+"apply": null,
+"icon": "skills/Ravage.png"
+},
+{
+"name": "Resonance",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+61,
+695,
+7200,
+36000
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Resonance.png"
+},
+{
+"name": "Shadow Hunter",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Shadow Faedrake",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+36,
+60,
+100
+],
+"values2": [
+1.2,
+1.9,
+3.2,
+5.3
+],
+"apply": null,
+"icon": "skills/Shadow Hunter.png"
+},
+{
+"name": "Soul Source",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Seraphic Faedrake",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+21,
+35,
+57,
+95
+],
+"values2": [
+36,
+60,
+100,
+160
+],
+"values3": [
+2,
+3,
+5,
+8
+],
+"conditionalFields": [
+{
+"key": "soulSourceExpectedBuff",
+"label": "Expected Buff/Debuff per cycle",
+"type": "number",
+"default": 4
+},
+{
+"key": "soulSourceFriendlyLegionAround",
+"label": "At least 1 friendly legion around",
+"type": "boolean",
+"default": true
+}
+],
+"apply": null,
+"icon": "skills/Soul Source.png"
+},
+{
+"name": "Stone Aura",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Sand Lizard",
+"type": "Overall",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"conditionalFields": [
+{
+"key": "stoneAuraFriendlyLegionAround",
+"label": "Friendly Legion around",
+"type": "number",
+"default": 4
+}
+],
+"values": [
+16,
+27,
+45,
+75
+],
+"apply": null,
+"icon": "skills/Stone Aura.png"
+},
+{
+"name": "Tempest",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Thunder Lizard",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+29,
+48,
+80,
+133
+],
+"apply": null,
+"icon": "skills/Tempest.png"
+},
+{
+"name": "Tooth and Claw",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+67,
+784,
+7200,
+36000
+],
+"values": [
+2.2,
+3.7,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Tooth and Claw.png"
+},
+{
+"name": "Tranquility",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "",
+"type": "Overall",
+"category": "Support",
+"costs": [
+61,
+431,
+4957,
+24785
+],
+"values": [
+2.2,
+3.6,
+6,
+10
+],
+"apply": null,
+"icon": "skills/Tranquility.png"
+},
+{
+"name": "Manic Might",
+"attribute": "Strength",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+20,
+100
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Manic Might.png"
+},
+{
+"name": "Hit Weakness",
+"attribute": "Strength",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+897,
+4485
+],
+"values": [
+0.8,
+1.3,
+2.1,
+3.33
+],
+"apply": null,
+"icon": "skills/Hit Weakness.png"
+},
+{
+"name": "Beast Mark",
+"attribute": "Strength",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+792,
+3960
+],
+"values": [
+0.8,
+1.3,
+2.1,
+3.33
+],
+"apply": null,
+"icon": "skills/Beast Mark.png"
+},
+{
+"name": "Swift Revenge",
+"attribute": "Strength",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+724,
+3620
+],
+"values": [
+0.8,
+1.3,
+2.1,
+3.33
+],
+"apply": null,
+"icon": "skills/Swift Revenge.png"
+},
+{
+"name": "Timely Strike",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+883,
+4415
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Timely Strike.png"
+},
+{
+"name": "Blood for Blood",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+837,
+4185
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Blood for Blood.png"
+},
+{
+"name": "Pursuit Predation",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+794,
+3970
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Pursuit Predation.png"
+},
+{
+"name": "Eviscerate",
+"attribute": "Luck",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+752,
+3760
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Eviscerate.png"
+},
+{
+"name": "Hit Back",
+"attribute": "Luck",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+121,
+715,
+3575
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Hit Back.png"
+},
+{
+"name": "Track and Hunt",
+"attribute": "Luck",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Physical",
+"category": "Legion",
+"costs": [
+20,
+120,
+775,
+3875
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Track and Hunt.png"
+},
+{
+"name": "Sudden Epiphany",
+"attribute": "Intelligence",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Magic",
+"category": "Legion",
+"costs": [
+20,
+120,
+934,
+4670
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Sudden Epiphany.png"
+},
+{
+"name": "Magic Pulse",
+"attribute": "Intelligence",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Magic",
+"category": "Legion",
+"costs": [
+20,
+120,
+828,
+4140
+],
+"values": [
+0.8,
+1.3,
+2.1,
+3.33
+],
+"apply": null,
+"icon": "skills/Magic Pulse.png"
+},
+{
+"name": "Light's Guidance",
+"attribute": "Luck",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Magic",
+"category": "Legion",
+"costs": [
+20,
+120,
+847,
+4235
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Light's Guidance.png"
+},
+{
+"name": "Shieldbreaker",
+"attribute": "Strength",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+990,
+4950
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Shieldbreaker.png"
+},
+{
+"name": "Wild Agility",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+782,
+3910
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Wild Agility.png"
+},
+{
+"name": "Poison Gland",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+1061,
+5305
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Poison Gland.png"
+},
+{
+"name": "Outbursts of Rage",
+"attribute": "Agility",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+2127,
+10635
+],
+"values": [
+7,
+11,
+17,
+27
+],
+"apply": null,
+"icon": "skills/Outbursts of Rage.png"
+},
+{
+"name": "Terra Barrier",
+"attribute": "Endurance",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+809,
+4045
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Terra Barrier.png"
+},
+{
+"name": "Bristles",
+"attribute": "Endurance",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+878,
+4390
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Bristles.png"
+},
+{
+"name": "Robust Body",
+"attribute": "Spirit",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+800,
+4000
+],
+"values": [
+0.3,
+0.5,
+0.8,
+1.3
+],
+"apply": null,
+"icon": "skills/Robust Body.png"
+},
+{
+"name": "Pure Strength",
+"attribute": "Spirit",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+774,
+3870
+],
+"values": [
+0.8,
+1.3,
+2.1,
+3.33
+],
+"apply": null,
+"icon": "skills/Pure Strength.png"
+},
+{
+"name": "Gentle Breeze",
+"attribute": "Luck",
+"talent": false,
+"legionStats": true,
+"petExclusive": "",
+"type": "Overall",
+"category": "Legion",
+"costs": [
+20,
+120,
+764,
+3820
+],
+"values": [
+0.4,
+0.7,
+1.1,
+1.7
+],
+"apply": null,
+"icon": "skills/Gentle Breeze.png"
+},
+{
+"name": "Intense Outburst",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Auric Warhound",
+"dependency": "Outburst",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+756,
+5742,
+28000,
+140000
+],
+"values": [
+1.1,
+1.8,
+3,
+5
+],
+"icon": "skills/Intense Outburst.png"
+},
+{
+"name": "Advanced Outburst",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Auric Warhound",
+"dependency": "Outburst",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4,
+7,
+12,
+20
+],
+"icon": "skills/Advanced Outburst.png"
+},
+{
+"name": "Outburst",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Auric Warhound",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+26,
+44,
+72,
+120
+],
+"values2": [
+1.1,
+1.8,
+3,
+5
+],
+"conditionalFields": [
+{
+"key": "outburstAuricMark",
+"label": "Expected Auric Mark",
+"type": "number",
+"maxValue": 5,
+"default": 5,
+"tooltip": {
+"$$typeof": null,
+"type": "div",
+"key": null,
+"ref": null,
+"props": {
+"children": [
+{
+"$$typeof": null,
+"type": "b",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-amber-400",
+"children": "Compatible Auric Mark Heroes:"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Neya:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "5"
+},
+"_owner": null
+},
+" / cycle ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(5 +Rage tick from Rage Skill)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Emrys:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "[0~3]"
+},
+"_owner": null
+},
+" / cycle ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(Awakening: 20% Chance on hitting target with Passion to +100 Rage, 2s CD)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Mardok:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "1"
+},
+"_owner": null
+},
+" / cycle ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(+Rage on buff gains, 8s CD)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Bahorn:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "1"
+},
+"_owner": null
+},
+" / cycle ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(+Rage on from Rage Skill)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Mu Hsiang (awakened):"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "1"
+},
+"_owner": null
+},
+" / cycle ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(+Rage on Normal Attack, 10s CD)"
+},
+"_owner": null
+}
+]
+},
+"_owner": null
+}
+}
+],
+"apply": null,
+"icon": "skills/Outburst.png"
+},
+{
+"name": "Intense Coil",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "Mossrock Aurochs",
+"dependency": "Coil",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+756,
+5742,
+28000,
+140000
+],
+"values": [
+1.5,
+2.4,
+4,
+7
+],
+"icon": "skills/Intense Coil.png"
+},
+{
+"name": "Advanced Coil",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Mossrock Aurochs",
+"dependency": "Coil",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4,
+7,
+12,
+20
+],
+"icon": "skills/Advanced Coil.png"
+},
+{
+"name": "Coil",
+"attribute": "Strength",
+"talent": true,
+"petExclusive": "Mossrock Aurochs",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+2.5,
+3.6,
+6,
+10
+],
+"values2": [
+6,
+10,
+17,
+28
+],
+"values3": [
+10,
+17,
+29,
+48
+],
+"conditionalFields": [
+{
+"key": "coilHPBonus",
+"label": "HP bonus (in %)",
+"type": "number",
+"maxValue": 250,
+"minValue": 0,
+"default": 50,
+"tooltip": {
+"$$typeof": null,
+"type": "div",
+"key": null,
+"ref": null,
+"props": {
+"children": [
+{
+"$$typeof": null,
+"type": "b",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-amber-400",
+"children": "HP Bonus Heroes:"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Kuma:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "[10-100]%"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(with Drains from Rage Skill)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Lei Kuan:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "[0-50]%"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(15% chance to get +5% HP for 5s, up to 50%)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-sky-300",
+"children": "Skogul:"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "font-semibold",
+"children": "15%"
+},
+"_owner": null
+},
+" ",
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-gray-400",
+"children": "(for 6s from Rage skill)"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "b",
+"key": null,
+"ref": null,
+"props": {
+"className": "text-amber-400",
+"children": "Note:"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"children": "In a Single Target context with LK/Kuma, you're sticking around ~50-57%"
+},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "br",
+"key": null,
+"ref": null,
+"props": {},
+"_owner": null
+},
+{
+"$$typeof": null,
+"type": "span",
+"key": null,
+"ref": null,
+"props": {
+"children": "In a Open field context with LK/Kuma, you can reach ~200-205%"
+},
+"_owner": null
+}
+]
+},
+"_owner": null
+}
+}
+],
+"apply": null,
+"icon": "skills/Coil.png"
+},
+{
+"name": "Intense Firecage",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Flaming Manticore",
+"dependency": "Firecage",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+758,
+4920,
+24102,
+120510
+],
+"values": [
+1,
+1.6,
+2.7,
+4
+],
+"icon": "skills/Intense Firecage.png"
+},
+{
+"name": "Advanced Firecage",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Flaming Manticore",
+"dependency": "Firecage",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+6,
+9,
+16,
+27
+],
+"icon": "skills/Advanced Firecage.png"
+},
+{
+"name": "Firecage",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Flaming Manticore",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+36,
+60,
+100
+],
+"values2": [
+10,
+15,
+24,
+40
+],
+"values3": [
+1,
+2,
+3,
+4
+],
+"conditionalFields": [
+{
+"key": "firecageBurningMark",
+"label": "Burning Mark",
+"type": "number",
+"maxValue": 7,
+"minValue": 0,
+"default": 7
+}
+],
+"apply": null,
+"icon": "skills/Firecage.png"
+},
+{
+"name": "Intense North Wind",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Windweasel",
+"dependency": "North Wind",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+659,
+4920,
+25291,
+126455
+],
+"values": [
+5,
+8,
+14,
+24
+],
+"icon": "skills/Intense North Wind.png"
+},
+{
+"name": "Advanced North Wind",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Windweasel",
+"dependency": "North Wind",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4,
+6,
+9,
+15
+],
+"icon": "skills/Advanced North Wind.png"
+},
+{
+"name": "North Wind",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Windweasel",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+7,
+11,
+18,
+30
+],
+"values2": [
+10,
+8,
+7,
+5
+],
+"lateApply": true,
+"apply": null,
+"icon": "skills/North Wind.png"
+},
+{
+"name": "Intense Good Fortune",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Bullionbeast",
+"dependency": "Good Fortune",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+653,
+5172,
+24102,
+120510
+],
+"values": [
+3.6,
+6,
+10,
+16.67
+],
+"icon": "skills/Intense Good Fortune.png"
+},
+{
+"name": "Advanced Good Fortune",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Bullionbeast",
+"dependency": "Good Fortune",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+2.88,
+4.8,
+8,
+13.33
+],
+"icon": "skills/Advanced Good Fortune.png"
+},
+{
+"name": "Good Fortune",
+"attribute": "Agility",
+"talent": true,
+"petExclusive": "Bullionbeast",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+18,
+30,
+50,
+83
+],
+"values2": [
+6,
+10,
+16,
+27
+],
+"values3": [
+2.2,
+3.6,
+6,
+10
+],
+"lateApply": true,
+"conditionalFields": [
+{
+"key": "goodFortuneProc",
+"label": "Estimated Proc",
+"type": "number",
+"maxValue": 8,
+"minValue": 0,
+"default": 4
+}
+],
+"apply": null,
+"icon": "skills/Good Fortune.png"
+},
+{
+"name": "Intense Blowoff",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "Brimstone Auroch",
+"dependency": "Blowoff",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+653,
+5172,
+24102,
+120510
+],
+"values": [
+18,
+30,
+50,
+83
+],
+"icon": "skills/Intense Blowoff.png"
+},
+{
+"name": "Advanced Blowoff",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Brimstone Auroch",
+"dependency": "Blowoff",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+3.66,
+6,
+10,
+16.67
+],
+"icon": "skills/Advanced Blowoff.png"
+},
+{
+"name": "Blowoff",
+"attribute": "Strength",
+"talent": true,
+"petExclusive": "Brimstone Auroch",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+9,
+14,
+24,
+40
+],
+"values2": [
+16,
+27,
+45,
+75
+],
+"apply": null,
+"icon": "skills/Blowoff.png"
+},
+{
+"_id": 122,
+"name": "Advanced Corrosion",
+"description": "Corrosion's direct damage dealt +${value}% (determined by Strength).",
+"attribute": "Strength",
+"talent": false,
+"petExclusive": "Toxisaur",
+"dependency": "Corrosion",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+4,
+7,
+12,
+20
+],
+"icon": "skills/Advanced Corrosion.png"
+},
+{
+"_id": 116,
+"name": "Advanced Foxfire",
+"description": "Foxfire damage dealt +${value}% (determined by Intelligence).",
+"attribute": "Intelligence",
+"talent": false,
+"petExclusive": "Magifox",
+"dependency": "Foxfire",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+5,
+8.4,
+14,
+23.3
+],
+"icon": "skills/Advanced Foxfire.png"
+},
+{
+"_id": 121,
+"name": "Corrosion",
+"description": "Attack Range: Medium\nDeals diffused Physical damage to the target Legion and nearby Legions (3 Legions total, Damage Factor ${value}, determined by Luck). If a damaged Legion has Putrefaction, stacks are consumed to increase damage taken from this Skill (15% increase per stack on the Legion), and for the next 10s, the next time the War Pet's Legion receives healing via an Innate Skill, the healing is increased by ${value3}% for each stack consumed.\n\nWhen the War Pet's Legion deals damage via a Marksman Innate Skill, it gains 3 stack(s) of Corrosive Mark for 5s (max 3 stacks, triggers once every 3s). When Legions with Corrosive Mark deal normal attack damage, the target gains 1 stack of Putrefaction: Deals Physical damage every second (Damage Factor ${value2} per stack, lasting 5s, max 15 stacks). Each normal attack or follow-up normal attack consumes 1 stack of Corrosive Mark.",
+"attribute": "Luck",
+"talent": true,
+"petExclusive": "Toxisaur",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+22,
+33,
+56,
+93
+],
+"values2": [
+1,
+1,
+2,
+2
+],
+"values3": [
+0.5,
+0.7,
+1.2,
+2
+],
+"conditionalFields": [
+{
+"key": "corrosionPutrefactionStacks",
+"label": "Putrefaction stacks consumed",
+"tooltip": "Expected Putrefaction stacks on the target consumed by Corrosion (0 to 15). Each stack adds 15% base + Intense Corrosion damage to this Skill.",
+"type": "number",
+"default": 15,
+"minValue": 0,
+"maxValue": 15
+}
+],
+"apply": null,
+"icon": "skills/Corrosion.png"
+},
+{
+"_id": 115,
+"name": "Foxfire",
+"description": "Attack Range: Very Far\nDeals Magic damage to the target Legion (Damage Factor ${value}, determined by Intelligence) which ignores 10% of the target's Magic DEF.\n\nEach time the Legion inflicts a new debuff type via an Innate Skill, it gains 1 stack of Phantasm Mark, causing the next instance of War Pet Rage Skill damage to ignore 15% of the target's Magic DEF (max 5 stacks). Casting a War Pet Rage Skill resets stack count and sets all debuff types as new again.",
+"attribute": "Intelligence",
+"talent": true,
+"petExclusive": "Magifox",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+21,
+36,
+60,
+100
+],
+"conditionalFields": [
+{
+"key": "foxfirePhantasmStacks",
+"label": "Phantasm Mark stacks",
+"tooltip": "Expected Phantasm Mark stacks built up before Foxfire cast (0 to 5). Each stack triggers Intense Foxfire bonus damage when gained.",
+"type": "number",
+"default": 5,
+"minValue": 0,
+"maxValue": 5
+}
+],
+"apply": null,
+"icon": "skills/Foxfire.png"
+},
+{
+"_id": 114,
+"name": "Interruption",
+"description": "25% chance to inflict Pet Deficiency on the target Legion every second.\n\nPet Deficiency: War Pet Skill trigger chance -${value}% for 4s (determined by Luck).\nCan be triggered once every 4s.",
+"attribute": "Luck",
+"talent": false,
+"type": "Overall",
+"category": "Warpet",
+"costs": [
+60,
+360,
+1800,
+9000
+],
+"values": [
+0.8,
+1.3,
+2.2,
+7.48
+],
+"apply": null,
+"icon": "skills/Interruption.png"
+},
+{
+"_id": 123,
+"name": "Intense Corrosion",
+"description": "Corrosion: Increases the base multiplier of the damage buff from consuming Putrefaction by an additional ${value}% (determined by Luck).",
+"attribute": "Luck",
+"talent": false,
+"petExclusive": "Toxisaur",
+"dependency": "Corrosion",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+758,
+4920,
+24102,
+120510
+],
+"values": [
+1.5,
+2,
+3,
+5
+],
+"icon": "skills/Intense Corrosion.png"
+},
+{
+"_id": 120,
+"name": "Intense Foxfire",
+"description": "Each stack of Phantasm Mark gained via Foxfire deals Magic damage to the target Legion (Damage Factor ${value}, determined by Spirit).",
+"attribute": "Spirit",
+"talent": false,
+"petExclusive": "Magifox",
+"dependency": "Foxfire",
+"type": "Magic",
+"category": "Warpet",
+"costs": [
+491,
+3666,
+18369,
+120510
+],
+"values": [
+6,
+10,
+17,
+28
+],
+"icon": "skills/Intense Foxfire.png"
+},
+{
+"_id": 118,
+"name": "Advanced Frost Armor",
+"description": "Primitive Strike damage proc chance from Frost Armor +${value}% (determined by Agility).",
+"attribute": "Agility",
+"talent": false,
+"petExclusive": "Frostbear",
+"dependency": "Frost Armor",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+4,
+4,
+4,
+4
+],
+"values": [
+1.4,
+2.4,
+4,
+6.7
+],
+"icon": "skills/Advanced Frost Armor.png"
+},
+{
+"_id": 119,
+"name": "Intense Frost Armor",
+"description": "Increases the duration of Frost Armor's Primitive Strike. Every ${value} points of Endurance extends the effect by 1s (determined by Endurance; threshold improves with skill level).",
+"attribute": "Endurance",
+"talent": false,
+"petExclusive": "Frostbear",
+"dependency": "Frost Armor",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+556,
+3167,
+10812,
+54060
+],
+"values": [
+250,
+200,
+150,
+107
+],
+"icon": "skills/Intense Frost Armor.png"
+},
+{
+"_id": 117,
+"name": "Frost Armor",
+"description": "When your Legion gains a shield, your War Pet gains Primitive Strike: 40% chance to deal damage to the target Legion upon being hit by a normal attack for 5s. Damage Type: Physical. Damage uses Shield factor × ${value}% (determined by Strength).",
+"attribute": "Strength",
+"talent": true,
+"petExclusive": "Frostbear",
+"type": "Physical",
+"category": "Warpet",
+"costs": [
+0,
+0,
+0,
+0
+],
+"values": [
+0.9,
+1.6,
+2.6,
+4.3
+],
+"conditionalFields": [
+{
+"key": "frostArmorShieldSourceHero",
+"label": "Reference hero (shield factor)",
+"tooltip": "Pick a hero to use the max-level shield factor from the reference table (e.g. Madeline 1200, Theia 1000).",
+"type": "hero",
+"default": "Madeline",
+"filter": [
+"Theia",
+"Madeline",
+"Eliana",
+"Danfel",
+"Ordo",
+"Waldyr"
+]
+}
+],
+"apply": null,
+"icon": "skills/Frost Armor.png"
+}
+]
+}

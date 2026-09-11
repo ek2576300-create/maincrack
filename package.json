@@ -1,0 +1,12 @@
+{
+  "name": "kraken-chronicles-888",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Хроники Кракена 888 — War Pet Builder, CoD DB and Tamaris War Stats merged into one site",
+  "engines": { "node": ">=22.5.0" },
+  "scripts": {
+    "start": "node server/server.mjs",
+    "dev": "node --watch server/server.mjs"
+  }
+}

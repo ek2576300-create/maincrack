@@ -1,0 +1,3038 @@
+{
+"count": 51,
+"items": [
+{
+"id": 1,
+"name": "Ordo",
+"title": "One-Eyed Veteran",
+"quality": "rare",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 1,
+"name": "Unbreakable Barrier",
+"rage_cost": 1000,
+"description": "Legion gains a shield for 5s that absorbs a massive amount of damage (Shield Factor 400).",
+"upgrade": "Shield Factor 150/200/250/325/400",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 2,
+"name": "In Full Swing",
+"rage_cost": null,
+"description": "All Legions: Increases Engineering by 18% when building or destroying buildings in the field.",
+"upgrade": "Engineering bonus 6%/9%/12%/15%/18%",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 3,
+"name": "Clearsighted",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 5%, Load Capacity by 5%, and Mana Gather Speed by an extra 10%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%\nLegion Load Capacity bonus 1%/2%/3%/4%/5%\nMana Gather Speed bonus 3%/4%/6%/8%/10%",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 4,
+"name": "Seasoned",
+"rage_cost": null,
+"description": "Reduces all damage taken by Legion by 10%. This damage reduction is doubled while the Legion is building or destroying Infrastructure or gathering resources.",
+"upgrade": "Damage taken reduction 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"Engineering",
+"Tank"
+]
+},
+{
+"id": 2,
+"name": "Chakcha",
+"title": "Gourmet Hunter",
+"quality": "rare",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 44,
+"name": "Hunter’s Instinct",
+"rage_cost": 1000,
+"description": "Grants Riposte and Passion, increasing counterattack damage by 15% and increasing Rage Accumulation Speed by 15% for 5s.",
+"upgrade": "Counterattack damage bonus 5%/7%/9%/12%/15%\nRage Accumulation Speed bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 45,
+"name": "Mountain Mover",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 5%, Load Capacity by 5%, and Ore Gather Speed by an extra 10%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%\nLegion Load Capacity bonus 1%/2%/3%/4%/5%\nOre Gather Speed bonus 3%/4%/6%/8%/10%",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 46,
+"name": "Hands-on Experience",
+"rage_cost": null,
+"description": "Increases Legion DEF by 7%.",
+"upgrade": "DEF bonus 2%/3%/4%/5%/7%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 47,
+"name": "Comfort Food",
+"rage_cost": null,
+"description": "Increases Legion HP by 7% and automatically heals the Legion’s lightly wounded units after defeating an enemy Legion (Healing Factor 1000).",
+"upgrade": "HP bonus 2%/3%/4%/5%/7%\nHealing Factor 300/450/600/800/1000",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"Gather",
+"Skills"
+]
+},
+{
+"id": 3,
+"name": "Kella",
+"title": "Savvy Trader",
+"quality": "rare",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 40,
+"name": "Roadblock",
+"rage_cost": 1000,
+"description": "Slows and inflicts Gloom on an enemy Legion, reducing their ATK by 20% and their March Speed by 30% for 4s.",
+"upgrade": "ATK reduction 5%/8%/11%/15%/20%\nMarch Speed reduction 6%/12%/18%/24%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 41,
+"name": "Midas Touch",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 5% and Gold Gather Speed by an extra 10%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%\nGold Gather Speed bonus 3%/4%/6%/8%/10%",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 42,
+"name": "Caravaneer",
+"rage_cost": null,
+"description": "All Legions: Increases Load Capacity by 10%.",
+"upgrade": "Legion Load Capacity bonus 3%/4%/6%/8%/10%",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 43,
+"name": "Tender Care",
+"rage_cost": null,
+"description": "Reduces all damage taken by Kella’s Legion by 10%and reduces the number of severely wounded units for both her Legion and the enemy’s Legion by 15%, leaving those units lightly wounded instead.",
+"upgrade": "Severely wounded reduction 3%/6%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"Gather",
+"Support"
+]
+},
+{
+"id": 4,
+"name": "Pan",
+"title": "Dream Herald",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 118,
+"name": "Foremother’s Blessing",
+"rage_cost": 1000,
+"description": "Heals lightly wounded units in a nearby friendly Legion with the lowest Unit Count (Healing Factor 400) and grants the Legion Onslaught, increasing normal attack damage dealt by 20% for 5s.",
+"upgrade": "Healing Factor 200/250/300/350/400\nNormal attack damage bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 119,
+"name": "Secret of the Trees",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 7% and Wood Gather Speed by an extra 15%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%/7%(Awakened)\nWood Gather Speed bonus 4%/6%/8%/10%/12%/15%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 120,
+"name": "Song of Protection",
+"rage_cost": null,
+"description": "Increases Legion DEF by 15%, while reducing Hero Skill damage taken by 10%.",
+"upgrade": "DEF Bonus 5%/7%/9%/12%/15%\nHero Skill damage taken reduction 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 121,
+"name": "Dream Omen",
+"rage_cost": null,
+"description": "Legion has a 20% to remove a debuff effect when hit with a normal attack. This effect can be triggered once every 5s.",
+"upgrade": "Probability 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 122,
+"name": "Prayer of Life",
+"rage_cost": null,
+"description": "Before Awakening\nHeals lightly wounded units in a nearby friendly Legion with the lowest Unit Count (Healing Factor 400) and grants the Legion Onslaught, increasing normal attack damage dealt by 20% for 5s.\n\nAfter Awakening\nHeals lightly wounded units in a nearby friendly Legion with the lowest Unit Count (Healing Factor 400) and grants them Onslaught, increasing normal attack damage dealt by 20% for 5s, while also healing Pan’s Legion (Healing Factor 200).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 118
+}
+],
+"categories": [
+"Overall",
+"Gather",
+"Support"
+]
+},
+{
+"id": 5,
+"name": "Atheus",
+"title": "Auspex",
+"quality": "epic",
+"season": 1,
+"flying": true,
+"skills": [
+{
+"id": 98,
+"name": "Smite",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion.\n\nDamage Type: Magic\nDamage Factor: 800",
+"upgrade": "Skill Damage Factor 300/400/500/650/800",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 99,
+"name": "Eye of Insight",
+"rage_cost": null,
+"description": "Launching a normal attacks have a 30% chance to grant Atheus’s Legion 60 Rage.",
+"upgrade": "Extra Rage gained 20/30/40/50/60",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 100,
+"name": "Sanctified Wings",
+"rage_cost": null,
+"description": "Atheus's Legion gains 10% HP. If the Legion is composed entirely of Flying units, all healing they receive is increased by 15%.",
+"upgrade": "HP bonus 3%/4%/6%/8%/10%\nHealing received bonus 4%/6%/8%/11%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 101,
+"name": "Winged Embrace",
+"rage_cost": null,
+"description": "Atheus's Legion gains 20% March Speed and takes 10% less damage.",
+"upgrade": "March Speed bonus 5%/8%/11%/15%/20% \nDamage taken reduction 3%/4%/6%/8%/10% ",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 102,
+"name": "Redemptive Healer ",
+"rage_cost": null,
+"description": "Atheus's Legion has a 30% chance to receive healing when hit with a normal attack (Healing Factor 400). This effect can be triggered once every 10s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 6,
+"name": "Waldyr",
+"title": "Ice Mage",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 93,
+"name": "Ice Breath",
+"rage_cost": 1000,
+"description": "Deals damage to the target and 2 nearby Legions and inflicts Gloom: ATK -20% for 2s.\n\nDamage Type: Magic\nDamage Factor: 600",
+"upgrade": "Skill Damage Factor 300/370/440/510/600 \nATK reduction 4%/8%/12%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 94,
+"name": "Royal Court Mage",
+"rage_cost": null,
+"description": "All Magic units in Waldyr’s Legion gain 10% Magic ATK and 10% HP. ",
+"upgrade": "Magic unit Magic ATK bonus 3%/4%/6%/8%/10%\nMagic unit HP bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 95,
+"name": "Frostbite",
+"rage_cost": null,
+"description": "Waldyr's Legion deals 15% more Hero Skill damage.",
+"upgrade": "Hero Skill damage dealt bonus 4%/6%/8%/11%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 96,
+"name": "Icy Veins",
+"rage_cost": null,
+"description": "When Waldyr takes Hero Skill damage, his Legion receives a Shield that can absorb a large amount of damage (Shield Factor 600). This effect can be triggered once per 20s.",
+"upgrade": "Shield Factor 200/300/400/500/600",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 97,
+"name": "Tide of Winter ",
+"rage_cost": null,
+"description": "Before Awakening\nDeals damage to the target and 2 nearby Legions and inflicts Gloom: ATK -20% for 2s.\n\nDamage Type: Magic\nDamage Factor: 600\n\nAfter Awakening\nDeals damage to the target and 3 nearby Legions and inflicts Gloom and Freeze for 3s.\n\nGloom: ATK -20%\nFreeze: March Speed -20%\n\nDamage Type: Magic\nDamage Factor: 700",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 93
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Skills"
+]
+},
+{
+"id": 7,
+"name": "Gwanwyn",
+"title": "Arrow of the Wind",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 103,
+"name": "Chaotic Arrows",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion 3 times in quick succession.\n\nDamage Type: Physical\nDamage Factor: 200,200,400",
+"upgrade": "Skill Damage Factor 100/120/140/160/200 \nFinal attack Damage Factor 200/250/300/350/400",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 104,
+"name": "Aspiring Queensguard",
+"rage_cost": null,
+"description": "All Legions: Increases damage dealt when peacekeeping by 10%.",
+"upgrade": "Damage dealt during Peacekeeping bonus 3%/4%/5%/6%/8%/10%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 105,
+"name": "Green Boats Master",
+"rage_cost": null,
+"description": "Legion Marksman units gain 15% Physical ATK and 10% March Speed. ",
+"upgrade": "Marksman unit Physical ATK bonus 4%/6%/8%/11%/15% \nMarksman unit March Speed bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 106,
+"name": "Preemptive Strike",
+"rage_cost": null,
+"description": "When Legion has 50% Unit Count or higher, units deal 10% more damage.",
+"upgrade": "Damage dealt bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 107,
+"name": "Fervent Wind",
+"rage_cost": null,
+"description": "When Gwanwyn's Legion launches a normal attack, they have a 50% chance to inflict Poison: deals damage every second for 3s.\n\nDamage Type: Physical\nDamage Factor: 100",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"Peacekeeping",
+"Precision"
+]
+},
+{
+"id": 8,
+"name": "Kregg",
+"title": "Mad Bomber",
+"quality": "epic",
+"season": 1,
+"flying": true,
+"skills": [
+{
+"id": 88,
+"name": "Fragmentation Bolt",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion, and deals additional damage to up to 2 of the nearest Legions.\n\nDamage Type: Physical\nDamage Factor: (Target): 600\nDamage Factor (Other Legions): 300",
+"upgrade": "Skill Damage Factor 200/300/400/500/600\nBomb Additional Damage Factor 100/150/200/250/300",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 89,
+"name": "Wyvern Rider",
+"rage_cost": null,
+"description": "Legion deals 10% more Hero Skill damage. After battle ends, they gain 20% March Speed for 10s.",
+"upgrade": "Hero Skill damage dealt bonus 4%/5%/6%/8%/10%\nMarch Speed bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 90,
+"name": "Aerial Formation",
+"rage_cost": null,
+"description": "Increases Legion’s ATK by 10%. If the Legion is composed entirely of Flying units, units gain 10% DEF.",
+"upgrade": "ATK bonus 4%/5%/6%/8%/10%\nDEF bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 91,
+"name": "Building Frenzy",
+"rage_cost": null,
+"description": "All Legions: Increases Engineering by 22% when building or destroying buildings in the field.",
+"upgrade": "Engineering bonus while building 6%/9%/12%/15%/18%/22%(Awakened)\nBonus to Engineering when destroying 6%/9%/12%/15%/18%/22%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 92,
+"name": "Biggus Bombus",
+"rage_cost": null,
+"description": "Before Awakening\nDeals damage to the target Legion, and deals additional damage to up to 2 of the nearest Legions.\n\nDamage Type: Physical\nDamage Factor (Target): 600\nDamage Factor (Other Legions): 300\n\nAfter Awakening\nDeals damage to the target Legion, and deals additional damage to up to 2 of the nearest Legions. Damage Legions gains Bleed: deals damage every second for 3s.\n\nDamage Type: Physical\nDamage Factor (Target): 800\nDamage Factor (Other Legions): 300\nDamage Factor (Bleed): 200",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 88
+}
+],
+"categories": [
+"Marksman",
+"Engineering",
+"Mobility"
+]
+},
+{
+"id": 9,
+"name": "Alistair",
+"title": "Royal Court Guard",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 48,
+"name": "Spear of Judgement",
+"rage_cost": 1000,
+"description": "Deals damage to the target and 2 nearby Legions.\n\nDamage Type: Physical\nDamage Factor: 600",
+"upgrade": "Skill Damage Factor 200/300/400/500/600",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 49,
+"name": "Devotion",
+"rage_cost": null,
+"description": "Alistair’s Legion gains 10% HP and 10% Physical ATK.",
+"upgrade": "HP bonus 4%/5%/6%/8%/10%\nPhysical ATK bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 50,
+"name": "Hold the Line",
+"rage_cost": null,
+"description": "20% chance to increase DEF by 30% for 2s when attacking Cities and Strongholds. This effect can be triggered once every 5s.",
+"upgrade": "DEF bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 51,
+"name": "Light of Sorland",
+"rage_cost": null,
+"description": "When the Legion has over 50% units remaining, it has a 20% chance to gain Riposte and Passion when launching normal attacks, increasing Counterattack damage dealt by 30% and Rage Accumulation Speed by 30% for 3s. This effect can be triggered once every 5s.",
+"upgrade": "Counterattack damage bonus 10%/15%/20%/25%/30%\nRage Accumulation Speed bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 52,
+"name": "Chivalric Oath",
+"rage_cost": null,
+"description": "Legion Cavalry units deal 10% more normal attack damage, and take 10% less damage.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"Rally",
+"Tank"
+]
+},
+{
+"id": 10,
+"name": "Alwyn",
+"title": "Master of Poisons",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 78,
+"name": "Venomous Overgrowth",
+"rage_cost": 1000,
+"description": "Deals damage to the target.\n\nDamage Type: Magic\nDamage Factor: 600\n\nTarget is also Ensnared for 3s:\n1) Deals Magic damage every second (Damage Factor 100)\n2) March Speed -10%",
+"upgrade": "Skill Damage Factor 300/360/420/500/600\nContinuous Damage Factor 100/100/100/100/100",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 79,
+"name": "Wealdshield",
+"rage_cost": null,
+"description": "Legion Magic units gain 10% Magic ATK and 10% HP.",
+"upgrade": "Magic unit Magic ATK bonus 4%/5%/6%/8%/10%\nMagic unit HP bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 80,
+"name": "Oath of the Wellspring",
+"rage_cost": null,
+"description": "Legion takes 15% less normal attack damage in the field.",
+"upgrade": "Normal attack damage taken reduction 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 81,
+"name": "Friend of the Hemlock",
+"rage_cost": null,
+"description": "When Legion is hit with a normal attack, 15% chance to Ensnare the attacker for 3s.\n\nEnsnared:\n1) Deals Magic damage every second (Damage Factor 100)\n2) March Speed -10%",
+"upgrade": "Probability 3%/6%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 82,
+"name": "Miasmic Mist",
+"rage_cost": null,
+"description": "Before Awakening\nDeals damage to the target.\n\nDamage Type: Magic\nDamage Factor: 600\n\nTarget is also Ensnared for 3s:\n1) Deals Magic damage every second (Damage Factor 100)\n2) March Speed -10%\n\nAfter Awakening\nAlwyn deals damage to the target Legion and Ensnares them for 3s. If the target is suffering from any other effects that deal Magic damage, Alwyn deals additional damage.\n\nDamage Type: Magic\nDamage Factor: 600\nDamage Factor (Additional): 200\n\nEnsnared:\n1) Deals Magic damage every second (Damage Factor 100)\n2) March Speed -10%",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 78
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Control"
+]
+},
+{
+"id": 11,
+"name": "Bakhar",
+"title": "Unyielding Blade",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 83,
+"name": "Grayclaw Fury",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and grants Bakhar's Legion Rampage: damage dealt by 20% for 4s.\n\nDamage Type: Physical\nDamage Factor: 600",
+"upgrade": "Skill Damage Factor 300/370/440/510/600\nDamage bonus 4%/8%/12%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 84,
+"name": "Boiling Blood",
+"rage_cost": null,
+"description": "Legion Infantry units Legion gain 10% Physical ATK and 10% DEF.",
+"upgrade": "Infantry unit Physical ATK bonus 3%/4%/6%/8%/10%\nInfantry unit DEF bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 85,
+"name": "Fearsome Roar",
+"rage_cost": null,
+"description": "When Legion is hit with a normal attack, Legion has a 20% chance to inflict Gloom on the target, reducing their ATK by 25% for 4s. This effect can be triggered once every 10s.\n\n",
+"upgrade": "ATK reduction 5%/10%/15%/20%/25%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 86,
+"name": "Tireless Will",
+"rage_cost": null,
+"description": "Garrisoned Armies takes 15% less Hero Skill damage while garrisoned in a City or Stronghold, and receives 15% more healing.",
+"upgrade": "Hero Skill damage taken reduction 4%/6%/8%/11%/15% \nHealing granted bonus 4%/6%/8%/11%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 87,
+"name": "Last-Ditch Strike",
+"rage_cost": null,
+"description": "When Bakhar's Legion has less than 50% units remaining, they have a 50% chance of inflicting Bleed on the target when counterattacking.\n\nBleed: deals damage every second for 3s\nDamage Type: Physical\nDamage Factor: 200",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"Garrison",
+"Skills"
+]
+},
+{
+"id": 12,
+"name": "Eliana",
+"title": "Daughter of Dawn",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 30,
+"name": "Benediction of Aurora",
+"rage_cost": 1000,
+"description": "Grants Eliana's Legion a Divine Shield and deals damage to the target Legion.\n\nShield Factor: 500\nShield Duration: 5s\n\nDamage Type: Physical/Magic\nDamage Factor: 200",
+"upgrade": "Shield Factor 200/270/350/420/500\nPhysical Skill Damage Factor 100/120/140/170/200\nMagic Skill Damage Factor 100/120/140/170/200",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 31,
+"name": "Purifying Touch",
+"rage_cost": null,
+"description": "All Legions: Increases damage dealt when peacekeeping by 7% and XP gained when peacekeeping by 20%.",
+"upgrade": "Damage dealt during Peacekeeping bonus 1%/2%/3%/4%/5%/7%(Awakened)\nHero EXP bonus 6%/8%/10%/12%/15%/20%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 32,
+"name": "Leosa's Brilliance",
+"rage_cost": null,
+"description": "Legion takes 30% less normal attack damage.",
+"upgrade": "Normal attack damage reduction 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 33,
+"name": "Holy Heart",
+"rage_cost": null,
+"description": "When casting Rage Skills, Legion gains Shelter, increasing their DEF by 30% for 5s.",
+"upgrade": "DEF bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 34,
+"name": "Divine Grace",
+"rage_cost": null,
+"description": "Grants a Divine Shield to Eliana's Legion, giving them a 70% chance to receive healing when hit with a normal attack (Healing Factor 400). This effect can be triggered once every 3s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"Peacekeeping",
+"Support"
+]
+},
+{
+"id": 13,
+"name": "Liliya",
+"title": "Sorceress of Flames",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 35,
+"name": "Flames of Vengeance",
+"rage_cost": 1000,
+"description": "Deals diffused damage to the target and 2 nearby Legions, with a 50% chance to inflict Scorch: deals damage every second for 5s.\n\nDamage Type: Magic\nDamage Factor (Targets): 1200\nDamage Factor (Scorch): 200",
+"upgrade": "Skill Damage Factor 600/700/800/1000/1200\nProbability 10%/20%/30%/40%/50%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 36,
+"name": "Dazzling Inferno",
+"rage_cost": null,
+"description": "All Legions: Increases damage dealt when peacekeeping by 15%.",
+"upgrade": "Damage dealt during Peacekeeping bonus 4%/6%/8%/10%/12%/15%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 37,
+"name": "Deep Burn",
+"rage_cost": null,
+"description": "Legion Magic units gain 20% Magic ATK and 10% HP.",
+"upgrade": "Magic unit Magic ATK bonus 10%/12%/14%/16%/20%\nMagic unit HP bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 38,
+"name": "Witchy Wiles",
+"rage_cost": null,
+"description": "When Liliya's Legion launches a normal attack, 30% chance to Scorch up to 2 surrounding enemy Legions, if the target Legion is Scorched.",
+"upgrade": "Probability 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 39,
+"name": "Burning Blood",
+"rage_cost": null,
+"description": "Before Awakening\nDeals diffused damage to the target and 1 nearby Legions, with a 50% chance to inflict Scorch: deals damage every second for 5s.\n\nDamage Type: Magic\nDamage Factor (Targets): 1200\nDamage Factor (Scorch): 200\n\nAfter Awakening\nDeals diffused damage to the target and 2 nearby Legions, with a 50% chance to inflict Scorch: deals damage every second for 5s.\n\nDamage Type: Magic\nDamage Factor (Targets): 1200\nDamage Factor (Scorch): 200",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 35
+}
+],
+"categories": [
+"Magic",
+"Peacekeeping",
+"Skills"
+]
+},
+{
+"id": 14,
+"name": "Velyn",
+"title": "Frost Scion",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 128,
+"name": "Frozen Star",
+"rage_cost": 1000,
+"description": "Deals diffused damage to the target and 2 nearby Legions, and inflicts Freeze for 3s.\n\nFreeze: March Speed -20%\n\nDamage Type: Magic\nDamage Factor: 1200",
+"upgrade": "Skill Damage Factor 600/700/800/1000/1200\nMarch Speed reduction 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 129,
+"name": "Perfection of Form",
+"rage_cost": null,
+"description": "While in the field, Legion deals 15% more Hero Skill damage and gains 20% March Speed.",
+"upgrade": "Hero Skill damage dealt bonus 5%/7%/9%/12%/15%\nMarch Speed bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 130,
+"name": "Bitter Cold",
+"rage_cost": null,
+"description": "Legion Magic units 10% Hero Skill Crit Rate and 15% DEF.",
+"upgrade": "Magic unit Hero Skill Crit Rate bonus 4%/5%/6%/8%/10%\nMagic unit DEF bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 131,
+"name": "Icy Interdiction",
+"rage_cost": null,
+"description": "When in battle, Legion has a 20% chance to inflict Magic DEF Break and Freeze on the target, reducing their Magic DEF by 20% and their March Speed by 20% for 3s.",
+"upgrade": "Magic DEF reduction 10%/12%/14%/16%/20%\nMarch Speed reduction 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 132,
+"name": "Snowblind",
+"rage_cost": null,
+"description": "When casting a Rage Skill on a target that is Frozen, Velyn deals additional damage and removes the target's Frozen effect.\n\nDamage Type: Magic\nDamage Factor: 400",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Control"
+]
+},
+{
+"id": 15,
+"name": "Bakshi",
+"title": "Wolf Hermit",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 133,
+"name": "Wolf-Spirit Binds",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and grants Bakshi's Legion Vigor: HP +20% for 5s.\n\nDamage Type: Physical\nDamage Factor: 1400",
+"upgrade": "Skill Damage Factor 700/800/1000/1200/1400\nHP bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 134,
+"name": "Sense Weakness",
+"rage_cost": null,
+"description": "All Legions: Increases damage dealt when peacekeeping by 10% and XP gained when peacekeeping by 10%.",
+"upgrade": "Damage dealt during Peacekeeping bonus 3%/4%/5%/6%/8%/10%(Awakened)\nHero EXP bonus 3%/4%/5%/6%/8%/10%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 135,
+"name": "Quickened Blood",
+"rage_cost": null,
+"description": "Legion Cavalry units gain 10% HP and 20% Physical ATK.",
+"upgrade": "Cavalry unit HP bonus 4%/5%/6%/8%/10%\nCavalry unit Physical ATK bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 136,
+"name": "Shaman's Call",
+"rage_cost": null,
+"description": "While in battle, Legion randomly gains either Ascension (increases ATK and DEF by 30%), Passion (increases Rage Accumulation Speed by 30%), or Spirit Siphon (launching normal attacks grants healing, Healing Factor 200) every 10s, lasting for 5s.",
+"upgrade": "ATK and DEF bonus 10%/15%/20%/25%/30%\nRage Accumulation Speed bonus 10%/15%/20%/25%/30%\nHealing Factor 100/120/140/170/200",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 137,
+"name": "Howl of the Wolf-Spirit",
+"rage_cost": null,
+"description": "Before Awakening\nDeals damage to the target Legion and grants Bakshi's Legion Vigor: HP +20% for 5s.\n\nDamage Type: Physical\nDamage Factor: 1400\n\nAfter Awakening\nDeals damage to the target Legion and grants Bakshi's Legion Vigor: HP +30% for 5s.\n\nDamage Type: Physical\nDamage Factor: 1500",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 133
+}
+],
+"categories": [
+"Cavalry",
+"Peacekeeping",
+"Skills"
+]
+},
+{
+"id": 16,
+"name": "Garwood",
+"title": "Forest Guardian",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 58,
+"name": "Revitalizing Rune",
+"rage_cost": 1000,
+"description": "Heals lightly wounded units in Garwood's Legion (Healing Factor 1200) and grants them Resistance reducing all damage taken by 20% for 4s.",
+"upgrade": "Healing Factor 500/650/800/1000/1200\nDamage taken reduction 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 59,
+"name": "Tempered Bark",
+"rage_cost": null,
+"description": "The Legion gains 10% HP.",
+"upgrade": "HP bonus 2%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 60,
+"name": "Call of the Ancient Tree",
+"rage_cost": null,
+"description": "Increases the DEF of all Infantry units in this Legion by 20%, and all healing they grant or receive by 30%.",
+"upgrade": "DEF bonus 10%/12%/14%/16%/20%\nHealing received bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 61,
+"name": "Thistles and Thorns",
+"rage_cost": null,
+"description": "Has a 75% chance to increase Physical damage dealt by 30% for 5s when healed.",
+"upgrade": "Physical Damage Dealt bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 62,
+"name": "Lifestone",
+"rage_cost": null,
+"description": "Before Awakening\nHeals lightly wounded units in Garwood's Legion (Healing Factor 1200) and grants them Resistance reducing all damage taken by 20% for 4s.\n\nAfter Awakening\nHeals lightly wounded units in Garwood's Legion (Healing Factor 1400) and grants them Resistance reducing all damage taken by 20% for 6s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 58
+}
+],
+"categories": [
+"Infantry",
+"Garrison",
+"Tank"
+]
+},
+{
+"id": 17,
+"name": "Theia",
+"title": "Unchanging Law",
+"quality": "legendary",
+"season": 1,
+"flying": true,
+"skills": [
+{
+"id": 113,
+"name": "Arbiter’s Ward",
+"rage_cost": 1000,
+"description": "Theia’s Legion gains a shield that absorbs a large amount of damage (Shield Factor 1000) for 5s, while also gaining Synergy, increasing Hero Skill damage dealt by 15% (ends when a Rage Skill is cast).",
+"upgrade": "Shield Factor 500/600/700/850/1000\nHero Skill damage dealt bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 114,
+"name": "Oracle’s Grace",
+"rage_cost": null,
+"description": "While in the field, Legion’s ATK is increased by 15%, and they take 15% less Hero Skill damage.",
+"upgrade": "ATK bonus 5%/7%/9%/12%/15%\nHero Skill damage taken reduction 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 115,
+"name": "Purging Wings",
+"rage_cost": null,
+"description": "Legion’s DEF is increased by 20%. When Legion is composed entirely of Flying units, their ATK is increasing by 10%, and their March Speed is increased by 20%.",
+"upgrade": "DEF bonus 10%/12%/14%/16%/20%\nATK bonus 4%/5%/6%/8%/10%\nMarch speed bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 116,
+"name": "Lex Lucis",
+"rage_cost": null,
+"description": "When Legion gains a shield, their ATK is increased by 10%, up to a maximum of 30%.",
+"upgrade": "ATK bonus 4%/5%/6%/8%/10%\nMax ATK bonus 12%/15%/18%/24%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 117,
+"name": "Redemption",
+"rage_cost": null,
+"description": "Before Awakening\nTheia’s Legion gains a shield that absorbs a large amount of damage (Shield Factor 1000) for 5s, while also gaining Synergy, increasing Hero Skill damage dealt by 15% (ends when a Rage Skill is cast).\n\nAfter Awakening\nGrants a shield to 2 nearby friendly Legions (including Theia’s Legion) that absorbs a large amount of damage for 5s (Shield Factor 1000). Theia’s Legion also gains Synergy, increasing Hero Skill damage dealt by 15% (ends when a Rage Skill is cast).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 113
+}
+],
+"categories": [
+"Overall",
+"PvP",
+"Support"
+]
+},
+{
+"id": 18,
+"name": "Kinnara",
+"title": "Flying Dagger",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 123,
+"name": "Rattlesnake Strike",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and inflicts Feeble: damage dealt -15% for 5s.",
+"upgrade": "Skill Damage Factor 700/800/1000/1200/1400\nTarget damage dealt reduction 4%/6%/8%/11%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 124,
+"name": "Provocation",
+"rage_cost": null,
+"description": "While in the field, Legion deals 20% more normal attack damage, and takes 10% less Hero Skill damage.",
+"upgrade": "Normal attack damage bonus 10%/12%/14%/16%/20%\nHero Skill damage taken reduction 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 125,
+"name": "Hunter’s Pace",
+"rage_cost": null,
+"description": "Legion Marksman units gain 30% Physical ATK.",
+"upgrade": "Marksman unit Physical ATK bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 126,
+"name": "Gratuitous Violence",
+"rage_cost": null,
+"description": "When Legion is attacked, they have a 20% chance to gain Physical Riposte and inflict Slow upon the target, increasing Physical counterattack damage dealt by 30% and reducing the target’s March Speed by 20% for 5s.",
+"upgrade": "Physical Counterattack Damage Dealt bonus 10%/15%/20%/25%/30%\nMarch Speed reduction 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 127,
+"name": "Jawbreaker",
+"rage_cost": null,
+"description": "When Kinnara’s Legion launches a normal attack, they have a 20% chance to inflict DEF Break on the target Legion, reducing their DEF by 20% for 3s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"PvP",
+"Control"
+]
+},
+{
+"id": 19,
+"name": "Emrys",
+"title": "Shadow Warlord",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 68,
+"name": "Shattering Blow",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion.\n\nDamage Type: Physical\nDamage Factor: 1500",
+"upgrade": "Skill Damage Factor 700/900/1100/1300/1500",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 69,
+"name": "Watcher’s Blade",
+"rage_cost": null,
+"description": "When Emrys’s Legion enters battle, they gain Passion, increasing their Rage Accumulation Speed by 40% for 5s. This effect can be triggered once every 30s.",
+"upgrade": "Rage Accumulation Speed bonus 20%/25%/30%/35%/40%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 70,
+"name": "Penumbra",
+"rage_cost": null,
+"description": "All Cavalry units in Emrys’s Legion gain 30% Physical ATK and 10% March Speed.",
+"upgrade": "Cavalry unit Physical ATK bonus 10%/15%/20%/25%/30%\nCavalry unit March Speed bonus 3%/4.5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 71,
+"name": "Shadow Raid",
+"rage_cost": null,
+"description": "All damage dealt by the Emrys’s Legion is increased by 10%.Emrys's Legion also deals 15% more Skill damage when attacking targets that have been Surrounded.",
+"upgrade": "Damage dealt bonus 4%/5%/6%/8%/10%\nHero Skill damage dealt bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 72,
+"name": "Springblade",
+"rage_cost": null,
+"description": "When hit a normal attack, Emrys's Legion has a 20% chance to gain Passion, increasing Rage Accumulation Speed by 20% for 5s. If Emrys's Legion already has Passion, it is removed, granting 100 Rage. This effect can be triggered once every 2s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 20,
+"name": "Indis",
+"title": "Sage of Order",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 138,
+"name": "Axiom of Glory",
+"rage_cost": 1000,
+"description": "Inflicts Infirm on the target Legion and 2 nearby Legions, increasing all damage taken by 200% for 2s, while also healing lightly wounded units in up to 2 surrounding Legions (Healing Factor 350).",
+"upgrade": "Target damage taken bonus 10%/12%/14%/16%/20%\nHealing Factor 150/200/250/300/350",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 139,
+"name": "Earthen Balance",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 7% and Wood Gather Speed by an extra 20%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%/7%(Awakened)\nWood Gather Speed bonus 6%/8%/10%/12%/15%/20%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 140,
+"name": "Rejuvenating Blessing",
+"rage_cost": null,
+"description": "Increases Legion HP by 20% and maximum Legion Capacity by 7%.",
+"upgrade": "HP bonus 10%/12%/14%/16%/20%\nMaximum Legion Capacity bonus 3%/4%/5%/6%/7%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 141,
+"name": "Purge",
+"rage_cost": null,
+"description": "When in battle, Indis’s Legion gains Unyielding every 8s, reducing counterattack damage taken by 30% for 5s, and removing one debuff effect.",
+"upgrade": "Counterattack damage taken reduction 20%/25%/30%/40%/50%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 142,
+"name": "Oaken Order",
+"rage_cost": null,
+"description": "Before Awakening\nInflicts Infirm on the target Legion and 2 nearby Legions, increasing all damage taken by 200% for 2s, while also healing lightly wounded units in up to 2 surrounding Legions (Healing Factor 350).\n\nAfter Awakening\nInflicts Infirm on the target Legion and 3 nearby Legions, increasing all damage taken by 200% for 2s, while also healing lightly wounded units in up to 2 surrounding Legions (Healing Factor 450).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 138
+}
+],
+"categories": [
+"Overall",
+"Gather",
+"Support"
+]
+},
+{
+"id": 21,
+"name": "Nico",
+"title": "Eyes of Daybreak",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 108,
+"name": "Piercing Shot",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and inflicts DEF Break: DEF -15% for 3s.\n\nDamage Type: Physical\nDamage Factor: 1400",
+"upgrade": "Skill Damage Factor 700/800/1000/1200/1400\nDEF reduction 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 109,
+"name": "Expert Mechanic",
+"rage_cost": null,
+"description": "When entering battle in the field, the Legion gains Vigor (HP+10%) and Haste (March Speed +15%) for 10s. This effect can trigger once every 30s.",
+"upgrade": "HP bonus 3%/4%/6%/8%/10%\nMarch Speed bonus 6%/8%/10%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 110,
+"name": "Agile Deployment",
+"rage_cost": null,
+"description": "All Marksman units in Nico’s Legion gain 20% ATK and 10% DEF.",
+"upgrade": "Marksman unit DEF bonus 4%/5%/6%/8%/10%\nMarksman unit Physical ATK bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 111,
+"name": "Greymar's Ballista",
+"rage_cost": null,
+"description": "When casting Rage Skills, Nico's Legion gains Onslaught and Riposte, increasing normal attack and counterattack damage dealt by 20% for 5s. This effect can be triggered once every 7s.",
+"upgrade": "Normal attack damage bonus 10%/12%/14%/16%/20%\nCounterattack damage bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 112,
+"name": "Bullseye Barrage",
+"rage_cost": null,
+"description": "When Nico's Legion launches a normal attack on a target Legion, that already has DEF Break, they have a 80% chance to deal additional damage.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"PvP",
+"Precision"
+]
+},
+{
+"id": 22,
+"name": "Nika",
+"title": "Snow Owl",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 53,
+"name": "Shimmerstrike",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and inflicts Bruise: HP-30% for 3s.\n\nDamage Type: Physical\nDamage Factor: 1500",
+"upgrade": "Skill Damage Factor 600/800/1000/1200/1500\nHP reduction 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 54,
+"name": "Assassin’s Covenant",
+"rage_cost": null,
+"description": "All Legions: Increases damage dealt when peacekeeping by 10% and XP gained when peacekeeping by 10%.",
+"upgrade": "Damage dealt during Peacekeeping bonus 3%/4%/5%/6%/8%/10%(Awakened)\nHero EXP bonus 3%/4%/5%/6%/8%/10%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 55,
+"name": "Night Prowler",
+"rage_cost": null,
+"description": "Legion Infantry gain 20% Physical ATK and 10% March Speed.",
+"upgrade": "Infantry unit Physical ATK bonus 10%/12%/14%/16%/20%\nInfantry unit March Speed bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 56,
+"name": "Blade Maelstrom",
+"rage_cost": null,
+"description": "Increases Hero Skill damage dealt by Nika’s Legion by 10%, and counterattack damage by 20%.",
+"upgrade": "Hero Skill damage dealt bonus 4%/5%/6%/8%/10%\nCounterattack damage bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 57,
+"name": "Total Slaughter",
+"rage_cost": null,
+"description": "When Nika's launches a normal attack, they have a 50% chance to deal damage if the target has fewer than 50% units remaining.\n\nDamage Type: Physical\nDamage Factor: 500\n\nThis effect can be triggered once every 2s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"Peacekeeping",
+"Skills"
+]
+},
+{
+"id": 23,
+"name": "Hosk",
+"title": "Mighty General",
+"quality": "legendary",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 63,
+"name": "No Quarter",
+"rage_cost": 1000,
+"description": "Hosk’s Legion gains Keen, Vigor, and Rampage, increasing their ATK by 20%, their HP by 30%, and their damage dealt by 10% for 5s.",
+"upgrade": "ATK bonus 10%/12%/14%/16%/20%\nHP bonus 10%/15%/20%/25%/30%\nDamage dealt bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 64,
+"name": "A Dream of Peace",
+"rage_cost": null,
+"description": "When launching a Rally, Hosk’s normal attacks have a 50% chance to reduce the target’s Physical DEF by 15% for 3s.",
+"upgrade": "DEF reduction 4%/6%/8%/11%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 65,
+"name": "Battle-Scarred",
+"rage_cost": null,
+"description": "Increases a Legion’s DEF by 25% when Hosk is a Commander, and their Normal Attack damage by 40% when Hosk is Deputy.",
+"upgrade": "DEF bonus 10%/13%/16%/20%/25%\nNormal attack damage bonus 15%/20%/25%/30%/40%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 66,
+"name": "Plateau Tactics",
+"rage_cost": null,
+"description": "Increases maximum Legion Capacity by 15000.",
+"upgrade": "Maximum Legion Capacity bonus 3000/6000/9000/12000/15000",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 67,
+"name": "Furious Charge",
+"rage_cost": null,
+"description": "After Hosk’s Legion receives a buff effect, their normal attack Crit Rate is increased by 6% and their counterattack Crit Rate is increased by 6% (up to a maximum of 30%) for 6s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"Rally",
+"Precision"
+]
+},
+{
+"id": 24,
+"name": "Madeline",
+"title": "Sword of the Kingdom",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 73,
+"name": "Blessed Blade",
+"rage_cost": 1000,
+"description": "Grants Physical Keen, increasing Physical ATK by 20% for 4s. Also grants a shield which absorbs damage (Shield Factor 1200) for 4s.",
+"upgrade": "Physical ATK bonus 5%/8%/11%/15%/20%\nShield Factor 600/700/800/1000/1200",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 74,
+"name": "Glorious Bloodline",
+"rage_cost": null,
+"description": "Increases Legion Capacity by 15000, and increases Physicl damage dealt by Legion in the field by 3%.",
+"upgrade": "Maximum Legion Capacity bonus 3000/6000/9000/12000/15000\nPhysical Damage Dealt bonus 3%/4%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 75,
+"name": "Steel Sentinel",
+"rage_cost": null,
+"description": "Legion deals 15% more counterattack damage, and all Infantry units in the Legion gain 15% HP.",
+"upgrade": "Infantry unit HP bonus 5%/7%/9%/12%/15%\nCounterattack damage bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 76,
+"name": "Piercing Gaze",
+"rage_cost": null,
+"description": "When Blessed Blade's shield is broken, Madeline deals damage to up to 3 surrounding Legions.\n\nDamage Type: Physical\nDamage Factor: 300",
+"upgrade": "Skill Damage Factor 100/150/200/250/300",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 77,
+"name": "The Sword of Sorland",
+"rage_cost": null,
+"description": "Before Awakening\nWhen Blessed Blade's shield is broken, Madeline deals damage to up to 3 surrounding Legions.\n\nDamage Type: Physical\nDamage Factor: 300\n\nAfter Awakening\nWhen Blessed Blade's shield is broken, Madeline deals damage to up to 3 surrounding Legions and gains Resistance: damage taken -10% for 4s..\n\nDamage Type: Physical\nDamage Factor: 300",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 76
+}
+],
+"categories": [
+"Overall",
+"PvP",
+"Tank"
+]
+},
+{
+"id": 25,
+"name": "Syndrion",
+"title": "Greenfeather",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 15,
+"name": "Greenfeather",
+"rage_cost": 1000,
+"description": "Legion gains Keen and Rapid-Fire, increasing their ATK by 20% and launching and additional normal attack every second for 7s.",
+"upgrade": "Duration 3/4/5/6/7",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 16,
+"name": "Soaring Ambition",
+"rage_cost": null,
+"description": "When besieging a City or Stronghold, Legion gains 10% ATK and ignores 5% of the enemy's DEF.",
+"upgrade": "ATK bonus 4%/5%/6%/8%/10%\nDEF Penetration 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 17,
+"name": "Feather Strike",
+"rage_cost": null,
+"description": "Legion Marksman units gain 10% normal attack Crit Rate and 15% HP.",
+"upgrade": "Marksman unit normal attack Crit Rate bonus 4%/5%/6%/8%/10%\nMarksman unit HP bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 18,
+"name": "Forest Shadow",
+"rage_cost": null,
+"description": "When battle begins, Legion gains Rapid-Fire for 3s, launching an extra attack every time they launch a normal attack. 3s after battle begins, Legion gains 20% ATK, lasting until battle ends.",
+"upgrade": "ATK bonus 10%/12%/14%/16%/20%\nDuration 1/1/2/2/3",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 19,
+"name": "Free as the Wind",
+"rage_cost": null,
+"description": "Every time Syndrion's Legion lands 5 critical hit(s) from normal attacks, they deal additional damage to the target Legion.\n\nDamage Type: Physical\nDamage Factor: 400",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"Rally",
+"Precision"
+]
+},
+{
+"id": 26,
+"name": "Ffraegar",
+"title": "Wandering Storm",
+"quality": "legendary",
+"season": 2,
+"flying": true,
+"skills": [
+{
+"id": 153,
+"name": "Squall Shot",
+"rage_cost": 1000,
+"description": "Deals damage to the target and grants Ffraegar's Legion Normal Attack Focus: normal attack Crit Rage +60% for 7s.\n\nDamage Type: Physical\nDamage Factor: 600",
+"upgrade": "Skill Damage Factor 300/360/420/500/600\nDuration 3/4/5/6/7",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 154,
+"name": "Nocked and Loaded",
+"rage_cost": null,
+"description": "While in the field, Legion deals 15% more normal attack damage and gains 15% DEF.",
+"upgrade": "Normal attack damage bonus 5%/7%/9%/16%/15%\nDEF Bonus 5%/7%/9%/10%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 155,
+"name": "Storm Barrage",
+"rage_cost": null,
+"description": "Legion Marksman units gain 20% Physical ATK and 30% normal attack Crit damage.",
+"upgrade": "Marksman unit Physical ATK bonus 10%/12%/14%/16%/20%\nNormal attack Crit damage bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 156,
+"name": "Falconeer Charge",
+"rage_cost": null,
+"description": "When Legion launches a normal attack, they have a 20% chance launch an extra normal attack at a Legion other than the target. For the next 5s, this Hero's Legion also gains Haste (March Speed +30%) and the target loses 20% Rage Accumulation Speed.",
+"upgrade": "March Speed bonus 15%/18%/21%/25%/30%\nRage Accumulation Speed reduction 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 157,
+"name": "Cloud Strike",
+"rage_cost": null,
+"description": "Before Awakening\nDeals damage to the target and grants Ffraegar's Legion Normal Attack Focus: normal attack Crit Rage +60% for 7s.\n\nDamage Type: Physical\nDamage Factor: 600\n\nAfter Awakening\nDeals damage to the target and grants Ffraegar's Legion Normal Attack Focus: normal attack Crit Rage +60% for 7s.\n\nDamage Type: Physical\nDamage Factor: 800",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 153
+}
+],
+"categories": [
+"Marksman",
+"Peacekeeping",
+"Mobility"
+]
+},
+{
+"id": 27,
+"name": "Forondil",
+"title": "Warden of the Four Plagues",
+"quality": "legendary",
+"season": 2,
+"flying": true,
+"skills": [
+{
+"id": 143,
+"name": "Shattering Screech",
+"rage_cost": 1000,
+"description": "Deals Physical damage to the target Legion (Damage Factor 1200), and deals extra Physical damage for each enemy Legion near the target Legion (Damage Factor 50, up to 250). Also inflicts Cowardice: all normal attacks miss for 3s.\n\nDamage Type: Skill Damage (Physical)\nDamage Factor: 1200",
+"upgrade": "Skill Damage Factor: 600/700/800/1000/1200\nDuration: 1/1/2/2/3",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 144,
+"name": "Death From Above",
+"rage_cost": null,
+"description": "Legion penetrates 10% of enemy’s DEF while in the field.",
+"upgrade": "DEF Penetration: 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 145,
+"name": "Song of Swiftness",
+"rage_cost": null,
+"description": "Grants buffs when leading a Cavalry Legions.\n\nWhen Forondil is Commander:\nMarch Speed +20%\nDamage dealt +10%\n\nWhen Forondil is Deputy:\nHero Skill damage dealt +10%\nRage Skill cost -50",
+"upgrade": "March Speed bonus 10%/12%/14%/16%/20%\nDamage dealt bonus 4%/5%/6%/8%/10%\nSkill Damage bonus 4%/5%/6%/8%/10%\nRage Cost Reduction 10/20/30/40/50",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 146,
+"name": "Aiming High",
+"rage_cost": null,
+"description": "Legion gains an ATK bonus upon entering battle.\n\nATK Bonus: 40%\nBonus reduced by -5% every 20s",
+"upgrade": "ATK bonus 20%/25%/30%/35%/40%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 147,
+"name": "Avian Splendor",
+"rage_cost": null,
+"description": "When Forondil's Legion launches a normal attack against a Legion that has Cowardice, they hve 50% chance of inflicting Physical DEF Break and Slow for 3s. This effect can be triggered once every 5s.\n\nPhysical DEF Break: Physical DEF -20%\nSlow: March Speed -20%",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"PvP",
+"Control"
+]
+},
+{
+"id": 28,
+"name": "Theodore",
+"title": "Master Strategist",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 148,
+"name": "Shadowed Spite",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and inflicts Bruise: HP -30% for 3s.\n\nDamage Type: Physical\nDamage Factor: 1400",
+"upgrade": "Skill Damage Factor 700/800/1000/1200/1400\nHP reduction 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 149,
+"name": "Traitor’s Ambition",
+"rage_cost": null,
+"description": "Legion Cavalry units gain a bonus to their attributes.\n\nDEF Bonus: +30%\nMarch Speed: +10%",
+"upgrade": "Cavalry unit DEF bonus 10%/15%/20%/25%/30%\nCavalry Unit March Speed 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 150,
+"name": "Royal Writ",
+"rage_cost": null,
+"description": "When garrisoning a City or Stronghold, Legion has a 20% chance to gain Vigor and ATK Resistance when hit by an attack.\n\nVigor: HP +10\nATK Resistance: ignores 10% of enemy ATK\nDuration: 3s",
+"upgrade": "HP bonus 4%/5%/6%/8%/10%\nATK Resistance 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 151,
+"name": "Coup de Grace",
+"rage_cost": null,
+"description": "Each time the Legion inflicts a debuff effect on and enemy Legion via a Hero Skill, it gains one stack of Consul's Mark (max 3 stacks).\n\nWhen Theodore casts a Rage Skill, all stacks of Consul's Mark are consumed, increasing damage dealt by that Skill by 20% per stack. Consul's Mark is reset when battle ends. When the Legion launches Unyielding Rush or Wild Barrage, it gains 3 stacks of Consul's Mark.\n\nDamage bonus: 20% per stack consumed.\n\nConsul’s Mark is reset when battle ends.",
+"upgrade": "Hero Skill damage bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 152,
+"name": "Weaver of Intrigue",
+"rage_cost": null,
+"description": "Legion takes 25% less normal attack damage.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"Garrison",
+"Skills"
+]
+},
+{
+"id": 29,
+"name": "Skogul",
+"title": "Scarlet Scimitar",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 20,
+"name": "Bloodsoaked Battle",
+"rage_cost": 1000,
+"description": "Skogul's Legion gains Vigor and Bloodfury for 6s.\n\nVigor: HP +15%\nBloodfury: Legion deals additional diffused counterattack damage every second to all Legions at close range when they launch a normal attack on your Legion",
+"upgrade": "Duration 2/3/4/5/6\nHP bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 21,
+"name": "Unshakeable",
+"rage_cost": null,
+"description": "Legion Infantry units gain 20% Physical ATK and 10% HP.",
+"upgrade": "Infantry unit Physical ATK bonus 5%/8%/11%/15%/20%\nHP bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 22,
+"name": "Guerilla Tactics",
+"rage_cost": null,
+"description": "While in the field, Legion gains 60% March Speed every time they Berserker Charge and 1% ATK every time they launch a counterattack, up to a maximum of 25%.",
+"upgrade": "Max ATK bonus 10%/13%/16%/20%/25%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 23,
+"name": "Tough as Nails",
+"rage_cost": null,
+"description": "Legion has 10% chance to receive healing when hit with a normal attack (Healing Factor 350). This effect can be triggered once every 5s.",
+"upgrade": "Healing Factor 150/200/250/300/350",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 24,
+"name": "Glory to Wilderburg!",
+"rage_cost": null,
+"description": "Legion Infantry units deal 10% more counterattack damage.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 30,
+"name": "Goresh",
+"title": "The Tormentor",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 25,
+"name": "Wild Blood",
+"rage_cost": 1000,
+"description": "Goresh's Legion gains Physical Keen and Resistance for 6s.\n\nPhysical Keen: Physical ATK +50%\nResistance: Damage taken -15%",
+"upgrade": "Duration 2/3/4/5/6\nPhysical ATK bonus 20%/25%/30%/40%/50%\nDamage taken reduction 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 26,
+"name": "Steel Skin",
+"rage_cost": null,
+"description": "Legion Infantry units gain 15% DEF and deal 20% more counterattack damage.",
+"upgrade": "Infantry unit counterattack damage bonus 5%/8%/11%/15%/20%\nInfantry unit DEF bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 27,
+"name": "Ruthless",
+"rage_cost": null,
+"description": "When Legion launches a counterattack, they have a 50% chance to deal additional damage to up to 5 surrounding Legions. Each additional Legion targeted reduces damage taken by 15%. This effect can be triggered up to 2 times per second.\n\nDamage Type: Physical\nDamage Factor: 200",
+"upgrade": "Skill Damage Factor 50/80/110/150/200",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 28,
+"name": "Ravaging Army",
+"rage_cost": null,
+"description": "When besieging a City or Stronghold, Legion gains 20% ATK. If the target Garrison Captain is an Infantry Hero, for every other attacking Legion in the siege, this Hero's Legion gains a 20% chance (up to 60%) to inflict Cower (counterattack damage -50%) for 3s when it launches a normal attack.",
+"upgrade": "ATK bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 29,
+"name": "Total Domination",
+"rage_cost": null,
+"description": "Before Awakening\nGoresh's Legion gains Physical Keen and Resistance for 6s.\n\nPhysical Keen: Physical ATK +50%\nResistance: Damage taken -15%\n\nAfter Awakening\nGoresh's Legion gains Physical Keen and Resistance for 6s.\n\nPhysical Keen: Physical ATK +60%\nResistance: Damage taken -20%",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 25
+}
+],
+"categories": [
+"Infantry",
+"Rally",
+"Tank"
+]
+},
+{
+"id": 31,
+"name": "Bertrand",
+"title": "Golden Child",
+"quality": "legendary",
+"season": 2,
+"flying": true,
+"skills": [
+{
+"id": 5,
+"name": "Entitled Rage",
+"rage_cost": 1000,
+"description": "Bertrand deals damage to the target Legion and consumes all stacks of Golden Mark, increasing damage dealt by 5% per stack.\n\nDamage Type: Magic\nDamage Factor: 1300",
+"upgrade": "Skill Damage Factor 700/800/900/1100/1300",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 6,
+"name": "Compound Interest",
+"rage_cost": null,
+"description": "When Legion deals Hero Skill damage, they gains 1 stack of Golden Mark for 5s (max 3 stacks). Each stack of Golden Mark increases Hero Skill damage dealt by 10%.",
+"upgrade": "Hero Skill damage dealt bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 7,
+"name": "Magic Circle",
+"rage_cost": null,
+"description": "Legion Magic units gain 25% Magic ATK and 10% DEF Penetration.",
+"upgrade": "Magic unit Magic ATK bonus 10%/13%/16%/20%/25%\nMagic unit enemy DEF penetration 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 8,
+"name": "Blue Blood",
+"rage_cost": null,
+"description": "While in the field, Legion gains 15% ATK and DEF if they have not taken normal attack damage for 3s.",
+"upgrade": "ATK and DEF bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 9,
+"name": "Noblesse Oblige",
+"rage_cost": null,
+"description": "Bertrand deals damage to the target Legion and consumes all stacks of Golden Mark, increasing damage dealt by 5% per stack.\n\nDamage Type: Magic\nDamage Factor: 1500",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 5
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Skills"
+]
+},
+{
+"id": 32,
+"name": "Tohar",
+"title": "Wit of Wilderburg",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 10,
+"name": "Earth Conduit",
+"rage_cost": null,
+"description": "After launching 3 normal attacks, Tohar channels Rage of the Plateau, dealing damage to the target every second for up to 3s.\n\nDamage Type: Magic\nDamage Factor: 500\n\nCooldown: 4s\n\nIf a Hero in Tohar's Legion casts a Rage Skill, the cooldown ands immediatly.",
+"upgrade": "Skill Damage Factor 250/300/350/400/500",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 11,
+"name": "Defensive Fortifications",
+"rage_cost": null,
+"description": "When garrisoning Cities or Strongholds, the Garrisoned Army gains 20% ATK. Each time Earth Conduit is cast, it has a 50% chance to hit an extra 3 enemy Legions, dealing diffused damage (Damage Factor 200).",
+"upgrade": "ATK bonus 10%/12%/14%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 12,
+"name": "Shamanic Mastery",
+"rage_cost": null,
+"description": "Legion Magic units deal 30% more Hero skill damage, but deal 5% less normal attack damage.",
+"upgrade": "Magic unit Hero Skill damage dealt bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 13,
+"name": "Plateau Protection",
+"rage_cost": null,
+"description": "When channeling Rage of the Plateau, his Legion gains Unyielding and Shelter for 5s.\n\nUnyielding: Counterattack damage taken -15%\nShelter: DEF +35%",
+"upgrade": "Counterattack damage taken reduction 5%/7%/9%/12%/15%\nDEF bonus 15%/20%/25%/30%/35%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 14,
+"name": "Earth Ritual",
+"rage_cost": null,
+"description": "After Tohar finishes channeling Rage of the Plateau, his Legion gains Keen: ATK +35% for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Magic",
+"Garrison",
+"Support"
+]
+},
+{
+"id": 33,
+"name": "Maggrat",
+"title": "Seer of Spores",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 158,
+"name": "Peech's Dream",
+"rage_cost": null,
+"description": "Maggrat's Legion gains variable healing whenever they deal normal attack damage (Healing Rate 5%). When variable healing has been triggered 5 times, their next normal attack deals 450% more damage.\nVariable healing can be triggered once every 1s.",
+"upgrade": "Normal attack damge bonus 250%/300%/350%/400%/450%\nHealing Rate 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 159,
+"name": "Truth Teller",
+"rage_cost": null,
+"description": "Whenever the Legion gains healing or variable healing, they have a 30% chance to gain 40% ATK for 3s.",
+"upgrade": "ATK bonus 20%/25%/30%/35%/40%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 160,
+"name": "Spore Stupor",
+"rage_cost": null,
+"description": "Legion Marksman units 15% more normal attack damage and gain 20% HP.",
+"upgrade": "Normal attack damage bonus 5%/7%/9%/12%/15%\nHP bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 161,
+"name": "Fungal Fervor",
+"rage_cost": null,
+"description": "When Garrisoned Army is in a City or Stronghold, they receive healing every 10s (Healing Factor 200), and gain 10% ATK for 5s.",
+"upgrade": "Healing Factor 50/80/110/150/200\nATK bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 162,
+"name": "Toadstool Stew",
+"rage_cost": null,
+"description": "Before Awakening\nMaggrat's Legion gains variable healing whenever they deal normal attack damage (Healing Rate 5%). When variable healing has been triggered 5 times, their next normal attack deals 450% more damage.\nVariable healing can be triggered once every 1s.\n\nAfter Awakening\nMaggrat's Legion gains variable healing whenever they deal normal attack damage (Healing Rate 5%). When variable healing has been triggered 5 times, their next normal attack deals 500% more damage.\nVariable healing can be triggered once every 1s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 158
+}
+],
+"categories": [
+"Marksman",
+"Garrison",
+"Precision"
+]
+},
+{
+"id": 34,
+"name": "Zayda",
+"title": "Starfall Sniper",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 163,
+"name": "Shining Star Shot",
+"rage_cost": null,
+"description": "When Zayda's Legion deals normal attack damage, they gain 1 stack of Dawnwatcher's Mark for 5s (up to 10 stacks, maximum 1 stack every 1s). Each stack of Dawnwatcher's Mark increases normal attack damage dealt by 8% and March Speed by 2%.",
+"upgrade": "Normal attack damage bonus 4%/5%/6%/7%/8%\nMarch Speed bonus 1%/1%/1%/2%/2%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 164,
+"name": "Decisive Duel",
+"rage_cost": null,
+"description": "When Legion reaches the maximum amount of Dawnwatcher's Mark stacks, they deal 10% more damage, and receive 20% more healing.",
+"upgrade": "Damage dealt bonus 4%/5%/6%/8%/10%\nHealing received bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 165,
+"name": "Tactical Adjustment",
+"rage_cost": null,
+"description": "Legion Marksman units gain 30% Physical ATK and 10% March Speed.",
+"upgrade": "Physical ATK bonus 10%/15%/20%/25%/30%\nMarch Speed bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 166,
+"name": "Silver Tongue",
+"rage_cost": null,
+"description": "When Legion deals normal attack damage, they have a 25% chance to gain Normal Attack Focus, increasing their normal attack Crit Rate by 25% for 4s.",
+"upgrade": "Normal attack Crit Rate bonus 10%/13%/16%/20%/25%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 167,
+"name": "Darling of Dawnwatch",
+"rage_cost": null,
+"description": "Legion gains 3 stack(s) of Dawnwatcher's Mark upon entering battle.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 35,
+"name": "Urag",
+"title": "One-Armed Wolf Lord",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 168,
+"name": "Lead the Charge",
+"rage_cost": 1000,
+"description": "Deals Physical damage to the target (Damage Factor 1600). Damage spreads to up to 2 nearby enemy Legions (Damage Factor 300).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 169,
+"name": "Wolf Lord's Will",
+"rage_cost": null,
+"description": "Legion takes 10% less damage when marching, and deals 10% more damage in battle.",
+"upgrade": "Damage taken reduction 4%/5%/6%/8%/10%\nDamage dealt bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 170,
+"name": "Forever Onwards",
+"rage_cost": null,
+"description": "Legion Cavalry units gain 10% March Speed and 30% ATK.",
+"upgrade": "Cavalry unit March Speed bonus 4%/5%/6%/8%/10%\nCavalry unit Physical ATK bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 171,
+"name": "Fearsome Flail",
+"rage_cost": null,
+"description": "Legion bypasses 10% of enemy HP, and increases Rage Accumulation Speed by 10%.",
+"upgrade": "HP Bypass 4%/5%/6%/8%/10%\nRage Accumulation Speed bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 172,
+"name": "Ancestral Heritage",
+"rage_cost": null,
+"description": "Before Awakening\nDeals Physical damage to the target (Damage Factor 1600). Damage spreads to up to 2 nearby enemy Legions (Damage Factor 300).\n\nAfter Awakening\nDeals Physical damage to the target (Damage Factor 1700). Damage spreads to up to 2 nearby enemy Legions (Damage Factor 400).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 168
+}
+],
+"categories": [
+"Cavalry",
+"PvP",
+"Skills"
+]
+},
+{
+"id": 36,
+"name": "Tobin",
+"title": "Lightbearer",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 173,
+"name": "Eos",
+"rage_cost": 1000,
+"description": "Deals damage to the target Legion and grants Tobin's Legion Mercy: Range damage taken -30% for 5s.\n\nDamage Type: Physical\nDamage Factor: 1600",
+"upgrade": "Skill Damage Factor 700/900/1100/1350/1600\nReduced ranged damage taken 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 174,
+"name": "Light of the Tower",
+"rage_cost": null,
+"description": "When launching a rally, 50% chance to reduce all damage taken by 20% for 5s. This effect can be triggered once every 8s.",
+"upgrade": "Damage taken reduction 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 175,
+"name": "Oath of the Heart",
+"rage_cost": null,
+"description": "Legion Cavalry units gain 20% HP and 10% ATK.",
+"upgrade": "Cavalry unit HP bonus 5%/8%/11%/15%/20%\nCavalry unit Physical ATK bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 176,
+"name": "All-Piercing Light",
+"rage_cost": null,
+"description": "Deals 20% more Rage Skill damage to enemy Legions in front of Legion, and 10% more counterattack damage to Legions behind Legion.",
+"upgrade": "Hero Skill damage bonus 5%/8%/11%/15%/20%\nCounterattack damage bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 177,
+"name": "Shared Calling",
+"rage_cost": null,
+"description": "When another Hero in Tobin's Legion deals damage with a Rage Skill, they deal 20% more damage when targeting Ranged Legions, When targeting Melee Legions, they take 15% less damage for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"Rally",
+"Tank"
+]
+},
+{
+"id": 37,
+"name": "Danfel",
+"title": "Tiny Juggernaut",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 178,
+"name": "Shield Strike",
+"rage_cost": 1000,
+"description": "Grants the Legion a shield and deals damage to the target Legion.\n\nShield Factor: 600\nShield Duration: 3s\n\nDamage Type: Physical\nDamage Factor: 1600",
+"upgrade": "Skill Damage Factor 700/900/1100/1350/1600\nShield Factor 300/360/420/500/600",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 179,
+"name": "Greymar's Aegis",
+"rage_cost": null,
+"description": "While in the field, the Legion and friendly Legions behind it gain Mercy for 3s every 10s.\n\nMercy: Ranged damage taken -20%\nBuffed Legions: 3\n\nEffect triggers once every 10s.",
+"upgrade": "Reduced ranged damage taken 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 180,
+"name": "Brothers in Arms",
+"rage_cost": null,
+"description": "All Infantry units in the Legion gain 10% DEF and 20% HP.",
+"upgrade": "Infantry unit DEF bonus 4%/5%/6%/8%/10%\nInfantry unit HP bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 181,
+"name": "Halfling Fury",
+"rage_cost": null,
+"description": "When the Legion casts Shield Strike, the target Legion gains Debilitated and Slow for 6s.\n\nDebilitated: takes 20% more damage from this Legion\nSlow: March Speed -20%",
+"upgrade": "March Speed reduction 8%/11%/14%/17%/20%\nTarget damage taken bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 182,
+"name": "Rune of Resolve",
+"rage_cost": null,
+"description": "When dealing damage to a Legion affected by Halfling Fury, adds 1s to the duration of Debilitated and Slow.\nThis effect can be triggered once every 2s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"PvP",
+"Tank"
+]
+},
+{
+"id": 38,
+"name": "Mogro",
+"title": "Fury of the Forest",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 183,
+"name": "Ashes of Rage",
+"rage_cost": 1000,
+"description": "Gains Lash Out for 3s. Meanwhile, target is Branded and Bruised for 3s.\n\nLash Out: Deals diffused Physical Skill damage every second to the target and 2 surrounding Legions.\nLash Out Damage Factor: 450\nBruised: HP -30%",
+"upgrade": "Skill Damage Factor 250/300/350/400/450\nHP reduction 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 184,
+"name": "Rancorous Rampage",
+"rage_cost": null,
+"description": "When the Legion inflicts a debuff upon a target via an Innate Skill, the effect is also transmitted to up to 2 surrounding targets.\nTargets are also prioritized for Lash Out and future effect transmission.\n\nHero Skill damage dealt to debuffed targets: +15%\nEffect duration: 10s (can be reset)",
+"upgrade": "Hero Skill damage dealt bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 185,
+"name": "Gold Dust",
+"rage_cost": null,
+"description": "Legion Infantry units gain 10% Physical ATK and 20% DEF.",
+"upgrade": "Infantry unit Physical ATK bonus 4%/5%/6%/8%/10%\nInfantry unit DEF bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 186,
+"name": "Unflinching",
+"rage_cost": null,
+"description": "While garrisoning a City or Stronghold, Legion has a 10% chance to increase damage dealt by 10% and bypass 10% of the target's HP for 3s after entering battle.",
+"upgrade": "Damage dealt bonus 4%/5%/6%/8%/10%\nHP Bypass 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 187,
+"name": "Brand of Sacred Might",
+"rage_cost": null,
+"description": "When dealing damage to a Branded enemy Legion, deals additional Physical Skill damage (Damage Factor 200).\nEffect can be triggered once every 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"Garrison",
+"Skills"
+]
+},
+{
+"id": 39,
+"name": "Naernin",
+"title": "Black Claw",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 193,
+"name": "Black Claw",
+"rage_cost": 1000,
+"description": "Deals diffused Physical damage to the target and surrounding Legions.\nDamaged Legions receive 15% less healing for 3s.\n\nMaximum targets: 3\nDamage Factor: 600",
+"upgrade": "Skill Damage Factor 300/370/440/510/600\nHealing received reduction 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 194,
+"name": "Druidic Teachings",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 7% and Gold Gather Speed by an extra 15%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%/7%(Awakened)\nGold Gather Speed bonus 4%/6%/8%/10%/12%/15%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 195,
+"name": "Feline Instincts",
+"rage_cost": null,
+"description": "Legion Infantry units gain 15% Physical ATK and deal 10% more Hero Skill damage.",
+"upgrade": "Infantry unit Physical ATK bonus 5%/7%/9%/12%/15%\nInfantry unit Hero Skill damage dealt bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 196,
+"name": "Shadow Ambush",
+"rage_cost": null,
+"description": "When the Legion launches a normal attack, they have a 10% chance to inflict Gloom on the target Legion, reducing the target's ATK by 20% for 5s.",
+"upgrade": "ATK reduction 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 197,
+"name": "Night Stalker",
+"rage_cost": null,
+"description": "Each time Naernin casts Black Claw, she gains 2% HP, up to a maximum of 10%. Effect lasts until her Legion joins or leaves a Rallied Army, or enters a Stronghold or Resource Point.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"Gather",
+"Skills"
+]
+},
+{
+"id": 40,
+"name": "Tarra",
+"title": "Healer of the Humble",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 188,
+"name": "Healing Devotion",
+"rage_cost": 1000,
+"description": "Heals the Legion's lightly wounded units and grants the Legion Synergy until the Legion casts a Rage Skill.\n\nHealing Factor: 500\nSynergy: Hero Skill damage dealt +20%",
+"upgrade": "Healing Factor 250/300/360/420/500\nHero Skill damage dealt bonus 10%/12%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 189,
+"name": "Enlightenment",
+"rage_cost": null,
+"description": "While in battle, the Legion and 4 surrounding friendly Legions gain Keen and Resistance every 10s.\n\nKeen: ATK +15%\nResistance: Damage taken -10%\nDuration: 5s",
+"upgrade": "ATK bonus 5%/7%/9%/12%/15%\nDamage taken reduction 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 190,
+"name": "Gatherer and Provider",
+"rage_cost": null,
+"description": "All Legions: Increases Gather Speed by 7% and Mana Gather Speed by an extra 15%.",
+"upgrade": "Gather Speed bonus 1%/2%/3%/4%/5%/7%(Awakened)\nMana Gather Speed bonus 4%/6%/8%/10%/12%/15%(Awakened)",
+"holistic": true,
+"skill_enhanced": null
+},
+{
+"id": 191,
+"name": "Gilda's Blessing",
+"rage_cost": null,
+"description": "Legion gains 10% DEF and 10% HP.",
+"upgrade": "DEF bonus 4%/5%/6%/8%/10%\nHP bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 192,
+"name": "Prayer of Light",
+"rage_cost": null,
+"description": "Before Awakening\nHeals the Legion's lightly wounded units and grants the Legion Synergy until the Legion casts a Rage Skill.\n\nHealing Factor: 500\nSynergy: Hero Skill damage dealt +20%\n\nAfter Awakening\nHeals the Legion's lightly wounded units and grants the Legion Synergy until the Legion casts a Rage Skill.\n\nHealing Factor: 600\nSynergy: Hero Skill damage dealt +20%",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 188
+}
+],
+"categories": [
+"Overall",
+"Gather",
+"Support"
+]
+},
+{
+"id": 41,
+"name": "Thundelyn",
+"title": "Lady of Storms",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 198,
+"name": "Skyfury",
+"rage_cost": 1000,
+"description": "Summons lightning that follows the target Legion, dealing diffused Magic damage every 2s to the target Legion and 2 nearby enemy Legions (Damage Factor 450). Lightning also inflicts Numbness upon the target, reducing March Speed by 40% and increasing damage taken by 5% for 2s.",
+"upgrade": "Skill Damage Factor 200/250/300/370/450\nMarch Speed reduction 20%/25%/30%/35%/40%\nTarget damage taken bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 199,
+"name": "Forbidden Healing",
+"rage_cost": null,
+"description": "Each time their Hero Skills grants buffs or debuffs, the Hero's Legion has a 30% chance to gain healing (Healing Factor 120) and Vigor: HP +30% for 3s. This effect can be triggered up to 1 times per second.",
+"upgrade": "Healing Factor 40/60/80/100/120\nHP bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 200,
+"name": "Prayer of Lucia",
+"rage_cost": null,
+"description": "Magic Legions led by this Hero gain 30% Magic ATK and provide 20% more shields and healing.",
+"upgrade": "Magic unit ATK bonus 10%/15%/20%/25%/30%\nMagic unit shield granted bonus 8%/11%/14%/17%/20%\nMagic unit healing granted bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 201,
+"name": "Thunderclap",
+"rage_cost": null,
+"description": "Each time summoned lightning deals damage while in the field, it has a 30% chance to deal extra diffused Magic damage to the target and enemiy Legion near the target (Damage Factor 450, 3 targets in total).",
+"upgrade": "Skill Damage Factor 250/300/350/400/450",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 202,
+"name": "Thunderous Onslaught",
+"rage_cost": null,
+"description": "Before Awakening\nSummons lightning that follows the target Legion, dealing diffused Magic damage every 2s to the target Legion and 2 nearby enemy Legions (Damage Factor 450). Lightning also inflicts Numbness upon the target, reducing March Speed by 40% and increasing damage taken by 5% for 2s.\n\nAfter Awakening\nSummons lightning that follows the target Legion, dealing diffused Magic damage every 2s to the target Legion and 2 nearby enemy Legions (Damage Factor 500). Lightning also inflicts Numbness upon the target, reducing March Speed by 40% and increasing damage taken by 5% for 2s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 198
+}
+],
+"categories": [
+"Magic",
+"PvP",
+"Control"
+]
+},
+{
+"id": 42,
+"name": "Thaleia",
+"title": "Skysinger",
+"quality": "legendary",
+"season": 3,
+"flying": false,
+"skills": [
+{
+"id": 203,
+"name": "Sounds of Nature",
+"rage_cost": 1000,
+"description": "Deals Magic damage to the target Legion (Damage Factor 1600) and gains Rampage: damage dealt +15% for 5s.",
+"upgrade": "Skill Damage Factor 700/900/1100/1300/1600\nDamage dealt bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 204,
+"name": "Good Tidings",
+"rage_cost": null,
+"description": "When dealing Hero Skill damage, Legion gains Keen and Shelter: ATK and DEF +25% for 3s.",
+"upgrade": "ATK bonus 10%/13%/16%/20%/25%\nDEF bonus 10%/13%/16%/20%/25%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 205,
+"name": "Blessing of Life",
+"rage_cost": null,
+"description": "Magic Legions led by this Hero deal 20% more Hero Skill damage and mitigate 20% of the enemy's ATK.",
+"upgrade": "Magic unit Hero Skill damage dealt bonus 8%/11%/14%/17%/20%\nEnemy ATK resistance 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 206,
+"name": "Musical Inspiration",
+"rage_cost": null,
+"description": "When launching a Rally, Legion gains 10% Magic ATK, and when hit by a normal attack has a 20% chance to take 5% less normal attack damage (maximum 15%) for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 207,
+"name": "Protector's Hymn",
+"rage_cost": null,
+"description": "While in battle, Legion has a 10% chance to gain shield (Shield Factor 150) for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Magic",
+"Rally",
+"Support"
+]
+},
+{
+"id": 43,
+"name": "Mu Hsiang",
+"title": "Sage of the Bottle-Gourd",
+"quality": "legendary",
+"season": 2,
+"flying": false,
+"skills": [
+{
+"id": 218,
+"name": "Demon Tamer Fan",
+"rage_cost": 1000,
+"description": "Throws a Jade Demon Pellet at the target Legion, dealing damage (Damage Factor 1300) and reducing the reducing the target's healing recieved by 20% for 5s. The Jade Demon Pellet can be transmitted 2 times between enemy Legions; the pellet deals 40% less damage with each transmission.",
+"upgrade": "Skill Damage Factor 600/700/900/1100/1300\nHealing received reduction 10%/12%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 219,
+"name": "Miracle Cure",
+"rage_cost": null,
+"description": "After Mu Hsiang casts a Rage Skill, she heals 3 surrounding friendly Legions once (Healing Factor 100), and heals her own Legion every second for 3s (Healing Factor 150)",
+"upgrade": "Healing Factor 40/50/60/80/100\nHealing Factor 50/70/90/120/150",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 220,
+"name": "Food as Medicine",
+"rage_cost": null,
+"description": "Legion grants 10% more healing and gains 10% DEF and 20% ATK.",
+"upgrade": "Healing granted bonus 4%/5%/6%/8%/10%\nLegion DEF bonus 4%/5%/6%/8%/10%\nLegion ATK bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 221,
+"name": "Field Surgery",
+"rage_cost": null,
+"description": "Whenever the Legion grants healing, it 1 stack of Healer's Mark.\nEach stack increases damage dealt by 6% for 5s (max 3 stacks). This effect can trigger once per second.",
+"upgrade": "Damage Dealt bonus 2%/3%/4%/5%/6%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 222,
+"name": "Demon Tamer Fan (Awakened)",
+"rage_cost": null,
+"description": "Whenever the Legion launches a normal attack, it gains an additional 50 Rage and gains Keen: ATK +15% for 3s. This effect can trigger once every 10s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"PvP",
+"Support"
+]
+},
+{
+"id": 44,
+"name": "Falgrim",
+"title": "Former Dwarven Mobster",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 213,
+"name": "Public Punishment",
+"rage_cost": 1000,
+"description": "Fires a Penetring Bolt that deals Physical damage to the target Legion (Damage Factor 1300) and to another enemy Legion behind the target (Damage Factor = 300 + 50% of damage dealt to target). If there are no enemy Legions behind the target, deals additional Physical damage to the target Legion (Damage Factor 300).",
+"upgrade": "Skill Damage Factor 600/700/900/1100/1300\nSkill Damage Factor 120/160/200/250/300\nAdditional Damage Factor 120/160/200/250/300",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 214,
+"name": "Criminal Underworld",
+"rage_cost": null,
+"description": "While in the field, the Legion gains 15% DEF and 10% March Speed.\nWhen Public Punishment deals damage, it also inflicts Slow: March Speed -20% for 3s.",
+"upgrade": "DEF bonus 5%/7%/9%/12%/15%\nMarch Speed bonus 4%/5%/6%/8%/10%\nMarch Speed reduction 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 215,
+"name": "Professional Principles",
+"rage_cost": null,
+"description": "Legion Marksman units gain 25% Physical ATK and take 10% less normal attack damage.",
+"upgrade": "Marksman unit ATK bonus 10%/13%/16%/20%/25%\nNormal attack damage taken by Marksman units 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 216,
+"name": "Contract Killer",
+"rage_cost": null,
+"description": "Each time a Hero Skill inflicts a debuff effect in battle, the Legion deals 6% more damage via normal attacks or Public Punishment 10s, up to maximum of 20%.",
+"upgrade": "Normal attack damage dealt bonus 2%/3%/4%/5%/6%\nPenetrating Bolt Damage Bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 217,
+"name": "No More Talk",
+"rage_cost": null,
+"description": "When Falgrim's Legion launches a normal attack, it deals 20% more Hero Skill damage until the next time Falgrim casts Rage Skill. This effect can trigger once every 8s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Marksman",
+"PvP",
+"Skills"
+]
+},
+{
+"id": 45,
+"name": "Sibyl",
+"title": "Tender Arrow",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 208,
+"name": "Dragonhunter Arrow",
+"rage_cost": 1000,
+"description": "With every 3 normal attacks the Legion launches, it deals additional Physical damage (Damage Factor 550) and reduces the target Legion's ATK by 5% for 2s (max 3 stacks).",
+"upgrade": "Skill Damage Factor 250/320/400/470/550\nLegion ATK reduction 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 209,
+"name": "Blue Blood ",
+"rage_cost": null,
+"description": "When the Legion launches a rally, it ignores 10% of enemy HP, and has a 50% chance to increase its DEF by 20% for 3s whenever it takes Skill damage. This effect can trigger once every 5s.",
+"upgrade": "Enemy HP bypass 4%/5%/6%/8%/10%\nLegion DEF bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 210,
+"name": "Getaway Plan",
+"rage_cost": null,
+"description": "Marksman Legions deal 15% more normal attack damage and gain 20% HP and 10% March Speed.",
+"upgrade": "Marksman unit Hero Skill damage bonus 5%/7%/9%/12%/15%\nMarksman unit HP bonus 8%/11%/14%/17%/20%\nMarksman unit March Speed bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 211,
+"name": "Explosive Potential",
+"rage_cost": null,
+"description": "On reaching 500, inflicts DEF Break upon the target for 15s, and gains Physical Keen for 15s.\n\nDEF Break: DEF -10%\nPhysical Keen: Physical ATK +40%",
+"upgrade": "DEF reduction 4%/5%/6%/8%/10%\nATK bonus 15%/20%/26%/32%/40%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 212,
+"name": "Softness to Steel",
+"rage_cost": null,
+"description": "Before Awakening\nWith every 3 normal attacks the Legion launches, it deals additional Physical damage (Damage Factor 550) and reduces the target Legion's ATK by 5% for 2s (max 3 stacks).\n\nAfter Awakening\nWith every 3 normal attacks the Legion launches, it deals additional Physical damage (Damage Factor 650) and reduces the target Legion's ATK by 5% for 2s (max 3 stacks).",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 208
+}
+],
+"categories": [
+"Marksman",
+"Rally",
+"Control"
+]
+},
+{
+"id": 46,
+"name": "Bahorn",
+"title": "Airborne Innovator",
+"quality": "legendary",
+"season": 2,
+"flying": true,
+"skills": [
+{
+"id": 223,
+"name": "Exhaust Fumes",
+"rage_cost": 1000,
+"description": "Deals diffused damage to the target and 2 surrounding Legions in an arc (Damage Factor 1000). Each Legion hit gains 30 Rage.",
+"upgrade": "Skill Damage Factor 400/500/600/800/1000\nExtra Rage gained 10/15/20/25/30",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 224,
+"name": "Mechanized Army",
+"rage_cost": null,
+"description": "Legion ignores 10% of enemy ATK in the field. Flying Legions also gain 10% ATK and 20% March Speed.",
+"upgrade": "ATK Resistance 4%/5%/6%/8%/10%\nATK bonus 4%/5%/6%/8%/10%\nMarch Speed bonus 8%/11%/14%/17%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 225,
+"name": "Chief Machinist",
+"rage_cost": null,
+"description": "Legion gains 10% DEF.\nInfantry units deal 15% more counterattack damages\nCavalry units deal 6% more damage\nMarksman units deal 20% more normal attack damage\nMagic units take 10% less damage.",
+"upgrade": "DEF bonus 4%/5%/6%/8%/10%\nInfantry counterattack damage bonus 5%/7%/9%/12%/15%\nCavalry unit damage dealt bonus 2%/3%/4%/5%/6%\nMarksman unit normal attack damage dealt bonus 8%/11%/14%/17%/20%\nMagic unit damage taken reduction 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 226,
+"name": "Just You Wait!",
+"rage_cost": null,
+"description": "Upon taking damage, Legion loses 50% Rage, deals damage to the target Legion (Damage Factor 300), and gains Resistance: damage taken -10% for 5s.\nEffect can trigger once every 15s.",
+"upgrade": "Skill Damage Factor 100/150/200/250/300\nDamage taken reduction 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 227,
+"name": "Firelance",
+"rage_cost": null,
+"description": "After casting Exhaust Fumes, Legion gains normal attack Crit Rate +30% for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Overall",
+"PvP",
+"Skills"
+]
+},
+{
+"id": 47,
+"name": "Nëya",
+"title": "Radiant Rider",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 228,
+"name": "Spearhead",
+"rage_cost": 1000,
+"description": "Deals Physical damage to the Target Legion (Damage Factor 1600) and gains 40 extra Rage every second for 5s.",
+"upgrade": "Skill Damage Factor 700/900/1100/1350/1600\nExtra Rage gained 20/25/30/35/40",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 229,
+"name": "Moonlight Blessing",
+"rage_cost": null,
+"description": "Legion ignores 10% of enemy HP. While in the field, if the Legion is not in battle, it becomes Camouflaged. When entering battle in a Camouflaged state, it ignores 20% of enemy HP for 10s.",
+"upgrade": "HP Bypass 4%/5%/6%/8%/10%\nAdditional HP Bypass 8%/10%/12%/16%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 230,
+"name": "Frontline Commander",
+"rage_cost": null,
+"description": "Increases Legion Cavalry units Skill damage by 10%, HP by 10%, and March Speed by 10%.",
+"upgrade": "Skill Damage bonus 4%/5%/6%/8%/10%\nHP bonus 4%/5%/6%/8%/10%\nMarch Speed bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 231,
+"name": "Relentless Advance",
+"rage_cost": null,
+"description": "Grants the Legion Keen for 10s every 15s during battle.\nKeen: ATK +30%",
+"upgrade": "ATK bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 232,
+"name": "Silverwood Lineage",
+"rage_cost": null,
+"description": "Before Awakening\nDeals Physical damage to the Target Legion (Damage Factor 1600) and gains 40 extra Rage every second for 5s..\n\nAfter Awakening\nDeals Physical damage to the Target Legion (Damage Factor 1700) and gains 50 extra Rage every second for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 228
+}
+],
+"categories": [
+"Cavalry",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 48,
+"name": "Lieh-Shan Yen",
+"title": "Supreme General",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 238,
+"name": "Scarlet Inferno",
+"rage_cost": 1000,
+"description": "Deals diffused damage to the target and 1 Legion near it and gains Passion: Rage Accumulation Speed +15% for 5s.\n\nDamage Type: Physical\nDamage Factor: 1500",
+"upgrade": "Skill Damage Factor 700/900/1100/1300/1500\nRage Accumulation Speed bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 239,
+"name": "Lieh-Shan's Command",
+"rage_cost": null,
+"description": "Legion Cavalry units gain 20% Physical ATK and 10% DEF.",
+"upgrade": "Cavalry Physical ATK bonus 10%/12%/14%/16%/20%\nCavalry DEF bonus 4%/5%/6%/8%/10%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 240,
+"name": "Stars Aligned",
+"rage_cost": null,
+"description": "When the Legion enters battle or a Legion Hero casts a Rage Skill, increases Hero Skill damage by 30% for 4s.",
+"upgrade": "Hero Skill damage bonus 10%/15%/20%/25%/30%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 241,
+"name": "Ironclad Defense",
+"rage_cost": null,
+"description": "Increases the Garrisoned Army's HP by 5% and ignores 5% of the enemy DEF while garrisoned in a City or Stronghold.",
+"upgrade": "Garrisoned Army HP bonus 1%/2%/3%/4%/5%\nDEF Penetration 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 242,
+"name": "Everblaze",
+"rage_cost": null,
+"description": "When the Legion gains a buff via Hero Skill, it ignores 30% of enemy ATK for 3s.\nThis effect can be triggered once every 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"Garrison",
+"Skills"
+]
+},
+{
+"id": 49,
+"name": "Mardok",
+"title": "Dreadfang Renegade",
+"quality": "epic",
+"season": 1,
+"flying": false,
+"skills": [
+{
+"id": 243,
+"name": "Drogho's Rage",
+"rage_cost": 1000,
+"description": "Randomly inflict one of the following effects upon the target Legion:\n\nDisruption: Deals Physical damage (Damage Factor 1000)\nTimidity: Inflicts DEF Break (DEF -50% for 5s)\nFall Apart: Deals diffused Physical damage to the target Legion and 2 surrounding Legions (Damage Factor 600)",
+"upgrade": "Skill Damage Factor 400/500/600/800/1000\nDEF reduction 20%/25%/30%/40%/50%\nSkill Damage Factor 200/300/400/500/600",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 244,
+"name": "Renegade Zeal",
+"rage_cost": null,
+"description": "Each time the Legion gains a buff while in battle in the field, it gains an extra 100 Rage and Vigor (HP +20%) for 3s. This effect trigger once every 8s.",
+"upgrade": "Extra Rage gained 40/50/60/80/100\nHP Bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 245,
+"name": "Anxious Hunter",
+"rage_cost": null,
+"description": "The Legion's Cavalry units gain 10% March Speed and 20% ATK.",
+"upgrade": "Cavalry March Speed bonus 4%/5%/6%/8%/10%\nCavalry Physical ATK bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 246,
+"name": "Broken Chains",
+"rage_cost": null,
+"description": "The Legion deals 10% more Skill damage and takes 5% less damage.",
+"upgrade": "Hero Skill damage dealt bonus 4%/5%/6%/8%/10%\nDamage taken reduction 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 247,
+"name": "Wolfpack Pursuit",
+"rage_cost": null,
+"description": "After casting a Rage Skill, the Legion gains Keen (ATK +15%) for 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Cavalry",
+"PvP",
+"Mobility"
+]
+},
+{
+"id": 50,
+"name": "Kuma",
+"title": "Gladiator Champion",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 248,
+"name": "Joy of Battle",
+"rage_cost": 1000,
+"description": "Drains 20% of the target Legion's HP and 10% of the HP of enemy Legions near the target for 10s, then heals this Hero's Legion (Healing Factor 200).",
+"upgrade": "Drained Target Legion HP 10%/12%/14%/16%/20%\nDrained Surrounding Legion HP 4%/5%/6%/8%/10%\nHealing Factor 100/120/140/170/200",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 249,
+"name": "Man-Eater",
+"rage_cost": null,
+"description": "The Legion heals once every 10s in battle (Healing Factor 50), and recevies extra healing according to its current Infantry HP bonus (Base Healing Factor 100).",
+"upgrade": "Healing Factor 25/30/35/40/50\nBase Healing Factor 50/60/70/80/100",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 250,
+"name": "Army of Exiles",
+"rage_cost": null,
+"description": "The Legion's Infantry units gain 15% Physical DEF and 15% ATK.",
+"upgrade": "Infantry Physical DEF bonus 5%/7%/9%/12%/15%\nInfantry Physical ATK bonus 5%/7%/9%/12%/15%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 251,
+"name": "Glorious Death",
+"rage_cost": null,
+"description": "While in the field, this Hero's Legion gains 10% ATK for every nearby Legion that is in battle, up to a maximum of 100%. When this Hero's Legion defeated an enemy Legion, this Hero's Legion receives 20% more healing for 10s.",
+"upgrade": "ATK bonus 4%/5%/6%/8%/10%\nMax ATK Bonus 40%/50%/60%/80%/100%\nHealing received bonus 5%/8%/11%/15%/20%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 252,
+"name": "Champion Gladiator",
+"rage_cost": null,
+"description": "When granting a buff via an Innate Skill, the Legion gains 20% HP for 3s. Effect can trigger once every 5s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": null
+}
+],
+"categories": [
+"Infantry",
+"PvP",
+"Support"
+]
+},
+{
+"id": 51,
+"name": "Lei Kuan",
+"title": "Thunder God",
+"quality": "legendary",
+"season": 4,
+"flying": false,
+"skills": [
+{
+"id": 253,
+"name": "Comradeship",
+"rage_cost": 1000,
+"description": "Deals diffused Physical damage to the target Legion and nearby Legions (Damage Factor 1500, scales with Infantry HP bonus, 3 Legions total).",
+"upgrade": "Skill Damage Factor 700/900/1100/1300/1500",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 254,
+"name": "Boisterous",
+"rage_cost": null,
+"description": "When besieging Cities or Strongholds, the Legion gains 5% DEF and ignores 5% of the enemy's ATK.",
+"upgrade": "DEF bonus 1%/2%/3%/4%/5%\nATK Resistance 1%/2%/3%/4%/5%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 255,
+"name": "To The Marrow",
+"rage_cost": null,
+"description": "The Legion's Infantry units gain 25% HP and take 25% less Skill damage.",
+"upgrade": "Infantry HP bonus 10%/13%/16%/20%/25%\nInfantry unit Skill Damage taken reduction 10%/13%/16%/20%/25%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 256,
+"name": "Death Glare",
+"rage_cost": null,
+"description": "When hit with a normal attack, the Legion has 15% chance to gain 5% HP and deal 2% more damage for 5s (max 10 stacks).",
+"upgrade": "HP bonus 1%/2%/3%/4%/5%\nDamage bonus 1%/1.25%/1.5%/1.75%/2%",
+"holistic": false,
+"skill_enhanced": null
+},
+{
+"id": 257,
+"name": "Everblaze ",
+"rage_cost": null,
+"description": "Before Awakening\nDeals diffused Physical damage to the target Legion and nearby Legions (Damage Factor 1500, scales with Infantry HP bonus, 3 Legions total).\n\nAfter Awakening\nDeals diffused Physical damage to the target Legion and nearby Legions (Damage Factor 1700, scales with Infantry HP bonus, 3 Legions total).\nThis Hero's Legion also deals 20% more counterattack damage for 3s.",
+"upgrade": "",
+"holistic": false,
+"skill_enhanced": 253
+}
+],
+"categories": [
+"Infantry",
+"Rally",
+"Tank"
+]
+}
+]
+}

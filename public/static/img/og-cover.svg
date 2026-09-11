@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#031016"/><stop offset=".45" stop-color="#06151a"/><stop offset="1" stop-color="#02090d"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="0%" r="60%">
+      <stop offset="0" stop-color="#29a3a0" stop-opacity=".45"/><stop offset="1" stop-color="#29a3a0" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#f4dc91"/><stop offset="1" stop-color="#b8872f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="24" y="24" width="1152" height="582" rx="26" fill="none" stroke="#d8b45d" stroke-opacity=".38" stroke-width="2"/>
+  <text x="600" y="196" text-anchor="middle" fill="#e7cf8c" font-family="Inter,Segoe UI,sans-serif" font-size="26" font-weight="800" letter-spacing="11">CALL OF DRAGONS</text>
+  <text x="600" y="316" text-anchor="middle" fill="url(#gold)" font-family="Georgia,serif" font-size="94" font-weight="800">Хроники Кракена 888</text>
+  <text x="600" y="382" text-anchor="middle" fill="#f4dc91" font-family="Georgia,serif" font-size="50" font-weight="700" opacity=".85">Kraken Chronicles 888</text>
+  <text x="600" y="454" text-anchor="middle" fill="#9fc8c5" font-family="Inter,Segoe UI,sans-serif" font-size="24" letter-spacing="5">КОНСТРУКТОР ПИТОМЦЕВ · БАЗА · СТАТИСТИКА</text>
+  <rect x="360" y="512" width="480" height="3" fill="#d8b45d" opacity=".55" rx="2"/>
+  <text x="600" y="566" text-anchor="middle" fill="#87a7a5" font-family="Inter,Segoe UI,sans-serif" font-size="20">War Pet Builder · Hero DB · Server 888 analytics</text>
+</svg>

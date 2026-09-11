@@ -1,0 +1,1113 @@
+{
+  "source": "/warpets",
+  "origin": "",
+  "capturedAt": "2026-08-21T17:06:46.738Z",
+  "resources": {
+    "/warpets": {
+      "path": "warpets/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2824
+    },
+    "/_next/static/css/2b3406818832d200.css": {
+      "path": "_next/static/css/2b3406818832d200.css",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8",
+      "method": "GET",
+      "size": 100073
+    },
+    "/_next/static/chunks/webpack-46e26731ddb4dd72.js": {
+      "path": "_next/static/chunks/webpack-46e26731ddb4dd72.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 6191
+    },
+    "/_next/static/chunks/698-d7c5676e218eae05.js": {
+      "path": "_next/static/chunks/698-d7c5676e218eae05.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 42470
+    },
+    "/_next/static/chunks/main-7cacea739e925464.js": {
+      "path": "_next/static/chunks/main-7cacea739e925464.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 229968
+    },
+    "/_next/static/chunks/pages/_app-9b26426a3a92a6e1.js": {
+      "path": "_next/static/chunks/pages/_app-9b26426a3a92a6e1.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 474915
+    },
+    "/_next/static/chunks/2657-d416e17a964cf7ef.js": {
+      "path": "_next/static/chunks/2657-d416e17a964cf7ef.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 176304
+    },
+    "/_next/static/chunks/6717-85373bc57cd8255f.js": {
+      "path": "_next/static/chunks/6717-85373bc57cd8255f.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 42510
+    },
+    "/_next/static/chunks/3223-1e32004f8430af02.js": {
+      "path": "_next/static/chunks/3223-1e32004f8430af02.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 36182
+    },
+    "/_next/static/chunks/7160-239aea84bf0b3e52.js": {
+      "path": "_next/static/chunks/7160-239aea84bf0b3e52.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 49304
+    },
+    "/_next/static/chunks/pages/warpets-f874f2e7a9fb2796.js": {
+      "path": "_next/static/chunks/pages/warpets-f874f2e7a9fb2796.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 230920
+    },
+    "/_next/static/3DdcS4S38Tb4Y8Ej_pke3/_buildManifest.js": {
+      "path": "_next/static/3DdcS4S38Tb4Y8Ej_pke3/_buildManifest.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 4298
+    },
+    "/_next/static/3DdcS4S38Tb4Y8Ej_pke3/_ssgManifest.js": {
+      "path": "_next/static/3DdcS4S38Tb4Y8Ej_pke3/_ssgManifest.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 77
+    },
+    "/_next/static/chunks/197-76edd28bc327d245.js": {
+      "path": "_next/static/chunks/197-76edd28bc327d245.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 32326
+    },
+    "/_next/static/chunks/framework-b129a0558f8177a4.js": {
+      "path": "_next/static/chunks/framework-b129a0558f8177a4.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 325164
+    },
+    "/api/heroes/": {
+      "path": "api/heroes.json",
+      "status": 200,
+      "contentType": "application/json",
+      "method": "GET",
+      "size": 91082
+    },
+    "/svg/discord.svg": {
+      "path": "svg/discord.svg",
+      "status": 200,
+      "contentType": "image/svg+xml",
+      "method": "GET",
+      "size": 985
+    },
+    "/img/warpets/skills/others/empty.png": {
+      "path": "img/warpets/skills/others/empty.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 4427
+    },
+    "/_next/static/chunks/pages/login-c35428d7ceb69754.js": {
+      "path": "_next/static/chunks/pages/login-c35428d7ceb69754.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/453-c1429af1acb8cb70.js": {
+      "path": "_next/static/chunks/453-c1429af1acb8cb70.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/db/artifacts-427fc385a0b739fe.js": {
+      "path": "_next/static/chunks/pages/db/artifacts-427fc385a0b739fe.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/index-e750ecbc8907b089.js": {
+      "path": "_next/static/chunks/pages/index-e750ecbc8907b089.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/db/heroes-1fe4f7b08be7923b.js": {
+      "path": "_next/static/chunks/pages/db/heroes-1fe4f7b08be7923b.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/builds-cc2d67c7985f5122.js": {
+      "path": "_next/static/chunks/pages/builds-cc2d67c7985f5122.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/4824-5421187c35524ddd.js": {
+      "path": "_next/static/chunks/4824-5421187c35524ddd.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/rowplanner-51652859617cd937.js": {
+      "path": "_next/static/chunks/pages/rowplanner-51652859617cd937.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/guides-6906d7d03cbfc3f3.js": {
+      "path": "_next/static/chunks/pages/guides-6906d7d03cbfc3f3.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calculators/resources-3f95ff7ca4f60e41.js": {
+      "path": "_next/static/chunks/pages/calculators/resources-3f95ff7ca4f60e41.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/6d2b60a9-72dd97f6c630567c.js": {
+      "path": "_next/static/chunks/6d2b60a9-72dd97f6c630567c.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/2885-f3bfb624dd881e47.js": {
+      "path": "_next/static/chunks/2885-f3bfb624dd881e47.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/78bb71b5-ac25e4b559ca223d.js": {
+      "path": "_next/static/chunks/78bb71b5-ac25e4b559ca223d.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calculators/training-26c35a10412e0fab.js": {
+      "path": "_next/static/chunks/pages/calculators/training-26c35a10412e0fab.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calculators/healing-184f0adfb75862c9.js": {
+      "path": "_next/static/chunks/pages/calculators/healing-184f0adfb75862c9.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/07c2d338-dbc1c4fcf17c0c3d.js": {
+      "path": "_next/static/chunks/07c2d338-dbc1c4fcf17c0c3d.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calculators/heroes-9ef23ba2f54d6482.js": {
+      "path": "_next/static/chunks/pages/calculators/heroes-9ef23ba2f54d6482.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calendar-243be1fdfbb34f0d.js": {
+      "path": "_next/static/chunks/pages/calendar-243be1fdfbb34f0d.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/1402-a394d135679bfab2.js": {
+      "path": "_next/static/chunks/1402-a394d135679bfab2.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/764-21d1dc62a3c5969a.js": {
+      "path": "_next/static/chunks/764-21d1dc62a3c5969a.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/decree-193aceab84b93849.js": {
+      "path": "_next/static/chunks/pages/decree-193aceab84b93849.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/pages/calculators/speedup-04fe5a0591acf2c0.js": {
+      "path": "_next/static/chunks/pages/calculators/speedup-04fe5a0591acf2c0.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/chunks/2bd5674f-f47b8aab29ad2658.js": {
+      "path": "_next/static/chunks/2bd5674f-f47b8aab29ad2658.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 0
+    },
+    "/_next/static/css/de6fa09b8a0934d1.css": {
+      "path": "_next/static/css/de6fa09b8a0934d1.css",
+      "status": 200,
+      "contentType": "text/css; charset=UTF-8",
+      "method": "GET",
+      "size": 21906
+    },
+    "/img/icons/units/Overall.png": {
+      "path": "img/icons/units/Overall.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 2823
+    },
+    "/img/icons/units/Infantry.png": {
+      "path": "img/icons/units/Infantry.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 2698
+    },
+    "/img/icons/units/Magic.png": {
+      "path": "img/icons/units/Magic.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 2570
+    },
+    "/img/icons/units/Marksman.png": {
+      "path": "img/icons/units/Marksman.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 2749
+    },
+    "/img/icons/units/Cavalry.png": {
+      "path": "img/icons/units/Cavalry.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 2623
+    },
+    "/img/warpets/attributes/Strength.png": {
+      "path": "img/warpets/attributes/Strength.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 6110
+    },
+    "/img/warpets/attributes/Intelligence.png": {
+      "path": "img/warpets/attributes/Intelligence.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 5763
+    },
+    "/img/warpets/attributes/Endurance.png": {
+      "path": "img/warpets/attributes/Endurance.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 6808
+    },
+    "/img/warpets/attributes/Spirit.png": {
+      "path": "img/warpets/attributes/Spirit.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 4752
+    },
+    "/img/warpets/attributes/Luck.png": {
+      "path": "img/warpets/attributes/Luck.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 5701
+    },
+    "/img/warpets/attributes/Agility.png": {
+      "path": "img/warpets/attributes/Agility.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 4756
+    },
+    "/img/warpets/skills/Outburst.png": {
+      "path": "img/warpets/skills/Outburst.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27362
+    },
+    "/img/warpets/portrait/Auric%20Warhound.png": {
+      "path": "img/warpets/portrait/Auric Warhound.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 161409
+    },
+    "/img/warpets/skills/others/nstier2.png": {
+      "path": "img/warpets/skills/others/nstier2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 1869
+    },
+    "/img/warpets/skills/Arrogance.png": {
+      "path": "img/warpets/skills/Arrogance.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28850
+    },
+    "/img/warpets/portrait/Berserk%20Faedrake.png": {
+      "path": "img/warpets/portrait/Berserk Faedrake.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 161071
+    },
+    "/img/warpets/skills/Gleaming%20Blade.png": {
+      "path": "img/warpets/skills/Gleaming Blade.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26930
+    },
+    "/img/warpets/portrait/Blade%20Manticore.png": {
+      "path": "img/warpets/portrait/Blade Manticore.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 191994
+    },
+    "/img/warpets/portrait/Bullionbeast.png": {
+      "path": "img/warpets/portrait/Bullionbeast.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 198391
+    },
+    "/img/warpets/skills/Good%20Fortune.png": {
+      "path": "img/warpets/skills/Good Fortune.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29097
+    },
+    "/img/warpets/skills/Exuberance.png": {
+      "path": "img/warpets/skills/Exuberance.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29749
+    },
+    "/img/warpets/portrait/Golden%20Roc.png": {
+      "path": "img/warpets/portrait/Golden Roc.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 161408
+    },
+    "/img/warpets/skills/Puncture.png": {
+      "path": "img/warpets/skills/Puncture.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29086
+    },
+    "/img/warpets/portrait/Barbed%20Manticore.png": {
+      "path": "img/warpets/portrait/Barbed Manticore.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 194339
+    },
+    "/img/warpets/skills/Ravage.png": {
+      "path": "img/warpets/skills/Ravage.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29685
+    },
+    "/img/warpets/portrait/Night%20Roc.png": {
+      "path": "img/warpets/portrait/Night Roc.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 162340
+    },
+    "/img/warpets/skills/Barbarism.png": {
+      "path": "img/warpets/skills/Barbarism.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28344
+    },
+    "/img/warpets/portrait/Shadow%20Manticore.png": {
+      "path": "img/warpets/portrait/Shadow Manticore.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 196725
+    },
+    "/img/warpets/skills/Concentration.png": {
+      "path": "img/warpets/skills/Concentration.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26591
+    },
+    "/img/warpets/portrait/Snowpeak%20Roc.png": {
+      "path": "img/warpets/portrait/Snowpeak Roc.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 149340
+    },
+    "/img/warpets/skills/North%20Wind.png": {
+      "path": "img/warpets/skills/North Wind.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28545
+    },
+    "/img/warpets/portrait/Windweasel.png": {
+      "path": "img/warpets/portrait/Windweasel.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 192429
+    },
+    "/img/warpets/skills/Blowoff.png": {
+      "path": "img/warpets/skills/Blowoff.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28426
+    },
+    "/img/warpets/portrait/Brimstone%20Auroch.png": {
+      "path": "img/warpets/portrait/Brimstone Auroch.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 192523
+    },
+    "/img/warpets/skills/Quickening.png": {
+      "path": "img/warpets/skills/Quickening.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24408
+    },
+    "/img/warpets/portrait/Bruinbear.png": {
+      "path": "img/warpets/portrait/Bruinbear.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 175280
+    },
+    "/img/warpets/skills/Moonrage.png": {
+      "path": "img/warpets/skills/Moonrage.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28733
+    },
+    "/img/warpets/portrait/Moonbear.png": {
+      "path": "img/warpets/portrait/Moonbear.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 160186
+    },
+    "/img/warpets/skills/Coil.png": {
+      "path": "img/warpets/skills/Coil.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27558
+    },
+    "/img/warpets/portrait/Mossrock%20Aurochs.png": {
+      "path": "img/warpets/portrait/Mossrock Aurochs.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 186505
+    },
+    "/img/warpets/skills/Firecage.png": {
+      "path": "img/warpets/skills/Firecage.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29237
+    },
+    "/img/warpets/portrait/Flaming%20Manticore.png": {
+      "path": "img/warpets/portrait/Flaming Manticore.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 195898
+    },
+    "/img/warpets/skills/Icecore.png": {
+      "path": "img/warpets/skills/Icecore.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26473
+    },
+    "/img/warpets/portrait/Ice%20Lizard.png": {
+      "path": "img/warpets/portrait/Ice Lizard.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 151623
+    },
+    "/img/warpets/skills/Painbloom.png": {
+      "path": "img/warpets/skills/Painbloom.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27220
+    },
+    "/img/warpets/portrait/Sapphire%20Faedrake.png": {
+      "path": "img/warpets/portrait/Sapphire Faedrake.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 167744
+    },
+    "/img/warpets/skills/Soul%20Source.png": {
+      "path": "img/warpets/skills/Soul Source.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27843
+    },
+    "/img/warpets/portrait/Seraphic%20Faedrake.png": {
+      "path": "img/warpets/portrait/Seraphic Faedrake.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 168497
+    },
+    "/img/warpets/skills/Shadow%20Hunter.png": {
+      "path": "img/warpets/skills/Shadow Hunter.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 30445
+    },
+    "/img/warpets/portrait/Shadow%20Faedrake.png": {
+      "path": "img/warpets/portrait/Shadow Faedrake.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 159343
+    },
+    "/img/warpets/skills/Tempest.png": {
+      "path": "img/warpets/skills/Tempest.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27793
+    },
+    "/img/warpets/portrait/Thunder%20Lizard.png": {
+      "path": "img/warpets/portrait/Thunder Lizard.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 148276
+    },
+    "/img/warpets/portrait/Sand%20Lizard.png": {
+      "path": "img/warpets/portrait/Sand Lizard.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 153633
+    },
+    "/img/warpets/skills/Stone%20Aura.png": {
+      "path": "img/warpets/skills/Stone Aura.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27825
+    },
+    "/img/warpets/skills/Infection.png": {
+      "path": "img/warpets/skills/Infection.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28138
+    },
+    "/img/warpets/portrait/Venomous%20Lizard.png": {
+      "path": "img/warpets/portrait/Venomous Lizard.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 149988
+    },
+    "/img/warpets/skills/Advanced%20Chain%20Strike.png": {
+      "path": "img/warpets/skills/Advanced Chain Strike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24272
+    },
+    "/img/warpets/skills/Advanced%20Fierce%20Attack.png": {
+      "path": "img/warpets/skills/Advanced Fierce Attack.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28283
+    },
+    "/img/warpets/skills/Advanced%20Counterstrike.png": {
+      "path": "img/warpets/skills/Advanced Counterstrike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25173
+    },
+    "/img/warpets/skills/Intense%20Fierce%20Attack.png": {
+      "path": "img/warpets/skills/Intense Fierce Attack.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28480
+    },
+    "/img/warpets/skills/Hit%20Back.png": {
+      "path": "img/warpets/skills/Hit Back.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28606
+    },
+    "/img/warpets/skills/Wild%20Agility.png": {
+      "path": "img/warpets/skills/Wild Agility.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26224
+    },
+    "/img/warpets/skills/Chain%20Strike.png": {
+      "path": "img/warpets/skills/Chain Strike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26010
+    },
+    "/img/warpets/skills/Timely%20Strike.png": {
+      "path": "img/warpets/skills/Timely Strike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24462
+    },
+    "/img/warpets/skills/Advanced%20Infection.png": {
+      "path": "img/warpets/skills/Advanced Infection.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27288
+    },
+    "/img/warpets/skills/Outbursts%20of%20Rage.png": {
+      "path": "img/warpets/skills/Outbursts of Rage.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24258
+    },
+    "/img/warpets/skills/Poison%20Gland.png": {
+      "path": "img/warpets/skills/Poison Gland.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24150
+    },
+    "/img/warpets/skills/Pursuit%20Predation.png": {
+      "path": "img/warpets/skills/Pursuit Predation.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25081
+    },
+    "/img/warpets/skills/Blood%20Roar.png": {
+      "path": "img/warpets/skills/Blood Roar.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25860
+    },
+    "/img/warpets/skills/Angry%20Roar.png": {
+      "path": "img/warpets/skills/Angry Roar.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25745
+    },
+    "/img/warpets/skills/Eviscerate.png": {
+      "path": "img/warpets/skills/Eviscerate.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26895
+    },
+    "/img/warpets/skills/Track%20and%20Hunt.png": {
+      "path": "img/warpets/skills/Track and Hunt.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26396
+    },
+    "/img/warpets/skills/Intense%20Chain%20Strike.png": {
+      "path": "img/warpets/skills/Intense Chain Strike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29226
+    },
+    "/img/warpets/skills/Heart%20Wall.png": {
+      "path": "img/warpets/skills/Heart Wall.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25717
+    },
+    "/img/warpets/skills/Gentle%20Breeze.png": {
+      "path": "img/warpets/skills/Gentle Breeze.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25555
+    },
+    "/img/warpets/skills/Determined%20Heart.png": {
+      "path": "img/warpets/skills/Determined Heart.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25948
+    },
+    "/img/warpets/skills/Blood%20for%20Blood.png": {
+      "path": "img/warpets/skills/Blood for Blood.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28387
+    },
+    "/img/warpets/skills/Intense%20Counterstrike.png": {
+      "path": "img/warpets/skills/Intense Counterstrike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26747
+    },
+    "/img/warpets/skills/Terra%20Barrier.png": {
+      "path": "img/warpets/skills/Terra Barrier.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26815
+    },
+    "/img/warpets/skills/Dauntless.png": {
+      "path": "img/warpets/skills/Dauntless.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27157
+    },
+    "/img/warpets/skills/Great%20Care.png": {
+      "path": "img/warpets/skills/Great Care.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26150
+    },
+    "/img/warpets/skills/Divine%20Blessing.png": {
+      "path": "img/warpets/skills/Divine Blessing.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27080
+    },
+    "/img/warpets/skills/Fatal%20Bite.png": {
+      "path": "img/warpets/skills/Fatal Bite.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29153
+    },
+    "/img/warpets/skills/Fierce%20Attack.png": {
+      "path": "img/warpets/skills/Fierce Attack.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25532
+    },
+    "/img/warpets/skills/Intense%20Infection.png": {
+      "path": "img/warpets/skills/Intense Infection.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27099
+    },
+    "/img/warpets/skills/Tooth%20and%20Claw.png": {
+      "path": "img/warpets/skills/Tooth and Claw.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 24405
+    },
+    "/img/warpets/skills/Manic%20Might.png": {
+      "path": "img/warpets/skills/Manic Might.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 29218
+    },
+    "/img/warpets/skills/Swift%20Revenge.png": {
+      "path": "img/warpets/skills/Swift Revenge.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27295
+    },
+    "/img/warpets/skills/Shieldbreaker.png": {
+      "path": "img/warpets/skills/Shieldbreaker.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26610
+    },
+    "/img/warpets/skills/Hit%20Weakness.png": {
+      "path": "img/warpets/skills/Hit Weakness.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 27536
+    },
+    "/img/warpets/skills/Beast%20Mark.png": {
+      "path": "img/warpets/skills/Beast Mark.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25603
+    },
+    "/img/warpets/skills/Bristles.png": {
+      "path": "img/warpets/skills/Bristles.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26592
+    },
+    "/img/warpets/skills/Tranquility.png": {
+      "path": "img/warpets/skills/Tranquility.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 25955
+    },
+    "/img/warpets/skills/Robust%20Body.png": {
+      "path": "img/warpets/skills/Robust Body.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 23631
+    },
+    "/img/warpets/skills/Pure%20Strength.png": {
+      "path": "img/warpets/skills/Pure Strength.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 26292
+    },
+    "/img/warpets/skills/Counterstrike.png": {
+      "path": "img/warpets/skills/Counterstrike.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 28700
+    },
+    "/img/warpets/amber.png": {
+      "path": "img/warpets/amber.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 6104
+    },
+    "/img/warpets/petCoin.png": {
+      "path": "img/warpets/petCoin.png",
+      "status": 200,
+      "contentType": "image/png",
+      "method": "GET",
+      "size": 47764
+    },
+    "/favicon.ico": {
+      "path": "favicon.ico",
+      "status": 200,
+      "contentType": "image/x-icon",
+      "method": "GET",
+      "size": 173142
+    },
+    "/_next/static/chunks/polyfills-42372ed130431b0a.js": {
+      "path": "_next/static/chunks/polyfills-42372ed130431b0a.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 112594
+    },
+    "/login": {
+      "path": "login/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2431
+    },
+    "/": {
+      "path": "index/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2504
+    },
+    "/db/artifacts": {
+      "path": "db/artifacts/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2523
+    },
+    "/db/heroes": {
+      "path": "db/heroes/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2517
+    },
+    "/builds": {
+      "path": "builds/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2667
+    },
+    "/rowplanner": {
+      "path": "rowplanner/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2446
+    },
+    "/guides": {
+      "path": "guides/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2434
+    },
+    "/calculators/speedup": {
+      "path": "calculators/speedup/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2620
+    },
+    "/calculators/resources": {
+      "path": "calculators/resources/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2546
+    },
+    "/calculators/training": {
+      "path": "calculators/training/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2772
+    },
+    "/calculators/healing": {
+      "path": "calculators/healing/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2537
+    },
+    "/calculators/heroes": {
+      "path": "calculators/heroes/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2535
+    },
+    "/calendar": {
+      "path": "calendar/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 3150
+    },
+    "/decree": {
+      "path": "decree/index.html",
+      "status": 200,
+      "contentType": "text/html; charset=utf-8",
+      "method": "GET",
+      "size": 2744
+    },
+    "/optimizer.js": {
+      "path": "optimizer.js",
+      "status": 200,
+      "contentType": "application/javascript; charset=UTF-8",
+      "method": "GET",
+      "size": 12643
+    }
+  },
+  "notes": [
+    "Captured with a real Chromium browser.",
+    "GET responses from coddb.app are saved with status/content-type metadata.",
+    "Query-string variants are mapped in manifest.json and served by serve.mjs."
+  ],
+  "finishedAt": "2026-08-21T17:13:44.843Z",
+  "resourceCount": 156
+}
