@@ -22,7 +22,7 @@ export function hofCard(person, lang, t) {
     h('div', { style: { display: 'flex', alignItems: 'center', gap: '12px' } },
       avatarEl(person, 48),
       h('div', { style: { minWidth: '0' } },
-        h('div', { style: { fontWeight: '800', fontSize: '14px', color: 'var(--gold-soft)' } }, person.nick || ''),
+        h('div', { style: { fontWeight: '600', fontSize: '14px', color: 'var(--text)' } }, person.nick || ''),
         person.period && h('small', { style: { color: 'var(--muted)' } }, `${t('hof.period')}: ${person.period}`))),
     person.contribution?.[lang] && h('p', { class: 'kc-note', style: { margin: '10px 0 0' } }, person.contribution[lang]));
 }

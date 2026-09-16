@@ -421,6 +421,10 @@ export const DICT = {
     'home.tools.all': 'Все инструменты',
 
     /* ----------------------------------------------------- home: youtube */
+    'home.soon.title': 'Скоро на сайте',
+    'home.soon.desc': 'Разделы сообщества, которые мы наполняем вместе с командой 888.',
+    'home.soon.tag': 'готовится',
+
     'home.youtube.title': 'YouTube-канал',
     'home.youtube.desc': 'Видео о сервере 888 и Call of Dragons.',
     'home.youtube.cta': 'Открыть канал',
@@ -833,6 +837,10 @@ export const DICT = {
     'home.tools.all': 'All tools',
 
     /* ----------------------------------------------------- home: youtube */
+    'home.soon.title': 'Coming up',
+    'home.soon.desc': 'Community sections we are filling in together with the 888 team.',
+    'home.soon.tag': 'in progress',
+
     'home.youtube.title': 'YouTube channel',
     'home.youtube.desc': 'Videos about server 888 and Call of Dragons.',
     'home.youtube.cta': 'Open the channel',

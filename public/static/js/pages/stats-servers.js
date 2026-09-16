@@ -10,13 +10,13 @@ export async function render(mount, { t, i18n, link }) {
       h('div', {
         style: {
           width: '48px', height: '48px', display: 'grid', placeItems: 'center', flexShrink: '0',
-          border: '1px solid rgba(216,180,93,.35)', borderRadius: '12px',
-          background: 'linear-gradient(180deg,#0e3d41,#04171c)',
-          font: '800 17px Georgia, serif', color: 'var(--gold-soft)',
+          border: '1px solid var(--line-2)', borderRadius: '9px',
+          background: 'var(--surface-2)',
+          font: '600 15px var(--sans)', color: 'var(--muted)',
         },
       }, s.serverId),
       h('div', {},
-        h('div', { style: { fontWeight: '800', fontSize: '16px', color: 'var(--text)' } }, t('common.server') + ' ' + s.serverId),
+        h('div', { style: { fontWeight: '600', fontSize: '15px', color: 'var(--text)' } }, t('common.server') + ' ' + s.serverId),
         h('small', { style: { color: 'var(--muted)' } }, dateTime(s.updatedAt, lang)))),
 
     h('div', { class: 'kc-grid c2', style: { marginTop: '12px', gap: '8px' } },
@@ -50,9 +50,9 @@ export async function render(mount, { t, i18n, link }) {
       h('div', { class: 'kc-panel-foot' }, `${t('stats.capturedAt')}: ${m.generatedAt} · ${t('stats.dataNote')}`)));
 
   function mini(label, value) {
-    return h('div', { style: { padding: '9px 10px', border: '1px solid rgba(216,180,93,.16)', borderRadius: '10px', background: 'rgba(4,24,28,.45)' } },
+    return h('div', { style: { padding: '10px 11px', border: '1px solid var(--line)', borderRadius: '8px' } },
       h('div', { style: { fontSize: '10px', textTransform: 'uppercase', letterSpacing: '.06em', color: 'var(--muted)' } }, label),
-      h('div', { style: { fontWeight: '800', fontSize: '16px', marginTop: '3px' } }, value));
+      h('div', { style: { fontWeight: '600', fontSize: '16px', marginTop: '4px', color: 'var(--text)' } }, value));
   }
   function tileOf(label, value, note) {
     return h('div', { class: 'kc-tile' },

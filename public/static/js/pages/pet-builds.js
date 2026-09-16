@@ -41,7 +41,7 @@ export async function render(mount, { t, i18n, store, navigate, link }) {
           h('div', { style: { display: 'flex', gap: '10px', alignItems: 'flex-start' } },
             pet && h('img', {
               src: '/static/img/warpets/' + pet.portrait, alt: '', loading: 'lazy',
-              style: { width: '46px', height: '46px', borderRadius: '9px', border: '1px solid rgba(216,180,93,.28)' },
+              style: { width: '42px', height: '42px', borderRadius: '8px', border: '1px solid var(--line)' },
             }),
             h('div', { style: { flex: '1', minWidth: '0' } },
               h('strong', { style: { color: 'var(--gold-soft)' } }, b.title),

@@ -20,7 +20,11 @@ export function mountSupport(context) {
     class: 'kc-support-launcher', type: 'button', id: 'kc-support-launcher',
     'aria-label': ctx.t('support.launcher'),
     onclick: () => toggle(true),
-  }, h('span', { class: 'mark' }, '💬'), h('span', { class: 'label' }, ctx.t('support.launcher')));
+  }, h('span', {
+    class: 'mark', 'aria-hidden': 'true',
+    html: '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">'
+      + '<path d="M21 12a8 8 0 0 1-8 8H7l-4 3V12a8 8 0 0 1 8-8h2a8 8 0 0 1 8 8z"/></svg>',
+  }), h('span', { class: 'label' }, ctx.t('support.launcher')));
 
   document.body.append(launcherEl);
 

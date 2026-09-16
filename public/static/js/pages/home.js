@@ -1,4 +1,12 @@
-import { h, getJSON, num, compact, dateTime, empty } from '../util.js';
+/**
+ * Home page.
+ *
+ * Order of business: what the site actually does first (tools + live numbers),
+ * community content second. Sections the client has not filled in yet are not
+ * six empty boxes — they collapse into one compact "coming up" list, which is
+ * the tidy waiting state the spec asks for without wasting a screen on it.
+ */
+import { h, getJSON, num, compact } from '../util.js';
 import { SITE } from '../routes.js';
 import { newsCard } from './news.js';
 import { achievementCard } from './achievements.js';
@@ -20,33 +28,65 @@ export async function render(mount, { t, i18n, link }) {
     getJSON('/data/webdata/manifest.json'),
   ]);
 
+  const news = [...(newsData.items || [])].filter((n) => n.published)
+    .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0));
+  const achievements = achData.items || [];
+  const officers = teamData.officers || [];
+  const legends = hofData.items || [];
+  const hasTournament = tournament.status && tournament.status !== 'coming-soon';
+  const hasAbout = Boolean(about.project?.summary?.[lang] || about.history?.teaser?.[lang]);
+
+  /* Sections still waiting for content, in the order of the content spec. */
+  const pending = [
+    !hasAbout && ['/about', t('about.title'), t('about.pendingHint')],
+    !news.length && ['/news', t('news.title'), t('news.emptyHint')],
+    !teamData.leader && !officers.length && ['/team', t('team.title'), t('team.emptyHint')],
+    !legends.length && ['/hall-of-fame', t('hof.title'), t('hof.emptyHint')],
+    !hasTournament && ['/tournament', t('tournament.title'), t('tournament.pendingHint')],
+  ].filter(Boolean);
+
   mount.append(...[
-    hero(t),
-    aboutSection(about, lang, t, link),
-    newsSection(newsData, lang, t, link),
-    achievementsSection(achData, lang, t, link),
-    teamSection(teamData, lang, t, link),
-    hofSection(hofData, lang, t, link),
-    tournamentSection(tournament, lang, t, link),
-    toolsSection(pets, skills, heroes, manifest, lang, t, link),
+    hero(t, lang, link),
+    statRow(pets, skills, heroes, manifest, lang, t),
+    toolsSection(pets, skills, heroes, lang, t, link),
+    hasAbout && aboutSection(about, lang, t, link),
+    news.length && newsSection(news, lang, t, link),
+    achievements.length && achievementsSection(achievements, lang, t, link),
+    (teamData.leader || officers.length) && teamSection(teamData, officers, lang, t, link),
+    legends.length && legendsSection(legends, lang, t, link),
+    hasTournament && tournamentSection(tournament, lang, t, link),
+    pending.length && pendingSection(pending, t, link),
     youtubeSection(t),
   ].filter(Boolean));
 }
 
 /* ------------------------------------------------------------------- hero */
-function hero(t) {
-  return h('div', { class: 'kc-banner' },
-    h('div', { class: 'kc-banner-inner' },
-      h('div', { class: 'kc-banner-kicker' }, 'CALL OF DRAGONS · SERVER 888'),
-      h('h1', { class: 'kc-banner-title' }, t('home.hero.h1')),
-      h('div', { class: 'kc-banner-sub' }, t('home.hero.sub')),
-      h('div', { class: 'kc-toolbar', style: { marginTop: '16px', justifyContent: 'center' } },
-        h('a', { class: 'kc-btn is-primary', href: '#about' }, t('home.hero.ctaAbout')),
-        h('a', {
-          class: 'kc-btn is-teal', href: 'https://www.youtube.com/@Kraken_Chronicles',
-          target: '_blank', rel: 'noopener', 'data-external': '1',
-        }, '▶ ' + t('home.hero.ctaYoutube')))),
-    h('div', { class: 'kc-banner-lights' }));
+function hero(t, lang, link) {
+  return h('section', { class: 'kc-hero' },
+    h('div', { class: 'kc-hero-kicker' }, 'Call of Dragons · ' + (lang === 'ru' ? 'сервер 888' : 'server 888')),
+    h('h1', {}, t('home.hero.h1')),
+    h('p', { class: 'kc-hero-lead' }, t('home.hero.sub')),
+    h('div', { class: 'kc-hero-actions' },
+      h('a', { class: 'kc-btn is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, t('home.cta')),
+      h('a', { class: 'kc-btn', href: '/stats/servers', onclick: link('/stats/servers') }, t('home.ctaStats')),
+      h('a', {
+        class: 'kc-btn is-ghost', href: 'https://www.youtube.com/@Kraken_Chronicles',
+        target: '_blank', rel: 'noopener', 'data-external': '1',
+      }, t('home.hero.ctaYoutube') + ' ↗')));
+}
+
+/* --------------------------------------------------------------- numbers */
+function statRow(pets, skills, heroes, manifest, lang, t) {
+  const cells = [
+    [num(pets.count, lang), t('home.stat.pets')],
+    [num(skills.count, lang), t('home.stat.skills')],
+    [num(heroes.count, lang), t('home.stat.heroes')],
+    [num(manifest.totals.players, lang), t('home.stat.players')],
+    [num(manifest.totals.alliances, lang), t('home.stat.alliances')],
+    [compact(manifest.totals.totalPower, lang), t('home.stat.power')],
+  ];
+  return h('div', { class: 'kc-statrow', style: { marginBottom: '34px' } },
+    ...cells.map(([v, k]) => h('div', {}, h('div', { class: 'v' }, v), h('div', { class: 'k' }, k))));
 }
 
 /* ---------------------------------------------------------------- helper */
@@ -58,39 +98,66 @@ function section(id, title, desc, cta, ...body) {
     h('div', { class: 'kc-panel-body' }, ...body));
 }
 
+/* -------------------------------------------------------------------- tools */
+function toolsSection(pets, skills, heroes, lang, t, link) {
+  const ru = lang === 'ru';
+  const tools = [
+    ['/pets/builder', ru ? 'Конструктор питомцев' : 'War Pet Builder',
+      ru ? 'Полный перебор навыков, Damage Factor и DPS, режим «лучшее за вашу сумму».'
+        : 'Exhaustive skill search, Damage Factor and DPS, and a "best for your amount" mode.'],
+    ['/pets/top', ru ? 'ТОП питомцев' : 'Top war pets',
+      ru ? `${pets.count} питомцев со всеми характеристиками и лидерами по каждой из них.`
+        : `${pets.count} pets with full stats and a leader per attribute.`],
+    ['/pets/skills', ru ? 'База навыков питомцев' : 'Pet skill database',
+      ru ? `${skills.count} навыков: стоимость в пет-коинах и янтаре, зависимости, эксклюзивы.`
+        : `${skills.count} skills: pet-coin and amber cost, dependencies, exclusives.`],
+    ['/db/heroes', ru ? 'База героев' : 'Hero database',
+      ru ? `${heroes.count} героев: качество, сезон и полное описание навыков.`
+        : `${heroes.count} heroes: rarity, season and full skill text.`],
+    ['/stats/servers', ru ? 'Статистика серверов' : 'Server analytics',
+      ru ? 'Игроки, альянсы, рейтинги, сравнение и иммиграция.'
+        : 'Players, alliances, rankings, comparison and immigration.'],
+    ['/calc/training', ru ? 'Калькуляторы' : 'Calculators',
+      ru ? 'Обучение войск, лечение, ускорения, ресурсы и прокачка героев.'
+        : 'Troop training, healing, speedups, resources and hero upgrades.'],
+    ['/guides', ru ? 'Гайды и календарь' : 'Guides and calendar',
+      ru ? 'Как собрать питомца под урон и что делать в недельном цикле сервера.'
+        : 'How to build a damage pet and what the weekly server cycle is for.'],
+    ['/pets/builds', ru ? 'Мои билды' : 'My builds',
+      ru ? 'Сохранённые сборки питомцев в вашем аккаунте.' : 'Your saved pet builds, stored in your account.'],
+  ];
+
+  return section('tools', t('home.tools.title'), t('home.tools.desc'), null,
+    h('div', { class: 'kc-linkgrid' }, ...tools.map(([href, title, desc]) =>
+      h('a', { class: 'kc-linkrow', href, onclick: link(href) },
+        h('div', {},
+          h('div', { class: 'kc-linkrow-title' }, title),
+          h('div', { class: 'kc-linkrow-desc' }, desc)),
+        h('span', { class: 'kc-linkrow-arrow' }, '→')))));
+}
+
 /* --------------------------------------------------------------- about */
 function aboutSection(about, lang, t, link) {
   const summary = about.project?.summary?.[lang];
   const teaser = about.history?.teaser?.[lang];
   return section('about', t('about.title'), SITE.tagline[lang],
     h('a', { class: 'kc-btn sm', href: '/about', onclick: link('/about') }, t('common.more')),
-    summary
-      ? h('p', { class: 'kc-prose', style: { color: 'var(--text-dim)' } }, summary)
-      : empty(t('about.pendingTitle'), t('about.pendingHint')),
-    h('div', { class: 'kc-section-title', style: { marginTop: '16px' } }, t('about.historyTitle')),
-    teaser
-      ? h('p', { class: 'kc-note', style: { color: 'var(--text-dim)' } }, teaser)
-      : empty(t('about.historyPendingTitle'), t('about.historyPendingHint')),
-    h('div', { class: 'kc-toolbar', style: { marginTop: '10px' } },
-      h('a', { class: 'kc-btn sm is-teal', href: '/about/history', onclick: link('/about/history') }, t('about.historyCta'))));
+    summary && h('p', { class: 'kc-prose' }, summary),
+    teaser && h('div', {},
+      h('div', { class: 'kc-section-title' }, t('about.historyTitle')),
+      h('p', { class: 'kc-prose', style: { margin: '0 0 12px' } }, teaser),
+      h('a', { class: 'kc-btn sm', href: '/about/history', onclick: link('/about/history') }, t('about.historyCta'))));
 }
 
 /* ---------------------------------------------------------------- news */
-function newsSection(data, lang, t, link) {
-  const items = [...(data.items || [])].filter((n) => n.published)
-    .sort((a, b) => (new Date(b.date).getTime() || 0) - (new Date(a.date).getTime() || 0))
-    .slice(0, 3);
+function newsSection(news, lang, t, link) {
   return section('news', t('news.title'), t('news.desc'),
     h('a', { class: 'kc-btn sm', href: '/news', onclick: link('/news') }, t('news.all')),
-    items.length
-      ? h('div', { class: 'kc-grid auto-lg' }, ...items.map((n) => newsCard(n, lang, t, link)))
-      : empty(t('news.emptyTitle'), t('news.emptyHint')));
+    h('div', { class: 'kc-grid auto-lg' }, ...news.slice(0, 3).map((n) => newsCard(n, lang, t, link))));
 }
 
 /* ------------------------------------------------------------ achievements */
-function achievementsSection(data, lang, t, link) {
-  const all = data.items || [];
-  if (!all.length) return null; // ТЗ §7: hide the whole block until it has content.
+function achievementsSection(all, lang, t, link) {
   const featured = all.filter((a) => a.featured);
   const items = (featured.length ? featured : all).slice(0, 6);
   return section('achievements', t('achievements.title'), t('achievements.desc'),
@@ -99,90 +166,54 @@ function achievementsSection(data, lang, t, link) {
 }
 
 /* -------------------------------------------------------------------- team */
-function teamSection(data, lang, t, link) {
-  const leader = data.leader || null;
-  const officers = (data.officers || []).slice(0, 5);
+function teamSection(data, officers, lang, t, link) {
   return section('team', t('team.title'), t('team.desc'),
     h('a', { class: 'kc-btn sm', href: '/team', onclick: link('/team') }, t('team.all')),
-    !leader && !officers.length
-      ? empty(t('team.emptyTitle'), t('team.emptyHint'))
-      : h('div', {},
-        leader && h('div', { style: { marginBottom: '16px', maxWidth: '360px' } }, teamCard(leader, lang, t, true)),
-        officers.length > 0 && h('div', { class: 'kc-grid auto-lg' }, ...officers.map((o) => teamCard(o, lang, t, false)))));
+    h('div', { class: 'kc-grid auto-lg' },
+      data.leader && teamCard(data.leader, lang, t, true),
+      ...officers.slice(0, 5).map((o) => teamCard(o, lang, t, false))));
 }
 
-/* --------------------------------------------------------------- hall of fame */
-function hofSection(data, lang, t, link) {
-  const all = data.items || [];
+/* --------------------------------------------------------------- legends */
+function legendsSection(all, lang, t, link) {
   const featured = all.filter((p) => p.featured);
   const items = (featured.length ? featured : all).slice(0, 6);
   return section('hall-of-fame', t('hof.title'), t('hof.desc'),
     h('a', { class: 'kc-btn sm', href: '/hall-of-fame', onclick: link('/hall-of-fame') }, t('hof.all')),
-    items.length
-      ? h('div', { class: 'kc-grid auto-lg' }, ...items.map((p) => hofCard(p, lang, t)))
-      : empty(t('hof.emptyTitle'), t('hof.emptyHint')));
+    h('div', { class: 'kc-grid auto-lg' }, ...items.map((p) => hofCard(p, lang, t))));
 }
 
 /* --------------------------------------------------------------- tournament */
 function tournamentSection(data, lang, t, link) {
-  const isPending = !data.status || data.status === 'coming-soon';
   return section('tournament', t('tournament.title'), t('tournament.desc'),
     h('a', { class: 'kc-btn sm', href: '/tournament', onclick: link('/tournament') }, t('common.more')),
-    isPending
-      ? empty(t('tournament.pendingTitle'), t('tournament.pendingHint'))
-      : h('div', {},
-        data.name?.[lang] && h('h3', { style: { margin: '0 0 8px' } }, data.name[lang]),
-        data.description?.[lang] && h('p', { class: 'kc-note' }, data.description[lang])));
+    data.name?.[lang] && h('h3', { style: { margin: '0 0 8px' } }, data.name[lang]),
+    data.description?.[lang] ? h('p', { class: 'kc-prose', style: { margin: 0 } }, data.description[lang]) : null);
 }
 
-/* -------------------------------------------------------------------- tools */
-function toolsSection(pets, skills, heroes, manifest, lang, t, link) {
-  return section('tools', t('home.tools.title'), t('home.tools.desc'),
-    h('a', { class: 'kc-btn sm', href: '/pets/builder', onclick: link('/pets/builder') }, t('home.tools.all')),
-    h('div', { class: 'kc-grid c3', style: { marginBottom: '16px' } },
-      tile(t, num(pets.count, lang), t('home.stat.pets')),
-      tile(t, num(skills.count, lang), t('home.stat.skills')),
-      tile(t, num(heroes.count, lang), t('home.stat.heroes')),
-      tile(t, num(manifest.totals.players, lang), t('home.stat.players')),
-      tile(t, num(manifest.totals.alliances, lang), t('home.stat.alliances')),
-      tile(t, compact(manifest.totals.totalPower, lang), t('home.stat.power'))),
-    h('div', { class: 'kc-grid auto-lg' },
-      toolCard(link, '/pets/builder', '🐉',
-        lang === 'ru' ? 'Конструктор питомцев' : 'War Pet Builder',
-        lang === 'ru' ? 'Полный перебор навыков, Damage Factor и DPS, режим «лучшее за вашу сумму».' : 'Exhaustive skill search, Damage Factor and DPS, and a "best for your amount" mode.'),
-      toolCard(link, '/pets/top', '📊',
-        lang === 'ru' ? 'ТОП питомцев и навыки' : 'Top pets and skills',
-        lang === 'ru' ? `${pets.count} питомцев и ${skills.count} навыков со всеми характеристиками.` : `${pets.count} pets and ${skills.count} skills with full stats.`),
-      toolCard(link, '/db/heroes', '📜',
-        lang === 'ru' ? 'База героев' : 'Hero database',
-        lang === 'ru' ? `${heroes.count} героев: качество, сезон и полное описание навыков.` : `${heroes.count} heroes: rarity, season and full skill text.`),
-      toolCard(link, '/stats/servers', '⚔️',
-        lang === 'ru' ? 'Статистика серверов' : 'Server analytics',
-        lang === 'ru' ? 'Игроки, альянсы, рейтинги, сравнение и иммиграция.' : 'Players, alliances, rankings, comparison and immigration.'),
-      toolCard(link, '/calc/training', '🧮',
-        lang === 'ru' ? 'Калькуляторы' : 'Calculators',
-        lang === 'ru' ? 'Обучение, лечение, ускорения, ресурсы и прокачка героев.' : 'Training, healing, speedups, resources and hero upgrades.'),
-      toolCard(link, '/guides', '🗺️',
-        lang === 'ru' ? 'Гайды и календарь' : 'Guides and calendar',
-        lang === 'ru' ? 'Как собрать питомца под урон и что делать в недельном цикле.' : 'How to build a damage pet and what the weekly cycle is for.')));
-}
-
-function tile(t, value, label) {
-  return h('div', { class: 'kc-tile' }, h('div', { class: 'kc-tile-value' }, value), h('div', { class: 'kc-tile-label' }, label));
-}
-
-function toolCard(link, href, icon, title, text) {
-  return h('a', { class: 'kc-card', href, onclick: link(href) },
-    h('div', { style: { fontSize: '22px', marginBottom: '8px' } }, icon),
-    h('h3', { style: { margin: '0 0 6px' } }, title),
-    h('p', { class: 'kc-note', style: { margin: '0' } }, text));
+/* ----------------------------------------------------------------- pending */
+function pendingSection(pending, t, link) {
+  return h('section', { class: 'kc-panel' },
+    h('div', { class: 'kc-panel-head' },
+      h('div', {}, h('h2', {}, t('home.soon.title')), h('p', {}, t('home.soon.desc')))),
+    h('div', { class: 'kc-panel-body', style: { paddingTop: '4px', paddingBottom: '6px' } },
+      ...pending.map(([href, title, hint]) => h('a', {
+        class: 'kc-pending', href, onclick: link(href),
+        id: href.replace(/^\//, '').replace(/\//g, '-'),
+        style: { scrollMarginTop: 'calc(var(--header-h) + 14px)' },
+      },
+      h('span', { class: 'n' }, title),
+      h('span', { style: { color: 'var(--muted-2)' } }, hint),
+      h('span', { class: 's' }, t('home.soon.tag'))))));
 }
 
 /* ------------------------------------------------------------------ youtube */
 function youtubeSection(t) {
-  return section('youtube', t('home.youtube.title'), t('home.youtube.desc'), null,
-    h('a', {
-      class: 'kc-btn is-primary', href: 'https://www.youtube.com/@Kraken_Chronicles',
-      target: '_blank', rel: 'noopener', 'data-external': '1',
-    }, '▶ ' + t('home.youtube.cta')));
+  return h('section', { class: 'kc-panel', id: 'youtube' },
+    h('div', { class: 'kc-panel-head' },
+      h('div', {}, h('h2', {}, t('home.youtube.title')), h('p', {}, t('home.youtube.desc'))),
+      h('a', {
+        class: 'kc-btn sm', href: 'https://www.youtube.com/@Kraken_Chronicles',
+        target: '_blank', rel: 'noopener', 'data-external': '1',
+      }, t('home.youtube.cta') + ' ↗')));
 }

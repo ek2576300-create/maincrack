@@ -108,9 +108,8 @@ export async function api(path, { method = 'GET', body } = {}) {
 export const loading = (label = '…') => h('div', { class: 'kc-loading' }, label);
 
 export const empty = (title, hint) => h('div', { class: 'kc-empty' },
-  h('span', { class: 'mark' }, '⚓'),
-  h('div', { style: { fontWeight: '700', color: 'var(--text-dim)' } }, title),
-  hint && h('div', { style: { marginTop: '6px', fontSize: '12px' } }, hint));
+  h('div', { style: { fontWeight: '500', color: 'var(--text-dim)', fontSize: '14px' } }, title),
+  hint && h('div', { style: { marginTop: '7px', fontSize: '12.5px', maxWidth: '46ch', marginInline: 'auto' } }, hint));
 
 export const errorBox = (msg) => h('div', { class: 'kc-error' }, msg);
 
