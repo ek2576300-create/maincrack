@@ -273,6 +273,22 @@
   const unitLabel = u => currentLang === 'ru' ? (UNIT_RU[u] || u) : u;
   const damageTypeLabel = ty => currentLang === 'ru' ? (DAMAGE_TYPE_RU[ty] || ty) : ty;
 
+  /* The mirrored builder picks pets through a react-select whose options are plain
+     text. Both the canonical English name and the Russian one resolve back to the
+     canonical name so the option can be matched in either language. */
+  const PET_BY_LABEL = (() => {
+    const map = new Map();
+    for (const pet of TOP_PETS_DATA) {
+      map.set(pet.name.trim().toLowerCase(), pet.name);
+      const ru = PET_NAME_RU[pet.name];
+      if (ru) map.set(ru.trim().toLowerCase(), pet.name);
+    }
+    return map;
+  })();
+  const petPortraitUrl = name => `/img/warpets/portrait/${encodeURIComponent(name)}.png`;
+  const PET_PLACEHOLDER = { en: 'Select a War Pet...', ru: 'Выберите питомца…' };
+  const UNIT_LABELS = new Set([...Object.keys(UNIT_RU), ...Object.values(UNIT_RU)].map(v => v.toLowerCase()));
+
   function injectStyles() {
     if (document.getElementById('warpet-optimizer-style')) return;
     const style = document.createElement('style');
@@ -409,6 +425,10 @@
       .wpo-skill.is-amber { border-color:rgba(231,190,89,.42); box-shadow:inset 0 0 16px rgba(212,157,49,.05); }
       .wpo-note { color:#789694; font-size:11px; margin-top:11px; line-height:1.5; }
       .wpo-note strong { color:#c9d9d8; }
+      /* Pet picker of the mirrored builder: room for the portrait and for the
+         longer Russian names, which used to wrap out of the 40px tall control. */
+      #__next [id^="react-select-"][id$="-placeholder"] { white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+      #__next div[class*="css-"][class*="-menu"] { width:max-content; min-width:100%; max-width:320px; }
       @media (max-width:980px){ .wpo-top-leaders{grid-template-columns:repeat(3,1fr)} }
       @media (max-width:900px){ #__next section[class*="pt-2"][class*="pb-2"]{padding:12px 12px 36px !important}.wpo-grid{grid-template-columns:repeat(2,minmax(0,1fr));}.wpo-skills{grid-template-columns:repeat(2,minmax(0,1fr));} }
       @media (max-width:650px){ #wpo-site-nav{position:relative;align-items:stretch}.wpo-nav-left{flex:1}.wpo-nav-btn{min-width:0;flex:1;padding:0 9px}.wpo-top-leaders{grid-template-columns:repeat(2,1fr)}.wpo-top-controls{width:100%}.wpo-top-controls input,.wpo-top-controls select{min-width:0;flex:1} #wpo-kraken-banner{min-height:142px;border-radius:14px}.wpo-banner-inner{min-height:142px}.wpo-head{align-items:flex-start}.wpo-head-right{align-items:flex-end;flex-direction:column}.wpo-pet{text-align:right} }
@@ -663,6 +683,7 @@
     } catch (_) {}
     document.documentElement.lang = lang;
     translateOriginalSite();
+    decoratePetSelect();
     renderPanelLanguage();
     syncFromApi(true);
 
@@ -726,6 +747,64 @@
     } else if (document.title === SITE_TRANSLATIONS['War Pet Builder - CoD DB']) {
       document.title = 'War Pet Builder - CoD DB';
     }
+  }
+
+  /**
+   * The pet dropdown of the mirrored builder renders bare option labels: no
+   * portrait, an English placeholder and English unit group headings even in the
+   * Russian UI. Decorate it in place — portraits as CSS backgrounds rather than
+   * extra DOM nodes, so React keeps owning the elements it rendered.
+   */
+  function decoratePetSelect() {
+    const wantPlaceholder = PET_PLACEHOLDER[currentLang] || PET_PLACEHOLDER.en;
+    document.querySelectorAll('[id^="react-select-"][id$="-placeholder"]').forEach(el => {
+      const text = el.textContent.trim();
+      if (text === wantPlaceholder) return;
+      if (text === PET_PLACEHOLDER.en || text === PET_PLACEHOLDER.ru) el.textContent = wantPlaceholder;
+    });
+
+    // Group headings ("Cavalry", "Marksman", …) sit next to their unit icon.
+    document.querySelectorAll('img[src*="icons/units/"]').forEach(icon => {
+      const file = (icon.getAttribute('src') || '').split('/').pop() || '';
+      const unit = decodeURIComponent(file).replace(/\.png$/i, '');
+      if (!unit || !UNIT_RU[unit]) return;
+      const label = icon.parentElement?.querySelector('span');
+      if (!label) return;
+      const current = label.textContent.trim();
+      if (!UNIT_LABELS.has(current.toLowerCase())) return;
+      const want = unitLabel(unit);
+      if (current !== want) label.textContent = want;
+    });
+
+    // Options only: the chosen pet already gets its full portrait under the control,
+    // and the control is too narrow to carry an icon without clipping the name.
+    document.querySelectorAll('[role="option"]').forEach(host => {
+      const label = host.querySelector('div') || host;
+      const pet = PET_BY_LABEL.get(label.textContent.trim().toLowerCase());
+      if (!pet) return;
+      const url = petPortraitUrl(pet);
+      if (label.dataset.wpoPetIcon === url) return;
+      label.dataset.wpoPetIcon = url;
+      label.style.setProperty('background-image', `url("${url}")`);
+      label.style.setProperty('background-repeat', 'no-repeat');
+      label.style.setProperty('background-size', '22px 22px');
+      label.style.setProperty('background-position', 'left center');
+      label.style.setProperty('padding-left', '28px');
+      label.style.setProperty('min-height', '24px');
+      label.style.setProperty('align-items', 'center');
+    });
+  }
+
+  /* react-select builds its menu only while it is open, so a 350ms poll would show
+     a bare list first. Watch the DOM instead and decorate within the same frame. */
+  function watchPetSelect() {
+    let queued = false;
+    const observer = new MutationObserver(() => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; decoratePetSelect(); });
+    });
+    observer.observe(document.getElementById('__next') || document.body, { childList: true, subtree: true });
   }
 
   function apiReady() { return window.__warpetOptimizerAPI && Array.isArray(window.__warpetOptimizerAPI.skills); }
@@ -1273,6 +1352,7 @@
     applyKrakenShell();
     document.documentElement.lang = currentLang;
     translateOriginalSite();
+    decoratePetSelect();
     if (!apiReady()) return setTimeout(boot, 150);
     const panel = createPanel();
     if (!panel) return setTimeout(boot, 250);
@@ -1280,10 +1360,12 @@
 
     // Next/React can redraw labels after hydration or when a pet changes.
     // Re-apply exact UI translations without touching canonical skill/pet names.
+    watchPetSelect();
     setInterval(() => {
       applyKrakenShell();
       removeChangelog();
       translateOriginalSite();
+      decoratePetSelect();
       syncFromApi(false);
     }, 350);
   }
