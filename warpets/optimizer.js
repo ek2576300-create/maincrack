@@ -166,12 +166,42 @@
 
   const ATTRIBUTE_RU = {
     Strength: 'Сила',
-    Agility: 'Ловкость',
+    Agility: 'Проворство',
     Intelligence: 'Интеллект',
     Endurance: 'Выносливость',
     Spirit: 'Дух',
     Luck: 'Удача'
   };
+
+  const PET_NAME_RU = {
+    'Berserk Faedrake': 'Яростный Феодрейк',
+    'Sapphire Faedrake': 'Сапфировый Феодрейк',
+    'Shadow Faedrake': 'Теневой Феодрейк',
+    'Golden Roc': 'Золотой Рух',
+    'Snowpeak Roc': 'Снежновершинный Рух',
+    'Night Roc': 'Ночной Рух',
+    'Bruinbear': 'Бурый Медведь',
+    'Sand Lizard': 'Песчаная Ящерица',
+    'Moonbear': 'Лунный Медведь',
+    'Thunder Lizard': 'Громовая Ящерица',
+    'Ice Lizard': 'Ледяная Ящерица',
+    'Venomous Lizard': 'Ядовитая Ящерица',
+    'Seraphic Faedrake': 'Серафический Феодрейк',
+    'Shadow Manticore': 'Теневая Мантикора',
+    'Blade Manticore': 'Клинковая Мантикора',
+    'Barbed Manticore': 'Шипастая Мантикора',
+    'Auric Warhound': 'Золотой Боевой Пёс',
+    'Mossrock Aurochs': 'Мохоскальный Тур',
+    'Flaming Manticore': 'Пламенная Мантикора',
+    'Windweasel': 'Ветряная Ласка',
+    'Bullionbeast': 'Златозверь',
+    'Brimstone Auroch': 'Серный Тур',
+    'Frostbear': 'Морозный Медведь',
+    'Magifox': 'Маголис',
+    'Toxisaur': 'Токсизавр'
+  };
+  const UNIT_RU = { Cavalry: 'Кавалерия', Infantry: 'Пехота', Marksman: 'Стрелки', Magic: 'Маги', Overall: 'Общий' };
+  const DAMAGE_TYPE_RU = { Physical: 'Физический', Magic: 'Магический', Overall: 'Общий' };
 
   // Exact UI strings on the mirrored War Pet page. Skill and pet names stay canonical
   // so builds can still be compared with the English in-game database.
@@ -197,7 +227,7 @@
     'Changelog': 'История изменений',
     'War Pet': 'Боевой питомец',
     'Strength': 'Сила',
-    'Agility': 'Ловкость',
+    'Agility': 'Проворство',
     'Intelligence': 'Интеллект',
     'Endurance': 'Выносливость',
     'Spirit': 'Дух',
@@ -223,13 +253,14 @@
     'Crit damage on Physical Hero Skill': 'Крит. урон физического навыка героя',
     'Crit damage on Physical normal attack': 'Крит. урон обычной физической атаки',
     'Legion Physical ATK': 'Физическая атака легиона',
-    '/ DPS:': '/ DPS:'
+    '/ DPS:': '/ DPS:',
+    ...PET_NAME_RU
   };
   const SITE_TRANSLATIONS_REVERSE = Object.fromEntries(Object.entries(SITE_TRANSLATIONS).map(([en, ru]) => [ru, en]));
 
   const TOP_I18N = {
     en: {builder:'BUILDER', top:'TOP PETS', heroBuilder:'WAR PET BUILDER', heroBuilderSub:'POWER · PRECISION · BEST BUILD', heroTop:'TOP WAR PETS', heroTopSub:'MAXIMUM ATTRIBUTES · SORTABLE RANKING', title:'Pets with the best attributes', desc:'Maximum pet stats from the builder database. Click a stat header to rank by it.', search:'Search pet', all:'All units', rank:'Rank', pet:'Pet', type:'Type', unit:'Unit', total:'Total', foot:'Gold marks the maximum value for an attribute. Cyan marks the next high tier.', attrs:{Strength:'Strength',Agility:'Agility',Intelligence:'Intelligence',Endurance:'Endurance',Spirit:'Spirit',Luck:'Luck'}},
-    ru: {builder:'БИЛДЕР', top:'ТОП ПИТОМЦЕВ', heroBuilder:'КОНСТРУКТОР ПИТОМЦЕВ', heroBuilderSub:'СИЛА · ТОЧНОСТЬ · ЛУЧШИЙ БИЛД', heroTop:'ТОП ПИТОМЦЕВ', heroTopSub:'МАКСИМАЛЬНЫЕ ХАРАКТЕРИСТИКИ · РЕЙТИНГ', title:'Петы с лучшими характеристиками', desc:'Максимальные характеристики петов из базы билдера. Нажмите на характеристику, чтобы построить топ.', search:'Поиск пета', all:'Все типы войск', rank:'Место', pet:'Пет', type:'Тип', unit:'Войска', total:'Сумма', foot:'Золотым отмечен максимум характеристики. Бирюзовым — следующий высокий уровень.', attrs:{Strength:'Сила',Agility:'Ловкость',Intelligence:'Интеллект',Endurance:'Выносливость',Spirit:'Дух',Luck:'Удача'}}
+    ru: {builder:'БИЛДЕР', top:'ТОП ПИТОМЦЕВ', heroBuilder:'КОНСТРУКТОР ПИТОМЦЕВ', heroBuilderSub:'СИЛА · ТОЧНОСТЬ · ЛУЧШИЙ БИЛД', heroTop:'ТОП ПИТОМЦЕВ', heroTopSub:'МАКСИМАЛЬНЫЕ ХАРАКТЕРИСТИКИ · РЕЙТИНГ', title:'Петы с лучшими характеристиками', desc:'Максимальные характеристики петов из базы билдера. Нажмите на характеристику, чтобы построить топ.', search:'Поиск пета', all:'Все типы войск', rank:'Место', pet:'Пет', type:'Тип', unit:'Войска', total:'Сумма', foot:'Золотым отмечен максимум характеристики. Бирюзовым — следующий высокий уровень.', attrs:{Strength:'Сила',Agility:'Проворство',Intelligence:'Интеллект',Endurance:'Выносливость',Spirit:'Дух',Luck:'Удача'}}
   };
   const topT = key => TOP_I18N[currentLang]?.[key] ?? TOP_I18N.en[key] ?? key;
   const sleepFrame = () => new Promise(resolve => requestAnimationFrame(resolve));
@@ -238,6 +269,9 @@
   const esc = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const t = key => I18N[currentLang][key] ?? I18N.en[key] ?? key;
   const attributeLabel = a => currentLang === 'ru' ? (ATTRIBUTE_RU[a] || a) : a;
+  const petNameLabel = name => currentLang === 'ru' ? (PET_NAME_RU[name] || name) : name;
+  const unitLabel = u => currentLang === 'ru' ? (UNIT_RU[u] || u) : u;
+  const damageTypeLabel = ty => currentLang === 'ru' ? (DAMAGE_TYPE_RU[ty] || ty) : ty;
 
   function injectStyles() {
     if (document.getElementById('warpet-optimizer-style')) return;
@@ -424,7 +458,7 @@
     const unit = view.querySelector('#wpo-top-unit');
     const unitValue = unit.value;
     const units = [...new Set(TOP_PETS_DATA.map(p => p.unit))].sort();
-    unit.innerHTML = `<option value="">${esc(topT('all'))}</option>` + units.map(u => `<option value="${esc(u)}">${esc(u)}</option>`).join('');
+    unit.innerHTML = `<option value="">${esc(topT('all'))}</option>` + units.map(u => `<option value="${esc(u)}">${esc(unitLabel(u))}</option>`).join('');
     if (units.includes(unitValue)) unit.value = unitValue;
     const sortSel = view.querySelector('#wpo-top-sort');
     const wantedSort = view.dataset.sort || 'Strength';
@@ -433,7 +467,7 @@
     const max = {};
     A.forEach(a => max[a] = Math.max(...TOP_PETS_DATA.map(p => Number(p['max'+a] || 0))));
     view.querySelector('#wpo-top-leaders').innerHTML = A.map(a => {
-      const names = TOP_PETS_DATA.filter(p => Number(p['max'+a]) === max[a]).map(p => p.name).join(', ');
+      const names = TOP_PETS_DATA.filter(p => Number(p['max'+a]) === max[a]).map(p => petNameLabel(p.name)).join(', ');
       return `<div class="wpo-top-leader"><strong><img src="/img/warpets/attributes/${a}.png" alt="">${esc(topT('attrs')[a])}</strong><div class="value">${max[a]}</div><small>${esc(names)}</small></div>`;
     }).join('');
     renderTopPetsRows();
@@ -450,14 +484,14 @@
     const unit = view.querySelector('#wpo-top-unit').value;
     const sort = view.dataset.sort || 'Strength';
     const dir = Number(view.dataset.dir || -1);
-    let rows = TOP_PETS_DATA.filter(p => (!needle || p.name.toLowerCase().includes(needle)) && (!unit || p.unit === unit));
+    let rows = TOP_PETS_DATA.filter(p => (!needle || p.name.toLowerCase().includes(needle) || petNameLabel(p.name).toLowerCase().includes(needle)) && (!unit || p.unit === unit));
     rows.sort((a,b) => {
       const av = sort === 'Total' ? total(a) : Number(a['max'+sort] || 0);
       const bv = sort === 'Total' ? total(b) : Number(b['max'+sort] || 0);
-      return (av-bv)*dir || a.name.localeCompare(b.name);
+      return (av-bv)*dir || petNameLabel(a.name).localeCompare(petNameLabel(b.name));
     });
     view.querySelector('#wpo-top-thead').innerHTML = `<tr><th>${esc(topT('rank'))}</th><th>${esc(topT('pet'))}</th><th>${esc(topT('type'))}</th><th>${esc(topT('unit'))}</th>${A.map(a => `<th data-top-sort="${a}">${esc(topT('attrs')[a])}${sort===a?(dir<0?' ↓':' ↑'):''}</th>`).join('')}<th data-top-sort="Total">${esc(topT('total'))}${sort==='Total'?(dir<0?' ↓':' ↑'):''}</th></tr>`;
-    view.querySelector('#wpo-top-tbody').innerHTML = rows.length ? rows.map((p,i) => `<tr><td class="wpo-top-rank">#${i+1}</td><td><div class="wpo-top-petcell"><img src="/img/warpets/portrait/${encodeURIComponent(p.name)}.png" alt=""><b>${esc(p.name)}</b></div></td><td>${esc(p.type)}</td><td>${esc(p.unit)}</td>${A.map(a => { const v=Number(p['max'+a]||0); const cls=v===max[a]?'wpo-top-best':v>=321?'wpo-top-high':''; return `<td class="${cls}">${v}</td>`; }).join('')}<td>${total(p)}</td></tr>`).join('') : `<tr><td colspan="11" style="padding:30px;text-align:center;color:#8aa7a5">—</td></tr>`;
+    view.querySelector('#wpo-top-tbody').innerHTML = rows.length ? rows.map((p,i) => `<tr><td class="wpo-top-rank">#${i+1}</td><td><div class="wpo-top-petcell"><img src="/img/warpets/portrait/${encodeURIComponent(p.name)}.png" alt=""><b>${esc(petNameLabel(p.name))}</b></div></td><td>${esc(damageTypeLabel(p.type))}</td><td>${esc(unitLabel(p.unit))}</td>${A.map(a => { const v=Number(p['max'+a]||0); const cls=v===max[a]?'wpo-top-best':v>=321?'wpo-top-high':''; return `<td class="${cls}">${v}</td>`; }).join('')}<td>${total(p)}</td></tr>`).join('') : `<tr><td colspan="11" style="padding:30px;text-align:center;color:#8aa7a5">—</td></tr>`;
     view.querySelectorAll('th[data-top-sort]').forEach(th => th.onclick = () => {
       const next = th.dataset.topSort;
       if (view.dataset.sort === next) view.dataset.dir = String(-Number(view.dataset.dir || -1));
@@ -796,7 +830,7 @@
     if (!api || !panel) return;
     enforceAmberSkillLevels(api);
     enforceLockedFirstSkill(api);
-    const petName = api.pet?.name || t('selectPet');
+    const petName = api.pet?.name ? petNameLabel(api.pet.name) : t('selectPet');
     const petChanged = lastPetName !== api.pet?.name;
     panel.querySelector('#wpo-pet').textContent = `${t('pet')}: ${petName}`;
 
@@ -933,11 +967,19 @@
   function getCandidates(api, tier, lockedSkill, allowCounterattack) {
     const all = api.skills;
     const byName = new Map(all.map(s => [s.name, s]));
+    const seenNames = new Set();
     return all
       .filter(s => compatible(s, api.pet))
       .filter(s => !lockedSkill || s.name !== lockedSkill.name)
       .filter(s => s.category === 'Warpet' || (s.dependency && byName.get(s.dependency)?.category === 'Warpet'))
       .filter(s => allowCounterattack || !belongsToCounterstrikeChain(s, byName))
+      // Some pets' innate talent shares its name with the base skill of its own
+      // upgrade chain (e.g. Windweasel's "North Wind"), and the source skill
+      // list can otherwise carry more than one entry per name. Without this,
+      // the exhaustive search can pick the same skill name into two different
+      // slots — a build the original page can't actually represent, which is
+      // why re-selecting either of those slots afterwards shows no options.
+      .filter(s => (seenNames.has(s.name) ? false : (seenNames.add(s.name), true)))
       .map(s => ({...s, tier: isAmberSkill(s) ? 3 : tier}));
   }
 

@@ -39,6 +39,7 @@ export const DICT = {
 
     /* ---------------------------------------------------------------- nav */
     'nav.menu': 'Меню',
+    'nav.close': 'Закрыть меню',
     'nav.signIn': 'Войти',
     'nav.signOut': 'Выйти',
 
@@ -93,7 +94,7 @@ export const DICT = {
 
     /* -------------------------------------------------------------- attrs */
     'attr.Strength': 'Сила',
-    'attr.Agility': 'Ловкость',
+    'attr.Agility': 'Проворство',
     'attr.Intelligence': 'Интеллект',
     'attr.Endurance': 'Выносливость',
     'attr.Spirit': 'Дух',
@@ -341,6 +342,88 @@ export const DICT = {
     'footer.sections': 'Разделы',
     'footer.legal': 'Call of Dragons — товарный знак Farlight Games. Проект фанатский, не связан с разработчиком игры.',
     'footer.merged': 'Объединены: конструктор питомцев coddb.app/warpets, база coddb.app, статистика Tamaris War Stats и codfan.com.',
+
+    /* ------------------------------------------------------------ hero (/) */
+    'home.hero.h1': 'Хроники Кракена — сообщество сервера 888',
+    'home.hero.sub': 'История, люди, победы и турниры 888 в Call of Dragons. Новости сообщества и полезные инструменты для игры.',
+    'home.hero.ctaAbout': 'О проекте',
+    'home.hero.ctaYoutube': 'Наш YouTube',
+
+    /* --------------------------------------------------------- about (/) */
+    'about.pendingTitle': 'Описание проекта уточняется',
+    'about.pendingHint': 'Материал появится здесь после согласования с командой проекта.',
+    'about.historyTitle': 'История сервера 888',
+    'about.historyCta': 'История сервера 888',
+    'about.historyPendingTitle': 'История пишется',
+    'about.historyPendingHint': 'Ключевые вехи появятся здесь после сверки с командой.',
+
+    /* --------------------------------------------------- about/history */
+    'history.title': 'История сервера 888',
+    'history.desc': 'Ключевые этапы и события в истории сообщества «Хроники Кракена».',
+    'history.emptyTitle': 'История пока не опубликована',
+    'history.emptyHint': 'Материалы уточняются у ветеранов сообщества.',
+
+    /* ------------------------------------------------------- about/build */
+    'aboutBuild.title': 'Как устроен этот сайт',
+    'aboutBuild.navLabel': 'Как устроен сайт',
+
+    /* ---------------------------------------------------------------- news */
+    'news.title': 'Новости',
+    'news.desc': 'Новости проекта «Хроники Кракена» и сервера 888.',
+    'news.all': 'Все новости',
+    'news.emptyTitle': 'Новости появятся здесь',
+    'news.emptyHint': 'Публикуем по мере событий в проекте и на сервере.',
+    'news.readMore': 'Читать',
+    'news.back': 'Ко всем новостям',
+    'news.notFoundTitle': 'Новость не найдена',
+    'news.category.project': 'Проект',
+    'news.category.server': 'Сервер 888',
+    'news.category.tournament': 'Турниры',
+
+    /* ------------------------------------------------------- achievements */
+    'achievements.title': 'Достижения 888',
+    'achievements.desc': 'Кубки, победы в сезонах и другие подтверждённые достижения сервера 888.',
+    'achievements.all': 'Все достижения',
+    'achievements.emptyTitle': 'Достижения скоро появятся здесь',
+    'achievements.emptyHint': 'Мы публикуем только подтверждённые результаты.',
+
+    /* -------------------------------------------------------------- team */
+    'team.title': 'Команда 888',
+    'team.desc': 'Действующее руководство сообщества сервера 888 и способы связи с ним.',
+    'team.leaderLabel': 'Глава',
+    'team.officersLabel': 'Офицеры',
+    'team.all': 'Вся команда',
+    'team.contact': 'Связаться',
+    'team.emptyTitle': 'Состав руководства уточняется',
+    'team.emptyHint': 'Данные появятся здесь после согласования с командой.',
+
+    /* -------------------------------------------------------- hall of fame */
+    'hof.title': 'Легенды 888',
+    'hof.desc': 'Бывшие участники сервера 888, которые внесли вклад в развитие сообщества.',
+    'hof.period': 'Период участия',
+    'hof.all': 'Все легенды',
+    'hof.emptyTitle': 'Раздел наполняется',
+    'hof.emptyHint': 'Список появится здесь после сверки с сообществом.',
+
+    /* ------------------------------------------------------------ tournament */
+    'tournament.title': 'Турнир «Хроники Кракена»',
+    'tournament.desc': 'Турнир сообщества сервера 888.',
+    'tournament.pendingTitle': 'Раздел готовится',
+    'tournament.pendingHint': 'Турнир переносится с другого сервера на сайт проекта. Статус, даты и результаты появятся здесь.',
+    'tournament.cta': 'Перейти к турниру',
+    'tournament.status.announced': 'Анонсирован',
+    'tournament.status.active': 'Идёт сейчас',
+    'tournament.status.finished': 'Завершён',
+
+    /* ------------------------------------------------------- home: tools */
+    'home.tools.title': 'Игровые инструменты',
+    'home.tools.desc': 'Конструктор питомцев, статистика, герои, артефакты, сборки и калькуляторы.',
+    'home.tools.all': 'Все инструменты',
+
+    /* ----------------------------------------------------- home: youtube */
+    'home.youtube.title': 'YouTube-канал',
+    'home.youtube.desc': 'Видео о сервере 888 и Call of Dragons.',
+    'home.youtube.cta': 'Открыть канал',
   },
 
   en: {
@@ -379,6 +462,7 @@ export const DICT = {
     'common.notFoundHint': 'There is no such tab. Pick a section in the navigation above.',
 
     'nav.menu': 'Menu',
+    'nav.close': 'Close menu',
     'nav.signIn': 'Sign in',
     'nav.signOut': 'Sign out',
 
@@ -670,6 +754,88 @@ export const DICT = {
     'footer.sections': 'Sections',
     'footer.legal': 'Call of Dragons is a trademark of Farlight Games. This is a fan project, unaffiliated with the developer.',
     'footer.merged': 'Merged: the coddb.app/warpets pet builder, the coddb.app database, Tamaris War Stats analytics and codfan.com.',
+
+    /* ------------------------------------------------------------ hero (/) */
+    'home.hero.h1': 'Kraken Chronicles — the server 888 community',
+    'home.hero.sub': 'History, people, victories and tournaments of 888 in Call of Dragons. Community news and handy tools for the game.',
+    'home.hero.ctaAbout': 'About',
+    'home.hero.ctaYoutube': 'Our YouTube',
+
+    /* --------------------------------------------------------- about (/) */
+    'about.pendingTitle': 'The project description is being finalised',
+    'about.pendingHint': 'It will appear here once the project team signs it off.',
+    'about.historyTitle': 'History of server 888',
+    'about.historyCta': 'History of server 888',
+    'about.historyPendingTitle': 'The history is being written',
+    'about.historyPendingHint': 'Key milestones will appear here once they are checked with the team.',
+
+    /* --------------------------------------------------- about/history */
+    'history.title': 'History of server 888',
+    'history.desc': 'Key milestones and events in the Kraken Chronicles community\'s history.',
+    'history.emptyTitle': 'The history has not been published yet',
+    'history.emptyHint': 'Details are being confirmed with community veterans.',
+
+    /* ------------------------------------------------------- about/build */
+    'aboutBuild.title': 'How this site is built',
+    'aboutBuild.navLabel': 'How this site is built',
+
+    /* ---------------------------------------------------------------- news */
+    'news.title': 'News',
+    'news.desc': 'News from the Kraken Chronicles project and server 888.',
+    'news.all': 'All news',
+    'news.emptyTitle': 'News will appear here',
+    'news.emptyHint': 'We publish it as things happen in the project and on the server.',
+    'news.readMore': 'Read',
+    'news.back': 'Back to all news',
+    'news.notFoundTitle': 'News post not found',
+    'news.category.project': 'Project',
+    'news.category.server': 'Server 888',
+    'news.category.tournament': 'Tournaments',
+
+    /* ------------------------------------------------------- achievements */
+    'achievements.title': 'Achievements of 888',
+    'achievements.desc': 'Trophies, season wins and other confirmed achievements of server 888.',
+    'achievements.all': 'All achievements',
+    'achievements.emptyTitle': 'Achievements will appear here soon',
+    'achievements.emptyHint': 'We only publish confirmed results.',
+
+    /* -------------------------------------------------------------- team */
+    'team.title': 'Team 888',
+    'team.desc': 'The server 888 community\'s current leadership and how to reach them.',
+    'team.leaderLabel': 'Leader',
+    'team.officersLabel': 'Officers',
+    'team.all': 'All team',
+    'team.contact': 'Contact',
+    'team.emptyTitle': 'Leadership details are being finalised',
+    'team.emptyHint': 'They will appear here once confirmed with the team.',
+
+    /* -------------------------------------------------------- hall of fame */
+    'hof.title': 'Legends of 888',
+    'hof.desc': 'Former members of server 888 who shaped the community.',
+    'hof.period': 'Time with the community',
+    'hof.all': 'All legends',
+    'hof.emptyTitle': 'This section is being filled in',
+    'hof.emptyHint': 'The list will appear here once checked with the community.',
+
+    /* ------------------------------------------------------------ tournament */
+    'tournament.title': 'The Kraken Chronicles tournament',
+    'tournament.desc': 'The server 888 community tournament.',
+    'tournament.pendingTitle': 'This section is being prepared',
+    'tournament.pendingHint': 'The tournament is being moved here from another server. Status, dates and results will appear here.',
+    'tournament.cta': 'Go to the tournament',
+    'tournament.status.announced': 'Announced',
+    'tournament.status.active': 'Live now',
+    'tournament.status.finished': 'Finished',
+
+    /* ------------------------------------------------------- home: tools */
+    'home.tools.title': 'Game tools',
+    'home.tools.desc': 'War pet builder, analytics, heroes, artifacts, builds and calculators.',
+    'home.tools.all': 'All tools',
+
+    /* ----------------------------------------------------- home: youtube */
+    'home.youtube.title': 'YouTube channel',
+    'home.youtube.desc': 'Videos about server 888 and Call of Dragons.',
+    'home.youtube.cta': 'Open the channel',
   },
 };
 

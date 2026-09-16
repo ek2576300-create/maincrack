@@ -1,2 +1,11 @@
 server/data/
 *.sqlite*
+
+# Python-бэкенд (backend/)
+backend/data/
+backend/data_raw/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/venv/
+backend/.venv/
+*.pyc

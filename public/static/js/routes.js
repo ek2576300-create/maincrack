@@ -81,13 +81,26 @@ export const NAV = [
     ],
   },
   {
+    id: 'server888',
+    icon: '🐙',
+    label: { ru: 'Хроники Кракена', en: 'Kraken Chronicles' },
+    items: [
+      { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About' } },
+      { path: '/news', id: 'news', label: { ru: 'Новости', en: 'News' } },
+      { path: '/achievements', id: 'achievements', label: { ru: 'Достижения', en: 'Achievements' } },
+      { path: '/team', id: 'team', label: { ru: 'Команда 888', en: 'Team 888' } },
+      { path: '/hall-of-fame', id: 'hallOfFame', label: { ru: 'Легенды 888', en: 'Legends of 888' } },
+      { path: '/tournament', id: 'tournament', label: { ru: 'Турнир', en: 'Tournament' } },
+    ],
+  },
+  {
     id: 'community',
     icon: '🗺️',
-    label: { ru: 'Сообщество', en: 'Community' },
+    label: { ru: 'Гайды и календарь', en: 'Guides & calendar' },
     items: [
       { path: '/guides', id: 'guides', label: { ru: 'Гайды', en: 'Guides' } },
       { path: '/calendar', id: 'calendar', label: { ru: 'Календарь', en: 'Calendar' } },
-      { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About' } },
+      { path: '/about/build', id: 'aboutBuild', label: { ru: 'Как устроен сайт', en: 'How this site is built' } },
     ],
   },
   {
@@ -219,8 +232,65 @@ export const SEO = {
     description: { ru: 'Недельный цикл событий, дни KvK, армейские и строительные дни.', en: 'Weekly event cycle, KvK days, army and construction days.' },
   },
   '/about': {
-    title: { ru: 'О проекте Хроники Кракена 888', en: 'About Kraken Chronicles 888' },
-    description: { ru: 'Что объединено в этом проекте и откуда взяты данные.', en: 'What this project merges and where its data comes from.' },
+    title: { ru: 'О проекте «Хроники Кракена» — сервер 888', en: 'About Kraken Chronicles — server 888' },
+    description: {
+      ru: 'Хроники Кракена — сообщество сервера 888 в Call of Dragons: история, люди и достижения.',
+      en: 'Kraken Chronicles — the server 888 community in Call of Dragons: history, people and achievements.',
+    },
+    keywords: ['хроники кракена 888', 'сервер 888 call of dragons', 'о проекте'],
+  },
+  '/about/history': {
+    title: { ru: 'История сервера 888 — Хроники Кракена', en: 'History of server 888 — Kraken Chronicles' },
+    description: {
+      ru: 'Как создавался сервер 888 и сообщество «Хроники Кракена»: ключевые этапы и события.',
+      en: 'How server 888 and the Kraken Chronicles community were founded: key milestones and events.',
+    },
+  },
+  '/about/build': {
+    title: { ru: 'Как устроен сайт Хроники Кракена 888', en: 'How the Kraken Chronicles 888 site is built' },
+    description: { ru: 'Что объединено в этом сайте и откуда взяты данные.', en: 'What this site merges and where its data comes from.' },
+  },
+  '/news': {
+    title: { ru: 'Новости — Хроники Кракена 888', en: 'News — Kraken Chronicles 888' },
+    description: {
+      ru: 'Новости проекта «Хроники Кракена» и сервера 888: события, обновления, турниры.',
+      en: 'Kraken Chronicles project and server 888 news: events, updates, tournaments.',
+    },
+  },
+  // Fallback SEO for /news/:slug (a real, indexable page per article — just
+  // not enumerable here as a single static path, so it's excluded from the
+  // sitemap below by key rather than by noindex).
+  '/news/post': {
+    title: { ru: 'Новость — Хроники Кракена 888', en: 'News — Kraken Chronicles 888' },
+    description: { ru: 'Новости проекта «Хроники Кракена» и сервера 888.', en: 'Kraken Chronicles project and server 888 news.' },
+  },
+  '/achievements': {
+    title: { ru: 'Достижения 888 — Хроники Кракена', en: 'Achievements of 888 — Kraken Chronicles' },
+    description: {
+      ru: 'Кубки, победы в сезонах и другие достижения сервера 888 и альянса Кraken Chronicles.',
+      en: 'Trophies, season wins and other achievements of server 888 and the Kraken Chronicles alliance.',
+    },
+  },
+  '/team': {
+    title: { ru: 'Команда 888 — глава и офицеры | Хроники Кракена', en: 'Team 888 — leader and officers | Kraken Chronicles' },
+    description: {
+      ru: 'Действующее руководство сообщества сервера 888: глава, офицеры и контакты.',
+      en: 'The server 888 community\'s current leadership: leader, officers and contacts.',
+    },
+  },
+  '/hall-of-fame': {
+    title: { ru: 'Легенды 888 — исторические участники | Хроники Кракена', en: 'Legends of 888 — hall of fame | Kraken Chronicles' },
+    description: {
+      ru: 'Бывшие участники сервера 888, внёсшие вклад в развитие сообщества.',
+      en: 'Former members of server 888 who shaped the community.',
+    },
+  },
+  '/tournament': {
+    title: { ru: 'Турнир «Хроники Кракена»', en: 'The Kraken Chronicles tournament' },
+    description: {
+      ru: 'Турнир сообщества сервера 888: статус, даты и результаты.',
+      en: 'The server 888 community tournament: status, dates and results.',
+    },
   },
   '/login': { title: { ru: 'Вход и регистрация | Хроники Кракена 888', en: 'Sign in | Kraken Chronicles 888' }, description: { ru: 'Войдите, чтобы сохранять билды питомцев и писать в поддержку.', en: 'Sign in to save pet builds and message support.' }, noindex: true },
   '/profile': { title: { ru: 'Профиль | Хроники Кракена 888', en: 'Profile | Kraken Chronicles 888' }, noindex: true },
@@ -229,7 +299,8 @@ export const SEO = {
 
 /** All public routes, for sitemap.xml. */
 export function publicRoutes() {
-  return Object.keys(SEO).filter((p) => !SEO[p].noindex);
+  // '/news/post' is a fallback SEO key for /news/:slug, not a real path.
+  return Object.keys(SEO).filter((p) => !SEO[p].noindex && p !== '/news/post');
 }
 
 export function findItem(path) {

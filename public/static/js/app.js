@@ -50,6 +50,14 @@ const PAGES = {
   '/guides':             () => import('./pages/guides.js'),
   '/calendar':           () => import('./pages/calendar.js'),
   '/about':              () => import('./pages/about.js'),
+  '/about/history':      () => import('./pages/about-history.js'),
+  '/about/build':        () => import('./pages/about-build.js'),
+  '/news':               () => import('./pages/news.js'),
+  '/news/post':          () => import('./pages/news-post.js'),
+  '/achievements':       () => import('./pages/achievements.js'),
+  '/team':               () => import('./pages/team.js'),
+  '/hall-of-fame':       () => import('./pages/hall-of-fame.js'),
+  '/tournament':         () => import('./pages/tournament.js'),
   '/login':              () => import('./pages/login.js'),
   '/profile':            () => import('./pages/profile.js'),
   '/admin':              () => import('./pages/admin.js'),
@@ -60,6 +68,8 @@ function resolve(pathname) {
   if (PAGES[pathname]) return { key: pathname, params: {} };
   const m = pathname.match(/^\/stats\/(player|alliance)\/([^/]+)$/);
   if (m) return { key: `/stats/${m[1]}`, params: { id: decodeURIComponent(m[2]) } };
+  const n = pathname.match(/^\/news\/([^/]+)$/);
+  if (n) return { key: '/news/post', params: { slug: decodeURIComponent(n[1]) } };
   return { key: null, params: {} };
 }
 
@@ -73,10 +83,20 @@ function buildHeader() {
   navEl = h('nav', { class: 'kc-nav', id: 'kc-nav' });
   headerRightEl = h('div', { class: 'kc-header-right' });
 
+  const setMobileOpen = (open) => {
+    navEl.classList.toggle('is-mobile-open', open);
+    burger.textContent = open ? '✕' : '☰';
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? t('nav.close') : t('nav.menu'));
+  };
   const burger = h('button', {
-    class: 'kc-burger', type: 'button', 'aria-label': t('nav.menu'),
-    onclick: () => navEl.classList.toggle('is-mobile-open'),
+    class: 'kc-burger', type: 'button', 'aria-label': t('nav.menu'), 'aria-expanded': 'false',
+    onclick: () => setMobileOpen(!navEl.classList.contains('is-mobile-open')),
   }, '☰');
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navEl.classList.contains('is-mobile-open')) { setMobileOpen(false); burger.focus(); }
+  });
+  navEl.__close = () => setMobileOpen(false);
 
   const header = h('header', { class: 'kc-header' },
     h('div', { class: 'kc-header-inner' },
@@ -104,6 +124,14 @@ export function navigate(href, { replace = false } = {}) {
   if (replace) history.replaceState({}, '', href);
   else history.pushState({}, '', href);
   render();
+}
+
+/** Smooth-scroll to an in-page anchor once its section has had a chance to mount. */
+function scrollToHash(hash) {
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    const el = hash && document.querySelector(hash);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }));
 }
 
 function renderNav() {
@@ -188,11 +216,14 @@ function buildFooter() {
 /* ------------------------------------------------------------------ render */
 async function render({ force = false } = {}) {
   const pathname = location.pathname;
-  if (!force && pathname === currentPath) return;
+  if (!force && pathname === currentPath) {
+    if (location.hash) scrollToHash(location.hash);
+    return;
+  }
   currentPath = pathname;
 
   navEl?.querySelectorAll('.kc-cat').forEach((c) => c.classList.remove('is-open'));
-  navEl?.classList.remove('is-mobile-open');
+  navEl?.__close?.();
   renderNav();
 
   const { key, params } = resolve(pathname);
@@ -229,7 +260,8 @@ async function render({ force = false } = {}) {
       h('button', { class: 'kc-btn', onclick: () => render({ force: true }) }, t('common.retry')));
   }
 
-  window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
+  if (location.hash) scrollToHash(location.hash);
+  else window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   track(pathname);
 }
 

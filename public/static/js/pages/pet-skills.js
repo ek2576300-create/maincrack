@@ -34,9 +34,12 @@ export async function render(mount, { t, i18n }) {
   const catSel = h('select', { class: 'kc-select', onchange: (e) => { cat = e.target.value; draw(); } },
     h('option', { value: '' }, t('pets.skills.category') + ': ' + t('common.all')),
     ...[...new Set(skills.map((s) => s.category).filter(Boolean))].sort().map((c) => h('option', { value: c }, t('cat.' + c, c))));
+  const petByName = new Map(petData.items.map((p) => [p.name, p]));
+  const petLabel = (name) => (lang === 'ru' && petByName.get(name)?.name_ru) || name;
+
   const petSel = h('select', { class: 'kc-select', onchange: (e) => { pet = e.target.value; draw(); } },
     h('option', { value: '' }, t('pets.skills.exclusive') + ': ' + t('common.all')),
-    ...petData.items.map((p) => h('option', { value: p.name }, p.name)));
+    ...petData.items.map((p) => h('option', { value: p.name }, petLabel(p.name))));
 
   const talentChip = h('button', { class: 'kc-chip', type: 'button', onclick: () => { onlyTalents = !onlyTalents; talentChip.classList.toggle('is-active', onlyTalents); draw(); } }, '⭐ ' + t('pets.skills.onlyTalents'));
   const amberChip = h('button', { class: 'kc-chip', type: 'button', onclick: () => { onlyAmber = !onlyAmber; amberChip.classList.toggle('is-active', onlyAmber); draw(); } }, '🟡 ' + t('pets.skills.onlyAmber'));
@@ -75,7 +78,12 @@ export async function render(mount, { t, i18n }) {
       {
         key: 'petExclusive', label: t('pets.skills.exclusive'),
         render: (s) => (s.petExclusive
-          ? h('span', { style: { color: 'var(--teal-soft)' } }, s.petExclusive)
+          ? h('span', { class: 'kc-iconcell', style: { color: 'var(--teal-soft)' } },
+            petByName.get(s.petExclusive) && h('img', {
+              src: '/static/img/warpets/' + petByName.get(s.petExclusive).portrait, alt: '', loading: 'lazy',
+              style: { width: '18px', height: '18px', borderRadius: '4px' },
+            }),
+            petLabel(s.petExclusive))
           : h('span', { style: { color: 'var(--muted-2)' } }, '—')),
       },
       {

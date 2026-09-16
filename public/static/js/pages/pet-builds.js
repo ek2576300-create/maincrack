@@ -14,13 +14,15 @@ export async function render(mount, { t, i18n, store, navigate, link }) {
   }
 
   const pets = (await getJSON('/data/pets.json')).items;
+  const petByName = new Map(pets.map((p) => [p.name, p]));
+  const petLabel = (name) => (lang === 'ru' && petByName.get(name)?.name_ru) || name;
   const listHost = h('div', {});
   const status = h('div', { class: 'kc-note' });
 
   const titleInput = h('input', { class: 'kc-input', placeholder: t('pets.builds.titleField') });
   const petSelect = h('select', { class: 'kc-select' },
     h('option', { value: '' }, t('pets.builds.petField') + '…'),
-    ...pets.map((p) => h('option', { value: p.name }, p.name)));
+    ...pets.map((p) => h('option', { value: p.name }, petLabel(p.name))));
   const notesInput = h('textarea', { class: 'kc-textarea', placeholder: t('pets.builds.notesField') });
 
   async function load() {
@@ -43,7 +45,7 @@ export async function render(mount, { t, i18n, store, navigate, link }) {
             }),
             h('div', { style: { flex: '1', minWidth: '0' } },
               h('strong', { style: { color: 'var(--gold-soft)' } }, b.title),
-              h('div', { class: 'kc-note', style: { marginTop: '3px' } }, b.pet || '—'))),
+              h('div', { class: 'kc-note', style: { marginTop: '3px' } }, (b.pet && petLabel(b.pet)) || '—'))),
           payload.notes && h('p', { class: 'kc-note', style: { margin: '10px 0 0', whiteSpace: 'pre-wrap', color: 'var(--text-dim)' } }, payload.notes),
           h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', marginTop: '11px' } },
             h('small', { style: { color: 'var(--muted-2)', flex: '1' } }, dateTime(b.created_at, lang)),
