@@ -27,6 +27,7 @@ export function buildGuides({ lang, t, pets, skills }) {
   // A couple of numbers pulled live from the data, so guides stay honest.
   const amber = skills.items.filter((s) => (s.costs || []).every((c) => c > 0 && c <= 12));
   const strongest = sortBy(pets.items, 'total', -1)[0];
+  const strongestName = (lang === 'ru' && strongest.name_ru) || strongest.name;
   const talents = skills.items.filter((s) => s.talent);
 
   return lang === 'ru' ? [
@@ -69,7 +70,7 @@ export function buildGuides({ lang, t, pets, skills }) {
       ],
     },
     {
-      icon: '🔍', title: `Самый «толстый» питомец в базе — ${strongest.name}`,
+      icon: '🔍', title: `Самый «толстый» питомец в базе — ${strongestName}`,
       body: [
         `Сумма максимальных характеристик: ${num(strongest.total, lang)}. Тип урона: ${t('dmg.' + strongest.type)}, род войск: ${t('unit.' + strongest.unit)}.`,
         'Но сумма характеристик — не то же самое, что урон. Питомец с меньшей суммой, но с талантом и навыками под ваш род войск, часто бьёт сильнее. Проверяйте конструктором, а не таблицей.',

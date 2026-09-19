@@ -195,11 +195,11 @@ export async function render(mount, { t, i18n, link }) {
           target: '_blank', rel: 'noopener', 'data-external': '1',
         }, '▶ ' + t('videos.subscribe'))),
       h('div', { class: 'kc-panel-body' },
-        h('div', { class: 'kc-grid c4' },
-          statTile(t('videos.stat.videos'), num(ch.videoCount || all.length, lang)),
-          statTile(t('videos.stat.views'), totalViews ? compact(ch.viewCount || totalViews, lang) : '—'),
-          statTile(t('videos.stat.subs'), ch.subscribers != null ? compact(ch.subscribers, lang) : '—'),
-          statTile(t('videos.stat.latest'), all[0]?.published ? dateTime(all[0].published, lang) : '—')),
+        h('div', { class: 'kc-statrow is-4' },
+          statCell(t('videos.stat.videos'), num(ch.videoCount || all.length, lang)),
+          statCell(t('videos.stat.views'), totalViews ? compact(ch.viewCount || totalViews, lang) : '—'),
+          statCell(t('videos.stat.subs'), ch.subscribers != null ? compact(ch.subscribers, lang) : '—'),
+          statCell(t('videos.stat.latest'), all[0]?.published ? dateTime(all[0].published, lang) : '—')),
         h('div', { class: 'kc-toolbar', style: { marginTop: '14px' } }, search, sort),
         chips,
         h('div', { style: { marginTop: '12px' } }, countEl))),
@@ -211,10 +211,10 @@ export async function render(mount, { t, i18n, link }) {
   draw();
 }
 
-function statTile(label, value) {
-  return h('div', { class: 'kc-tile' },
-    h('div', { class: 'kc-tile-label' }, label),
-    h('div', { class: 'kc-tile-value' + (String(value).length > 12 ? ' sm' : '') }, value));
+function statCell(label, value) {
+  return h('div', {},
+    h('div', { class: 'v' + (String(value).length > 12 ? ' sm' : '') }, value),
+    h('div', { class: 'k' }, label));
 }
 
 /** Честная подпись: откуда взялся список и почему он может быть неполным. */

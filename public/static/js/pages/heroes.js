@@ -45,12 +45,12 @@ export async function render(mount, { t, i18n }) {
         style: {
           width: '42px', height: '42px', flexShrink: '0', display: 'grid', placeItems: 'center',
           border: `1px solid ${color}55`, borderRadius: '10px',
-          background: 'linear-gradient(180deg, rgba(12,46,52,.8), rgba(4,23,28,.8))',
-          color, font: '800 17px Georgia, serif',
+          background: 'var(--surface-2)',
+          color, font: '600 16px var(--sans)',
         },
       }, hero.name.slice(0, 2)),
       h('div', { style: { flex: '1', minWidth: '0' } },
-        h('div', { style: { fontWeight: '800', color: 'var(--text)', fontSize: '15px' } }, hero.name),
+        h('div', { style: { fontWeight: '600', color: 'var(--text)', fontSize: '15px' } }, hero.name),
         h('div', { class: 'kc-note', style: { marginTop: '2px' } }, hero.title)),
       h('span', { style: { fontSize: '12px', color: 'var(--muted)', flexShrink: '0' } }, open ? '▲' : '▼'));
 
@@ -63,7 +63,7 @@ export async function render(mount, { t, i18n }) {
     const skills = open && h('div', { style: { marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '9px' } },
       ...hero.skills.map((s) => h('div', {
         style: {
-          padding: '10px 12px', border: '1px solid rgba(216,180,93,.18)', borderRadius: '10px',
+          padding: '11px 13px', border: '1px solid var(--line)', borderRadius: '9px',
           background: 'rgba(4,24,28,.5)',
         },
       },

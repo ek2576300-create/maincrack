@@ -26,12 +26,12 @@ export function render(mount, { t, i18n }) {
           const isToday = i === todayIdx;
           return h('div', {
             class: 'kc-card',
-            style: isToday ? { borderColor: 'var(--gold)', boxShadow: '0 0 0 1px rgba(216,180,93,.25), 0 12px 30px rgba(0,0,0,.3)' } : undefined,
+            style: isToday ? { borderColor: 'var(--accent)' } : undefined,
           },
             h('div', { style: { display: 'flex', alignItems: 'center', gap: '9px' } },
               h('span', { style: { fontSize: '20px' } }, d.icon),
               h('div', { style: { flex: '1' } },
-                h('div', { style: { fontWeight: '800', color: isToday ? 'var(--gold-soft)' : 'var(--text)' } }, d.day[lang]),
+                h('div', { style: { fontWeight: '600', color: isToday ? 'var(--accent)' : 'var(--text)' } }, d.day[lang]),
                 h('small', { style: { color: 'var(--muted)' } }, d.event[lang])),
               isToday && h('span', { class: 'kc-badge is-gold' }, t('calendar.today'))),
             h('p', { class: 'kc-note', style: { margin: '10px 0 0', color: 'var(--text-dim)' } },

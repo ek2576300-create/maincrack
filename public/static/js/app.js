@@ -102,7 +102,12 @@ function buildHeader() {
   const header = h('header', { class: 'kc-header' },
     h('div', { class: 'kc-header-inner' },
       h('a', { class: 'kc-brand', href: '/', onclick: linkHandler('/') },
-        h('div', { class: 'kc-brand-mark' }, '⚓'),
+        h('div', {
+          class: 'kc-brand-mark', 'aria-hidden': 'true',
+          html: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">'
+            + '<circle cx="12" cy="4.2" r="2"/><path d="M12 6.4V21"/><path d="M8 9.4h8"/>'
+            + '<path d="M4.5 14.2c0 4 3.4 6.8 7.5 6.8s7.5-2.8 7.5-6.8"/></svg>',
+        }),
         h('div', { class: 'kc-brand-text' },
           h('div', { class: 'kc-brand-name', id: 'kc-brand-name' }, SITE.name[i18n.lang]),
           h('div', { class: 'kc-brand-sub', id: 'kc-brand-sub' }, SITE.short[i18n.lang]))),
@@ -182,7 +187,7 @@ function renderHeaderRight() {
       h('span', { class: 'kc-dot' }),
       h('span', { style: { overflow: 'hidden', textOverflow: 'ellipsis' } }, store.user.name),
       store.user.role === 'admin' && h('span', { class: 'kc-badge-admin' }, 'ADM'))
-    : h('button', { class: 'kc-userchip', type: 'button', onclick: () => navigate('/login') }, '👤 ' + t('nav.signIn'));
+    : h('button', { class: 'kc-userchip', type: 'button', onclick: () => navigate('/login') }, t('nav.signIn'));
 
   headerRightEl.append(lang, account);
 }

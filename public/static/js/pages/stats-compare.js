@@ -81,15 +81,15 @@ export async function render(mount, { t, i18n }) {
       const max = Math.max(x, y, 1);
       const fmt = (v) => (v > 1e5 ? compact(v, lang) : num(v, lang));
       const diff = x - y;
-      return h('div', { style: { padding: '11px 0', borderBottom: '1px solid rgba(216,180,93,.11)' } },
+      return h('div', { style: { padding: '11px 0', borderBottom: '1px solid var(--line)' } },
         h('div', { style: { display: 'flex', alignItems: 'center', gap: '10px', fontSize: '12px' } },
-          h('div', { style: { width: '90px', textAlign: 'right', fontWeight: '800', color: x >= y ? 'var(--gold-soft)' : 'var(--text-dim)' } }, fmt(x)),
+          h('div', { style: { width: '90px', textAlign: 'right', fontWeight: '600', color: x >= y ? 'var(--accent)' : 'var(--muted)' } }, fmt(x)),
           h('div', { style: { flex: '1', display: 'flex', gap: '4px', alignItems: 'center' } },
             h('div', { class: 'kc-bar', style: { flex: '1', transform: 'scaleX(-1)' } },
               h('span', { style: { width: `${(x / max) * 100}%` } })),
             h('div', { class: 'kc-bar', style: { flex: '1' } },
               h('span', { style: { width: `${(y / max) * 100}%` } }))),
-          h('div', { style: { width: '90px', fontWeight: '800', color: y >= x ? 'var(--gold-soft)' : 'var(--text-dim)' } }, fmt(y))),
+          h('div', { style: { width: '90px', fontWeight: '600', color: y >= x ? 'var(--accent)' : 'var(--muted)' } }, fmt(y))),
         h('div', { style: { textAlign: 'center', marginTop: '5px', fontSize: '11px', color: 'var(--muted)' } },
           t(mt.labelKey), diff !== 0 ? ` · ${t('stats.compare.diff')} ${diff > 0 ? '←' : '→'} ${fmt(Math.abs(diff))}` : ''));
     });
@@ -98,7 +98,7 @@ export async function render(mount, { t, i18n }) {
 
     function side(name, sub, align) {
       return h('div', { style: { textAlign: align === 'left' ? 'left' : 'right' } },
-        h('div', { style: { fontWeight: '800', fontSize: '15px', color: 'var(--gold-soft)' } }, name),
+        h('div', { style: { fontWeight: '600', fontSize: '15px', color: 'var(--text)' } }, name),
         h('small', { style: { color: 'var(--muted)' } }, sub));
     }
   }

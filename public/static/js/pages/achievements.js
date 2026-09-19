@@ -25,6 +25,6 @@ export function achievementCard(a, lang) {
     h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap', marginBottom: '6px' } },
       a.season && h('span', { class: 'kc-badge is-gold' }, a.season)),
     h('h3', { style: { margin: '0 0 4px' } }, a.title?.[lang] || ''),
-    a.result?.[lang] && h('div', { style: { color: 'var(--gold-soft)', fontWeight: '800', fontSize: '13px', marginBottom: '6px' } }, a.result[lang]),
+    a.result?.[lang] && h('div', { style: { color: 'var(--accent)', fontWeight: '500', fontSize: '13px', marginBottom: '6px' } }, a.result[lang]),
     a.description?.[lang] && h('p', { class: 'kc-note', style: { margin: '0' } }, a.description[lang]));
 }
