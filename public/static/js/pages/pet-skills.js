@@ -1,4 +1,4 @@
-import { h, clear, getJSON, dataTable, sortBy, num, empty, debounce } from '../util.js';
+import { h, clear, getJSON, dataTable, sortBy, num, empty, debounce, counted } from '../util.js';
 
 /**
  * Amber-priced skills are marked in the source data by a very small cost array
@@ -78,7 +78,7 @@ export async function render(mount, { t, i18n }) {
       {
         key: 'petExclusive', label: t('pets.skills.exclusive'),
         render: (s) => (s.petExclusive
-          ? h('span', { class: 'kc-iconcell', style: { color: 'var(--teal-soft)' } },
+          ? h('span', { class: 'kc-iconcell', style: { color: 'var(--info)' } },
             petByName.get(s.petExclusive) && h('img', {
               src: '/static/img/warpets/' + petByName.get(s.petExclusive).portrait, alt: '', loading: 'lazy',
               style: { width: '18px', height: '18px', borderRadius: '4px' },
@@ -109,7 +109,7 @@ export async function render(mount, { t, i18n }) {
 
     clear(foot);
     foot.append(
-      `${t('common.showing')} ${rows.length} ${t('common.of')} ${skills.length}. `,
+      counted(rows.length, skills.length, t, lang) + '. ',
       lang === 'ru'
         ? 'Навыки со стоимостью до 12 оплачиваются янтарём — конструктор всегда ставит им 4 уровень и не тратит на них бюджет пет-коинов. Advanced/Intense навыки требуют базовый навык из колонки «Требует».'
         : 'Skills costing 12 or less are paid in amber — the builder always runs them at Lv.4 and they never consume the pet-coin budget. Advanced/Intense skills require the base skill shown in "Requires".');

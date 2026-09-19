@@ -28,5 +28,5 @@ export function newsCard(n, lang, t, link) {
       h('small', { style: { color: 'var(--muted)' } }, dateTime(n.date, lang))),
     h('h3', { style: { margin: '0 0 6px' } }, n.title?.[lang] || ''),
     h('p', { class: 'kc-note', style: { margin: '0' } }, n.excerpt?.[lang] || ''),
-    h('div', { style: { marginTop: '10px', color: 'var(--gold-soft)', fontWeight: '700', fontSize: '12px' } }, t('news.readMore') + ' →'));
+    h('div', { style: { marginTop: '12px', color: 'var(--muted)', fontSize: '12px' } }, t('news.readMore') + ' →'));
 }

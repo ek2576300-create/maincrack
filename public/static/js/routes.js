@@ -87,6 +87,7 @@ export const NAV = [
     items: [
       { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About' } },
       { path: '/news', id: 'news', label: { ru: 'Новости', en: 'News' } },
+      { path: '/videos', id: 'videos', label: { ru: 'Видео канала', en: 'Channel videos' } },
       { path: '/achievements', id: 'achievements', label: { ru: 'Достижения', en: 'Achievements' } },
       { path: '/team', id: 'team', label: { ru: 'Команда 888', en: 'Team 888' } },
       { path: '/hall-of-fame', id: 'hallOfFame', label: { ru: 'Легенды 888', en: 'Legends of 888' } },
@@ -263,6 +264,14 @@ export const SEO = {
   '/news/post': {
     title: { ru: 'Новость — Хроники Кракена 888', en: 'News — Kraken Chronicles 888' },
     description: { ru: 'Новости проекта «Хроники Кракена» и сервера 888.', en: 'Kraken Chronicles project and server 888 news.' },
+  },
+  '/videos': {
+    title: { ru: 'Видео канала «Хроники Кракена» — все ролики | Кракен 888', en: 'Kraken Chronicles videos — full feed | Kraken 888' },
+    description: {
+      ru: 'Лента YouTube-канала «Хроники Кракена»: все видео о Call of Dragons и сервере 888 — поиск, фильтры и просмотр прямо на сайте.',
+      en: 'The Kraken Chronicles YouTube feed: every Call of Dragons and server 888 video — search, filters and in-page playback.',
+    },
+    keywords: ['хроники кракена видео', 'kraken chronicles youtube', 'call of dragons видео', 'гайды call of dragons видео'],
   },
   '/achievements': {
     title: { ru: 'Достижения 888 — Хроники Кракена', en: 'Achievements of 888 — Kraken Chronicles' },

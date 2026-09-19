@@ -1,17 +1,37 @@
-import { h, clear, getJSON, sortBy, num } from '../util.js';
+import { h, getJSON, sortBy, num } from '../util.js';
 
 export async function render(mount, { t, i18n, link }) {
   const lang = i18n.lang;
   const [pets, skills] = await Promise.all([getJSON('/data/pets.json'), getJSON('/data/pet-skills.json')]);
 
+  const GUIDES = buildGuides({ lang, t, pets, skills });
+
+  mount.append(
+    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('guides.title')),
+    h('section', { class: 'kc-panel' },
+      h('div', { class: 'kc-panel-head' },
+        h('div', {}, h('h2', {}, t('guides.title')), h('p', {}, t('guides.desc'))),
+        h('a', { class: 'kc-btn sm is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, t('pets.builder.title'))),
+      h('div', { class: 'kc-panel-body' },
+        h('div', { class: 'kc-grid auto-lg' }, ...GUIDES.map((g) => h('article', { class: 'kc-card' },
+          h('h3', { style: { margin: '0 0 12px', fontSize: '15px' } }, g.title),
+          ...g.body.map((p) => h('p', { class: 'kc-note', style: { margin: '0 0 10px' } }, p))))))));
+}
+
+/**
+ * Тексты гайдов. Вынесено из render(), чтобы главная могла показать
+ * те же заголовки в блоке-анонсе и они не разъезжались с /guides.
+ */
+export function buildGuides({ lang, t, pets, skills }) {
   // A couple of numbers pulled live from the data, so guides stay honest.
   const amber = skills.items.filter((s) => (s.costs || []).every((c) => c > 0 && c <= 12));
   const strongest = sortBy(pets.items, 'total', -1)[0];
+  const strongestName = (lang === 'ru' && strongest.name_ru) || strongest.name;
   const talents = skills.items.filter((s) => s.talent);
 
-  const GUIDES = lang === 'ru' ? [
+  return lang === 'ru' ? [
     {
-      icon: '🐉', title: 'Как собрать питомца под максимальный урон',
+      title: 'Как собрать питомца под максимальный урон',
       body: [
         'Первый слот навыка — врождённый талант выбранного питомца. Он закреплён, конструктор его не убирает и не заменяет: при 8 слотах перебираются оставшиеся 7.',
         `В базе ${talents.length} врождённых талантов — по одному на питомца, поэтому выбор питомца сразу задаёт один навык из билда.`,
@@ -21,7 +41,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '🪙', title: 'Куда девать пет-коины и янтарь',
+      title: 'Куда девать пет-коины и янтарь',
       body: [
         `${amber.length} навыков из ${skills.count} оплачиваются янтарём, а не пет-коинами. Конструктор всегда ставит им 4 уровень и не списывает за них бюджет.`,
         'Кнопка «ЛУЧШЕЕ ЗА ВАШУ СУММУ» ищет лучший полный билд, укладывающийся в заданный бюджет пет-коинов, и может выставлять разный уровень каждому навыку — в отличие от BEST BUILD, который ставит всем один уровень.',
@@ -30,7 +50,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '⚔️', title: 'Пресеты боя: какой когда',
+      title: 'Пресеты боя: какой когда',
       body: [
         'DUEL (1 цель, 1 атакующий) — соло-размен. Здесь выигрывают навыки чистого одиночного урона.',
         'FIELD CLASH (3 цели, 2 атакующих) — обычный полевой бой. Универсальный дефолт.',
@@ -40,7 +60,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '📊', title: 'Как читать статистику сервера',
+      title: 'Как читать статистику сервера',
       body: [
         'Сила (power) — самая грубая метрика: она растёт и от войск, и от построек, и от исследований. Для оценки боевой готовности смотрите её вместе с уровнем ратуши.',
         'Очки сценариев показывают, кто реально ходит в события, а не просто фармит.',
@@ -49,7 +69,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '🔍', title: `Самый «толстый» питомец в базе — ${strongest.name}`,
+      title: `Самый «толстый» питомец в базе — ${strongestName}`,
       body: [
         `Сумма максимальных характеристик: ${num(strongest.total, lang)}. Тип урона: ${t('dmg.' + strongest.type)}, род войск: ${t('unit.' + strongest.unit)}.`,
         'Но сумма характеристик — не то же самое, что урон. Питомец с меньшей суммой, но с талантом и навыками под ваш род войск, часто бьёт сильнее. Проверяйте конструктором, а не таблицей.',
@@ -57,7 +77,7 @@ export async function render(mount, { t, i18n, link }) {
     },
   ] : [
     {
-      icon: '🐉', title: 'Building a war pet for maximum damage',
+      title: 'Building a war pet for maximum damage',
       body: [
         'The first skill slot is the pet\'s innate talent. It is locked — the builder never removes or replaces it, so with 8 slots the search covers the remaining 7.',
         `The database holds ${talents.length} innate talents, one per pet, so picking the pet already fixes one skill in the build.`,
@@ -67,7 +87,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '🪙', title: 'Where pet coins and amber go',
+      title: 'Where pet coins and amber go',
       body: [
         `${amber.length} of the ${skills.count} skills are paid in amber rather than pet coins. The builder always runs those at Lv.4 and never charges them to the budget.`,
         '"BEST FOR YOUR AMOUNT" finds the best complete build that fits a given pet-coin budget and may assign a different level to each skill — unlike BEST BUILD, which puts every skill at the same level.',
@@ -76,7 +96,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '⚔️', title: 'Combat presets: which one when',
+      title: 'Combat presets: which one when',
       body: [
         'DUEL (1 target, 1 attacker) — a solo trade. Pure single-target damage wins here.',
         'FIELD CLASH (3 targets, 2 attackers) — an ordinary field fight. The sensible default.',
@@ -86,7 +106,7 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '📊', title: 'Reading the server analytics',
+      title: 'Reading the server analytics',
       body: [
         'Power is the bluntest metric: troops, buildings and research all feed it. Read it next to the town centre level to judge actual combat readiness.',
         'Scenario points show who actually turns up to events instead of only farming.',
@@ -95,23 +115,11 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
     {
-      icon: '🔍', title: `The beefiest pet in the database — ${strongest.name}`,
+      title: `The beefiest pet in the database — ${strongest.name}`,
       body: [
         `Sum of maximum stats: ${num(strongest.total, lang)}. Damage type: ${t('dmg.' + strongest.type)}, unit class: ${t('unit.' + strongest.unit)}.`,
         'But a stat total is not damage. A pet with a smaller total, whose talent and skills match your unit class, often hits harder. Check it in the builder, not in the table.',
       ],
     },
   ];
-
-  mount.append(
-    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('guides.title')),
-    h('section', { class: 'kc-panel' },
-      h('div', { class: 'kc-panel-head' },
-        h('div', {}, h('h2', {}, t('guides.title')), h('p', {}, t('guides.desc'))),
-        h('a', { class: 'kc-btn sm is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, '🐉 ' + t('pets.builder.title'))),
-      h('div', { class: 'kc-panel-body' },
-        h('div', { class: 'kc-grid auto-lg' }, ...GUIDES.map((g) => h('article', { class: 'kc-card' },
-          h('div', { style: { fontSize: '22px', marginBottom: '8px' } }, g.icon),
-          h('h3', { style: { margin: '0 0 10px' } }, g.title),
-          ...g.body.map((p) => h('p', { class: 'kc-note', style: { margin: '0 0 9px', color: 'var(--text-dim)', lineHeight: '1.6' } }, p))))))));
 }

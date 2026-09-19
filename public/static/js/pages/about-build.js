@@ -8,6 +8,10 @@ export async function render(mount, { t, i18n, link }) {
     getJSON('/data/heroes.json'), getJSON('/data/webdata/manifest.json'),
   ]);
 
+  // Серверов в выгрузке под три сотни — печатаем диапазон, а не список.
+  const serverIds = m.servers.map((x) => Number(x.serverId)).filter(Number.isFinite).sort((a, b) => a - b);
+  const serverRange = [serverIds[0] ?? '—', serverIds[serverIds.length - 1] ?? '—'];
+
   const SOURCES = [
     {
       name: 'coddb.app / warpets',
@@ -32,8 +36,8 @@ export async function render(mount, { t, i18n, link }) {
       role: { ru: 'Статистика игроков, альянсов и серверов', en: 'Player, alliance and server analytics' },
       status: 'ok',
       detail: {
-        ru: `Полноценное React-приложение с готовой выгрузкой webdata: ${num(m.totals.players, lang)} игроков, ${num(m.totals.alliances, lang)} альянсов на серверах ${m.servers.map((s) => s.serverId).join(' и ')}, плюс достижения по игрокам. Данные перенесены целиком, интерфейс переписан под дизайн конструктора.`,
-        en: `A full React app with a ready webdata export: ${num(m.totals.players, lang)} players and ${num(m.totals.alliances, lang)} alliances on servers ${m.servers.map((s) => s.serverId).join(' and ')}, plus per-player achievements. The data was carried over whole; the interface was rewritten to match the builder's design.`,
+        ru: `Полноценное React-приложение с готовой выгрузкой webdata: ${num(m.totals.players, lang)} игроков, ${num(m.totals.alliances, lang)} альянсов на ${num(m.servers.length, lang)} серверах (от ${serverRange[0]} до ${serverRange[1]}), плюс достижения по игрокам. Данные перенесены целиком, интерфейс переписан под дизайн конструктора.`,
+        en: `A full React app with a ready webdata export: ${num(m.totals.players, lang)} players and ${num(m.totals.alliances, lang)} alliances across ${num(m.servers.length, lang)} servers (${serverRange[0]} to ${serverRange[1]}), plus per-player achievements. The data was carried over whole; the interface was rewritten to match the builder's design.`,
       },
     },
     {
@@ -61,14 +65,14 @@ export async function render(mount, { t, i18n, link }) {
       h('div', { class: 'kc-panel-body' },
         h('p', { class: 'kc-prose', style: { color: 'var(--text-dim)' } },
           lang === 'ru'
-            ? 'Этот сайт — объединение четырёх источников в один. За основу дизайна и логики взят конструктор питомцев (Kraken-стиль из optimizer.js v6): его палитра, панели, баннер и элементы управления распространены на все вкладки.'
-            : 'This site merges four sources into one. The design and logic base is the War Pet Builder (the Kraken style from optimizer.js v6): its palette, panels, banner and controls carry across every tab.'),
+            ? 'Этот сайт — объединение четырёх источников в один. Логика взята из конструктора питомцев (optimizer.js v6) и перенесена без изменений, а оформление всех вкладок переведено на общую минималистичную тему: одна тёмная шкала поверхностей, один акцентный цвет, тонкие границы, без градиентов и декоративных теней.'
+            : 'This site merges four sources into one. The logic comes from the War Pet Builder (optimizer.js v6) and is carried over untouched, while every tab was restyled onto one minimalist theme: a single dark surface scale, one accent colour, hairline borders, no gradients or decorative shadows.'),
         h('div', { class: 'kc-grid auto-lg', style: { marginTop: '14px' } },
           ...SOURCES.map((s) => h('div', { class: 'kc-card' },
             h('div', { style: { display: 'flex', alignItems: 'center', gap: '9px', flexWrap: 'wrap' } },
-              h('strong', { style: { color: 'var(--gold-soft)', fontSize: '14px' } }, s.name), badge(s.status)),
-            h('div', { class: 'kc-note', style: { marginTop: '4px', fontWeight: '600', color: 'var(--teal-dim)' } }, s.role[lang]),
-            h('p', { class: 'kc-note', style: { margin: '9px 0 0', color: 'var(--text-dim)', lineHeight: '1.6' } }, s.detail[lang])))))),
+              h('strong', { style: { fontSize: '14px' } }, s.name), badge(s.status)),
+            h('div', { class: 'kc-note', style: { marginTop: '5px', color: 'var(--text-dim)' } }, s.role[lang]),
+            h('p', { class: 'kc-note', style: { margin: '10px 0 0' } }, s.detail[lang])))))),
 
     h('section', { class: 'kc-panel' },
       h('div', { class: 'kc-panel-head' },
@@ -100,5 +104,5 @@ export async function render(mount, { t, i18n, link }) {
 
     h('section', { class: 'kc-panel' },
       h('div', { class: 'kc-panel-body', style: { textAlign: 'center' } },
-        h('a', { class: 'kc-btn is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, '🐉 ' + t('home.cta')))));
+        h('a', { class: 'kc-btn is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, t('home.cta')))));
 }

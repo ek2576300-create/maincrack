@@ -1,4 +1,4 @@
-import { h, clear, api, num, dateTime, timeShort, empty, loading, dataTable, debounce } from '../util.js';
+import { h, clear, api, num, dateTime, timeShort, empty, loading, dataTable, debounce, counted } from '../util.js';
 
 export function render(mount, ctx) {
   const { t, store, link } = ctx;
@@ -42,7 +42,7 @@ export function render(mount, ctx) {
     h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('admin.title')),
     h('section', { class: 'kc-panel' },
       h('div', { class: 'kc-panel-head' },
-        h('div', {}, h('h2', {}, '🛡 ' + t('admin.title')), h('p', {}, store.user.email)),
+        h('div', {}, h('h2', {}, t('admin.title')), h('p', {}, store.user.email)),
         h('button', { class: 'kc-btn sm', type: 'button', onclick: () => draw() }, '⟳')),
       h('div', { class: 'kc-panel-body', style: { paddingBottom: '0' } }, tabsHost)),
     body);
@@ -160,7 +160,7 @@ async function users(host, { t, i18n, store }) {
           u.id !== store.user.id && h('button', {
             class: 'kc-btn sm', type: 'button', title: u.role === 'admin' ? t('admin.user.makeUser') : t('admin.user.makeAdmin'),
             onclick: async (e) => { e.stopPropagation(); await api('/admin/user', { method: 'PATCH', body: { id: u.id, role: u.role === 'admin' ? 'user' : 'admin' } }); load(); },
-          }, u.role === 'admin' ? '↓' : '🛡'),
+          }, u.role === 'admin' ? '↓' : '↑'),
           u.id !== store.user.id && h('button', {
             class: 'kc-btn sm', type: 'button', title: u.status === 'blocked' ? t('admin.user.unblock') : t('admin.user.block'),
             onclick: async (e) => { e.stopPropagation(); await api('/admin/user', { method: 'PATCH', body: { id: u.id, status: u.status === 'blocked' ? 'active' : 'blocked' } }); load(); },
@@ -178,7 +178,7 @@ async function users(host, { t, i18n, store }) {
     ], { lang, minWidth: '900px' }));
 
     clear(foot);
-    foot.append(`${t('common.showing')} ${d.items.length} ${t('common.of')} ${d.total}.`);
+    foot.append(counted(d.items.length, d.total, t, lang) + '.');
   }
 
   await load();

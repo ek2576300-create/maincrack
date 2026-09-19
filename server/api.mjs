@@ -1,6 +1,7 @@
 // REST API — /api/v1/*
 import { Users, Sessions, Threads, Messages, Visits, db, now } from './db.mjs';
 import { hashPassword, verifyPassword, newToken, newGuestId, identify, isAdmin, cookie, clearCookie } from './auth.mjs';
+import { getVideos } from './youtube.mjs';
 
 const MAX_BODY = 64 * 1024;
 
@@ -74,6 +75,15 @@ export async function handleApi(req, res, url, ctx) {
   if (method === 'POST' || method === 'PATCH' || method === 'DELETE') {
     try { body = await readJson(req); }
     catch (e) { return bad(e.message); }
+  }
+
+  /* ------------------------------------------------------- public content */
+  // Лента YouTube-канала: RSS + curated public/data/site/videos.json.
+  // Публичный GET — им пользуются главная и /videos.
+  if (p === '/youtube/videos' && method === 'GET') {
+    if (!rateLimit('yt:' + ip, 120, 60_000)) return bad('too_many_requests', 429);
+    const data = await getVideos({ force: url.searchParams.get('force') === '1' && isAdmin(user) });
+    return json(200, data);
   }
 
   /* ---------------------------------------------------------------- auth */

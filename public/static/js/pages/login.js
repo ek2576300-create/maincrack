@@ -66,5 +66,5 @@ export function render(mount, { t, i18n, store, navigate }) {
         h('div', { class: 'kc-panel-body' },
           formHost,
           h('p', { class: 'kc-note', style: { marginTop: '14px' } }, t('auth.hint')),
-          h('p', { class: 'kc-note', style: { marginTop: '6px', color: 'var(--gold-dim)' } }, t('auth.firstAdmin'))))));
+          h('p', { class: 'kc-note', style: { marginTop: '6px', color: 'var(--muted)' } }, t('auth.firstAdmin'))))));
 }
