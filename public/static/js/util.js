@@ -65,6 +65,13 @@ export function dateTime(iso, lang = 'ru') {
   return d.toLocaleString(lang === 'ru' ? 'ru-RU' : 'en-US', { year: 'numeric', month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' });
 }
 
+/**
+ * «Показано 24 из 312» — одна подпись под всеми списками и таблицами,
+ * чтобы счётчики не расходились по формату и по языку.
+ */
+export const counted = (shown, total, t, lang = 'ru') =>
+  `${t('common.showing')} ${num(shown, lang)} ${t('common.of')} ${num(total, lang)}`;
+
 export function timeShort(iso, lang = 'ru') {
   if (!iso) return '';
   const d = new Date(iso);

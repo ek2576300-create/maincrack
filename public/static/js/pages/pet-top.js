@@ -1,4 +1,4 @@
-import { h, clear, getJSON, dataTable, sortBy, num, panel, empty, debounce } from '../util.js';
+import { h, clear, getJSON, dataTable, sortBy, num, panel, empty, debounce, counted } from '../util.js';
 
 const ATTRS = ['Strength', 'Agility', 'Intelligence', 'Endurance', 'Spirit', 'Luck'];
 
@@ -92,7 +92,7 @@ export async function render(mount, { t, i18n, navigate }) {
       : empty(t('common.nothing'), t('common.nothingHint')));
 
     clear(foot);
-    foot.append(`${t('common.showing')} ${rows.length} ${t('common.of')} ${pets.length} · ${t('pets.skills.title')}: `,
+    foot.append(counted(rows.length, pets.length, t, lang) + ` · ${t('pets.skills.title')}: `,
       h('a', { href: '/pets/skills' }, t('pets.skills.title')),
       ' · ', h('a', { href: '/pets/builder' }, t('pets.builder.title')));
   }

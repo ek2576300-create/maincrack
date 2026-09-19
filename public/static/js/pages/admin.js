@@ -1,4 +1,4 @@
-import { h, clear, api, num, dateTime, timeShort, empty, loading, dataTable, debounce } from '../util.js';
+import { h, clear, api, num, dateTime, timeShort, empty, loading, dataTable, debounce, counted } from '../util.js';
 
 export function render(mount, ctx) {
   const { t, store, link } = ctx;
@@ -178,7 +178,7 @@ async function users(host, { t, i18n, store }) {
     ], { lang, minWidth: '900px' }));
 
     clear(foot);
-    foot.append(`${t('common.showing')} ${d.items.length} ${t('common.of')} ${d.total}.`);
+    foot.append(counted(d.items.length, d.total, t, lang) + '.');
   }
 
   await load();

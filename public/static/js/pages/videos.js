@@ -3,7 +3,7 @@
  * Данные — /api/v1/youtube/videos (RSS канала + curated videos.json).
  * Если API недоступен (статический хостинг), берём файл напрямую.
  */
-import { h, clear, getJSON, api, num, compact, dateTime, empty, debounce } from '../util.js';
+import { h, clear, getJSON, api, num, compact, dateTime, empty, debounce, counted } from '../util.js';
 
 const CHANNEL_URL = 'https://www.youtube.com/@Kraken_Chronicles';
 const PAGE = 24;
@@ -141,7 +141,7 @@ export async function render(mount, { t, i18n, link }) {
     }
     const page = rows.slice(0, state.shown);
     listEl.append(...page.map((v) => videoCard(v, lang, t)));
-    countEl.textContent = `${t('common.showing')} ${num(page.length, lang)} ${t('common.of')} ${num(rows.length, lang)}`;
+    countEl.textContent = counted(page.length, rows.length, t, lang);
     if (page.length < rows.length) {
       moreWrap.append(h('button', {
         class: 'kc-btn', type: 'button',

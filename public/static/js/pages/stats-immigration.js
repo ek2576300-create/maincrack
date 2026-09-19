@@ -1,4 +1,4 @@
-import { h, clear, dataTable, sortBy, num, compact, empty, debounce, loading } from '../util.js';
+import { h, clear, dataTable, sortBy, num, compact, empty, debounce, loading, counted } from '../util.js';
 import { manifest, serverImmigration, serverSelect, nameCell } from './stats-common.js';
 
 export async function render(mount, { t, i18n, navigate }) {
@@ -58,7 +58,7 @@ export async function render(mount, { t, i18n, navigate }) {
       onRow: (p) => navigate(`/stats/player/${p.playerId}`),
     }));
     clear(foot);
-    foot.append(`${t('common.showing')} ${rows.length} ${t('common.of')} ${total}.`);
+    foot.append(counted(rows.length, total, t, lang) + '.');
   }
 
   mount.append(

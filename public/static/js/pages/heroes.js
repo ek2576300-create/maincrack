@@ -1,4 +1,4 @@
-import { h, clear, getJSON, empty, debounce, num } from '../util.js';
+import { h, clear, getJSON, empty, debounce, num, counted } from '../util.js';
 
 const QUALITY_COLOR = { legendary: '#f0c96a', epic: '#b48ce0', rare: '#6fb4e8' };
 
@@ -92,7 +92,7 @@ export async function render(mount, { t, i18n }) {
       : empty(t('common.nothing'), t('common.nothingHint')));
 
     clear(foot);
-    foot.append(`${t('common.showing')} ${rows.length} ${t('common.of')} ${heroes.length}. `,
+    foot.append(counted(rows.length, heroes.length, t, lang) + '. ',
       lang === 'ru' ? 'Источник: api/heroes.json из зеркала coddb.app.' : 'Source: api/heroes.json from the coddb.app mirror.');
   }
 
