@@ -140,12 +140,12 @@ function toolsSection(pets, skills, heroes, manifest, lang, t, link) {
   return section('tools', t('home.tools.title'), t('home.tools.desc'),
     h('a', { class: 'kc-btn sm', href: '/pets/builder', onclick: link('/pets/builder') }, t('home.tools.all')),
     h('div', { class: 'kc-grid c3', style: { marginBottom: '16px' } },
-      tile(t, num(pets.count, lang), t('home.stat.pets')),
-      tile(t, num(skills.count, lang), t('home.stat.skills')),
-      tile(t, num(heroes.count, lang), t('home.stat.heroes')),
-      tile(t, num(manifest.totals.players, lang), t('home.stat.players')),
-      tile(t, num(manifest.totals.alliances, lang), t('home.stat.alliances')),
-      tile(t, compact(manifest.totals.totalPower, lang), t('home.stat.power'))),
+      tile(t('home.stat.pets'), num(pets.count, lang)),
+      tile(t('home.stat.skills'), num(skills.count, lang)),
+      tile(t('home.stat.heroes'), num(heroes.count, lang)),
+      tile(t('home.stat.players'), num(manifest.totals.players, lang)),
+      tile(t('home.stat.alliances'), num(manifest.totals.alliances, lang)),
+      tile(t('home.stat.power'), compact(manifest.totals.totalPower, lang), num(manifest.totals.totalPower, lang))),
     h('div', { class: 'kc-grid auto-lg' },
       toolCard(link, '/pets/builder', '🐉',
         lang === 'ru' ? 'Конструктор питомцев' : 'War Pet Builder',
@@ -167,8 +167,12 @@ function toolsSection(pets, skills, heroes, manifest, lang, t, link) {
         lang === 'ru' ? 'Как собрать питомца под урон и что делать в недельном цикле.' : 'How to build a damage pet and what the weekly cycle is for.')));
 }
 
-function tile(t, value, label) {
-  return h('div', { class: 'kc-tile' }, h('div', { class: 'kc-tile-value' }, value), h('div', { class: 'kc-tile-label' }, label));
+/* Same shape as the tile helpers on the stats and admin tabs: label first. */
+function tile(label, value, note) {
+  return h('div', { class: 'kc-tile' },
+    h('div', { class: 'kc-tile-value' }, value),
+    h('div', { class: 'kc-tile-label' }, label),
+    note && h('small', { class: 'kc-tile-note' }, note));
 }
 
 function toolCard(link, href, icon, title, text) {

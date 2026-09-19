@@ -256,7 +256,9 @@ async function render({ force = false } = {}) {
     console.error('[route]', pathname, err);
     if (currentPath !== pathname) return;
     clear(mainEl);
-    mainEl.append(errorBox(t('common.error') + ' — ' + err.message),
+    // Name the route in the message: a bare "x is not a function" is unusable
+    // in a bug report, and the shell is the only place that knows the path.
+    mainEl.append(errorBox(`${t('common.error')} — ${pathname} — ${err.message}`),
       h('button', { class: 'kc-btn', onclick: () => render({ force: true }) }, t('common.retry')));
   }
 
