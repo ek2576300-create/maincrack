@@ -1,15 +1,35 @@
-import { h, clear, getJSON, sortBy, num } from '../util.js';
+import { h, getJSON, sortBy, num } from '../util.js';
 
 export async function render(mount, { t, i18n, link }) {
   const lang = i18n.lang;
   const [pets, skills] = await Promise.all([getJSON('/data/pets.json'), getJSON('/data/pet-skills.json')]);
 
+  const GUIDES = buildGuides({ lang, t, pets, skills });
+
+  mount.append(
+    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('guides.title')),
+    h('section', { class: 'kc-panel' },
+      h('div', { class: 'kc-panel-head' },
+        h('div', {}, h('h2', {}, t('guides.title')), h('p', {}, t('guides.desc'))),
+        h('a', { class: 'kc-btn sm is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, '🐉 ' + t('pets.builder.title'))),
+      h('div', { class: 'kc-panel-body' },
+        h('div', { class: 'kc-grid auto-lg' }, ...GUIDES.map((g) => h('article', { class: 'kc-card' },
+          h('div', { style: { fontSize: '22px', marginBottom: '8px' } }, g.icon),
+          h('h3', { style: { margin: '0 0 10px' } }, g.title),
+          ...g.body.map((p) => h('p', { class: 'kc-note', style: { margin: '0 0 9px', color: 'var(--text-dim)', lineHeight: '1.6' } }, p))))))));
+}
+
+/**
+ * Тексты гайдов. Вынесено из render(), чтобы главная могла показать
+ * те же заголовки в блоке-анонсе и они не разъезжались с /guides.
+ */
+export function buildGuides({ lang, t, pets, skills }) {
   // A couple of numbers pulled live from the data, so guides stay honest.
   const amber = skills.items.filter((s) => (s.costs || []).every((c) => c > 0 && c <= 12));
   const strongest = sortBy(pets.items, 'total', -1)[0];
   const talents = skills.items.filter((s) => s.talent);
 
-  const GUIDES = lang === 'ru' ? [
+  return lang === 'ru' ? [
     {
       icon: '🐉', title: 'Как собрать питомца под максимальный урон',
       body: [
@@ -102,16 +122,4 @@ export async function render(mount, { t, i18n, link }) {
       ],
     },
   ];
-
-  mount.append(
-    h('div', { class: 'kc-breadcrumb' }, h('a', { href: '/' }, t('common.home')), ' / ', t('guides.title')),
-    h('section', { class: 'kc-panel' },
-      h('div', { class: 'kc-panel-head' },
-        h('div', {}, h('h2', {}, t('guides.title')), h('p', {}, t('guides.desc'))),
-        h('a', { class: 'kc-btn sm is-primary', href: '/pets/builder', onclick: link('/pets/builder') }, '🐉 ' + t('pets.builder.title'))),
-      h('div', { class: 'kc-panel-body' },
-        h('div', { class: 'kc-grid auto-lg' }, ...GUIDES.map((g) => h('article', { class: 'kc-card' },
-          h('div', { style: { fontSize: '22px', marginBottom: '8px' } }, g.icon),
-          h('h3', { style: { margin: '0 0 10px' } }, g.title),
-          ...g.body.map((p) => h('p', { class: 'kc-note', style: { margin: '0 0 9px', color: 'var(--text-dim)', lineHeight: '1.6' } }, p))))))));
 }

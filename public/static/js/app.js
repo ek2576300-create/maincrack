@@ -54,6 +54,7 @@ const PAGES = {
   '/about/build':        () => import('./pages/about-build.js'),
   '/news':               () => import('./pages/news.js'),
   '/news/post':          () => import('./pages/news-post.js'),
+  '/videos':             () => import('./pages/videos.js'),
   '/achievements':       () => import('./pages/achievements.js'),
   '/team':               () => import('./pages/team.js'),
   '/hall-of-fame':       () => import('./pages/hall-of-fame.js'),

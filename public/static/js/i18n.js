@@ -421,9 +421,47 @@ export const DICT = {
     'home.tools.all': 'Все инструменты',
 
     /* ----------------------------------------------------- home: youtube */
-    'home.youtube.title': 'YouTube-канал',
-    'home.youtube.desc': 'Видео о сервере 888 и Call of Dragons.',
+    'home.youtube.title': 'YouTube-канал «Хроники Кракена»',
+    'home.youtube.desc': 'Видео о сервере 888 и Call of Dragons: гайды, бои, разборы обновлений.',
     'home.youtube.cta': 'Открыть канал',
+    'home.youtube.aboutPending': 'Описание канала подтянется с YouTube, как только сервер получит доступ к нему (или после запуска scripts/import-youtube.mjs).',
+
+    /* -------------------------------------------------------- home: лента */
+    'home.feed.earlier': 'Раньше',
+    'home.feed.allVideos': 'Все видео канала',
+
+    /* -------------------------------------------------- home: неделя, FAQ */
+    'home.guides.all': 'Все гайды',
+    'home.week.title': 'Что делать сегодня',
+    'home.week.desc': 'Недельный цикл событий Call of Dragons: на что копить ускорения и ресурсы.',
+    'home.week.all': 'Весь календарь',
+    'home.faq.title': 'Частые вопросы',
+    'home.faq.desc': 'Коротко о проекте, инструментах и данных.',
+
+    /* ------------------------------------------------------------- videos */
+    'videos.title': 'Видео канала',
+    'videos.sub': 'Лента YouTube-канала «Хроники Кракена»',
+    'videos.all': 'Все видео',
+    'videos.more': 'Показать ещё',
+    'videos.play': 'Смотреть',
+    'videos.subscribe': 'Подписаться',
+    'videos.searchPlaceholder': 'Поиск по названию и описанию…',
+    'videos.sort.new': 'Сначала новые',
+    'videos.sort.old': 'Сначала старые',
+    'videos.sort.views': 'По просмотрам',
+    'videos.channelTitle': 'Канал «Хроники Кракена»',
+    'videos.channelDesc': 'Лента обновляется прямо с YouTube: новые ролики появляются здесь сами.',
+    'videos.stat.channel': 'Канал',
+    'videos.stat.videos': 'Видео в ленте',
+    'videos.stat.views': 'Просмотров',
+    'videos.stat.subs': 'Подписчиков',
+    'videos.stat.latest': 'Последнее видео',
+    'videos.emptyTitle': 'Лента видео пока пуста',
+    'videos.emptyHint': 'Сервер не смог получить список с YouTube. Проверьте доступ в интернет или наполните public/data/site/videos.json командой node scripts/import-youtube.mjs.',
+    'videos.sourceLive': 'Источник: RSS канала YouTube',
+    'videos.sourceCache': 'Источник: последний удачный ответ YouTube (кэш)',
+    'videos.sourceStatic': 'Источник: public/data/site/videos.json',
+    'videos.sourceError': 'YouTube недоступен',
   },
 
   en: {
@@ -833,9 +871,44 @@ export const DICT = {
     'home.tools.all': 'All tools',
 
     /* ----------------------------------------------------- home: youtube */
-    'home.youtube.title': 'YouTube channel',
-    'home.youtube.desc': 'Videos about server 888 and Call of Dragons.',
+    'home.youtube.title': 'The Kraken Chronicles YouTube channel',
+    'home.youtube.desc': 'Videos about server 888 and Call of Dragons: guides, battles and patch breakdowns.',
     'home.youtube.cta': 'Open the channel',
+    'home.youtube.aboutPending': 'The channel description is pulled from YouTube as soon as the server can reach it (or after running scripts/import-youtube.mjs).',
+
+    'home.feed.earlier': 'Earlier',
+    'home.feed.allVideos': 'Every video on the channel',
+
+    'home.guides.all': 'All guides',
+    'home.week.title': 'What to do today',
+    'home.week.desc': 'The weekly Call of Dragons event cycle: what to save speedups and resources for.',
+    'home.week.all': 'Full calendar',
+    'home.faq.title': 'Frequently asked',
+    'home.faq.desc': 'The project, the tools and the data in short.',
+
+    'videos.title': 'Channel videos',
+    'videos.sub': 'The Kraken Chronicles YouTube feed',
+    'videos.all': 'All videos',
+    'videos.more': 'Show more',
+    'videos.play': 'Play',
+    'videos.subscribe': 'Subscribe',
+    'videos.searchPlaceholder': 'Search titles and descriptions…',
+    'videos.sort.new': 'Newest first',
+    'videos.sort.old': 'Oldest first',
+    'videos.sort.views': 'By views',
+    'videos.channelTitle': 'The Kraken Chronicles channel',
+    'videos.channelDesc': 'The feed refreshes straight from YouTube: new uploads show up on their own.',
+    'videos.stat.channel': 'Channel',
+    'videos.stat.videos': 'Videos in the feed',
+    'videos.stat.views': 'Views',
+    'videos.stat.subs': 'Subscribers',
+    'videos.stat.latest': 'Latest video',
+    'videos.emptyTitle': 'The video feed is empty for now',
+    'videos.emptyHint': 'The server could not reach YouTube. Check outbound access, or fill public/data/site/videos.json with node scripts/import-youtube.mjs.',
+    'videos.sourceLive': 'Source: the channel RSS feed on YouTube',
+    'videos.sourceCache': 'Source: the last successful YouTube response (cache)',
+    'videos.sourceStatic': 'Source: public/data/site/videos.json',
+    'videos.sourceError': 'YouTube unreachable',
   },
 };
 

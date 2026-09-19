@@ -1,0 +1,13 @@
+{
+  "channel": {
+    "handle": "@Kraken_Chronicles",
+    "url": "https://www.youtube.com/@Kraken_Chronicles",
+    "id": null,
+    "title": { "ru": "Хроники Кракена", "en": "Kraken Chronicles" },
+    "description": { "ru": "", "en": "" }
+  },
+  "playlists": [],
+  "items": [],
+  "updatedAt": null,
+  "source": "manual"
+}

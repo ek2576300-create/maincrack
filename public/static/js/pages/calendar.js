@@ -2,7 +2,7 @@ import { h } from '../util.js';
 
 /* The weekly Call of Dragons cycle. The coddb.app /calendar chunk was empty in
    the mirror, so this is rebuilt from the game's published rotation. */
-const WEEK = [
+export const WEEK = [
   { day: { ru: 'Понедельник', en: 'Monday' }, event: { ru: 'День строительства', en: 'Construction day' }, focus: { ru: 'Ускорения строительства, ресурсы на здания', en: 'Building speedups, resources into buildings' }, icon: '🏗️' },
   { day: { ru: 'Вторник', en: 'Tuesday' }, event: { ru: 'День науки', en: 'Research day' }, focus: { ru: 'Ускорения исследований, книги опыта', en: 'Research speedups, XP books' }, icon: '📚' },
   { day: { ru: 'Среда', en: 'Wednesday' }, event: { ru: 'День войск', en: 'Troop day' }, focus: { ru: 'Обучение войск, ускорения обучения', en: 'Troop training, training speedups' }, icon: '⚔️' },
