@@ -44,7 +44,7 @@ export async function render(mount, { t, i18n, store, navigate, link }) {
               style: { width: '42px', height: '42px', borderRadius: '8px', border: '1px solid var(--line)' },
             }),
             h('div', { style: { flex: '1', minWidth: '0' } },
-              h('strong', { style: { color: 'var(--gold-soft)' } }, b.title),
+              h('strong', { style: { color: 'var(--accent)' } }, b.title),
               h('div', { class: 'kc-note', style: { marginTop: '3px' } }, (b.pet && petLabel(b.pet)) || '—'))),
           payload.notes && h('p', { class: 'kc-note', style: { margin: '10px 0 0', whiteSpace: 'pre-wrap', color: 'var(--text-dim)' } }, payload.notes),
           h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', marginTop: '11px' } },

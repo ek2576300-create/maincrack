@@ -289,6 +289,8 @@ a.kc-card:hover h3 { color: var(--accent); }
 .kc-feed a { flex: 1 1 220px; color: var(--text-dim); font-size: 13.5px; line-height: 1.5; }
 .kc-feed a:hover { color: var(--accent); }
 .kc-feed .kc-note { margin: 0; }
+.kc-feed .kc-feed-name { flex: 1 1 200px; color: var(--text); font-size: 13.5px; font-weight: 500; }
+.kc-feed li.is-now time, .kc-feed li.is-now .kc-feed-name, .kc-feed li.is-now > a { color: var(--accent); }
 .kc-feed .kc-badge { flex: 0 0 auto; margin-left: auto; }
 
 /* ------------------------------------------------------------------ forms */

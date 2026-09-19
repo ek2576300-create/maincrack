@@ -25,5 +25,5 @@ export async function render(mount, { t, i18n, link }) {
           ? h('p', { class: 'kc-prose', style: { color: 'var(--text-dim)' } }, teaser)
           : empty(t('about.historyPendingTitle'), t('about.historyPendingHint')),
         milestoneCount > 0 && h('div', { class: 'kc-toolbar', style: { marginTop: '14px' } },
-          h('a', { class: 'kc-btn is-teal', href: '/about/history', onclick: link('/about/history') }, t('about.historyCta'))))));
+          h('a', { class: 'kc-btn', href: '/about/history', onclick: link('/about/history') }, t('about.historyCta'))))));
 }

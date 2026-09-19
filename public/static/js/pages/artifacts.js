@@ -57,7 +57,7 @@ export async function render(mount, { t, i18n }) {
         h('div', { class: 'kc-grid auto-lg' },
           ...holistic.map((x) => h('div', { class: 'kc-card' },
             h('div', { style: { display: 'flex', gap: '8px', alignItems: 'center', flexWrap: 'wrap' } },
-              h('strong', { style: { color: 'var(--gold-soft)', fontSize: '13px' } }, x.skill),
+              h('strong', { style: { color: 'var(--accent)', fontSize: '13px' } }, x.skill),
               h('span', { class: 'kc-badge' }, x.hero)),
             h('p', { class: 'kc-note', style: { margin: '8px 0 0', color: 'var(--text-dim)' } }, x.text),
             x.upgrade && h('p', { class: 'kc-note', style: { margin: '5px 0 0' } }, x.upgrade))))),

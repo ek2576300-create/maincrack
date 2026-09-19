@@ -260,7 +260,7 @@ function weekSection(lang, t, link) {
   const todayIdx = (new Date().getDay() + 6) % 7; // понедельник = 0
   return section('week', t('home.week.title'), t('home.week.desc'),
     h('a', { class: 'kc-btn sm', href: '/calendar', onclick: link('/calendar') }, t('home.week.all')),
-    h('ul', { class: 'kc-feed' }, ...WEEK.map((d, i) => h('li', {},
+    h('ul', { class: 'kc-feed' }, ...WEEK.map((d, i) => h('li', { class: i === todayIdx ? 'is-now' : undefined },
       h('time', {}, d.day[lang]),
       h('a', { href: '/calendar', onclick: link('/calendar') }, d.event[lang]),
       h('span', { class: 'kc-note', style: { flex: '2 1 240px' } }, d.focus[lang]),

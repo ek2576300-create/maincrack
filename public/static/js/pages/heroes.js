@@ -31,11 +31,11 @@ export async function render(mount, { t, i18n }) {
   const flyChip = h('button', {
     class: 'kc-chip', type: 'button',
     onclick: () => { flying = !flying; flyChip.classList.toggle('is-active', flying); draw(); },
-  }, '🪽 ' + t('heroes.onlyFlying'));
+  }, t('heroes.onlyFlying'));
 
   function heroCard(hero) {
     const open = openId === hero.id;
-    const color = QUALITY_COLOR[hero.quality] || 'var(--gold-soft)';
+    const color = QUALITY_COLOR[hero.quality] || 'var(--accent)';
 
     const head = h('div', {
       style: { display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer' },
@@ -57,7 +57,7 @@ export async function render(mount, { t, i18n }) {
     const tags = h('div', { class: 'kc-chips', style: { marginTop: '10px' } },
       h('span', { class: 'kc-badge', style: { borderColor: color + '66', color } }, t('quality.' + hero.quality, hero.quality)),
       h('span', { class: 'kc-badge' }, t('heroes.season') + ' ' + hero.season),
-      hero.flying && h('span', { class: 'kc-badge is-gold' }, '🪽 ' + t('heroes.flying')),
+      hero.flying && h('span', { class: 'kc-badge is-gold' }, t('heroes.flying')),
       h('span', { class: 'kc-badge' }, hero.skills.length + ' ' + t('heroes.skills').toLowerCase()));
 
     const skills = open && h('div', { style: { marginTop: '12px', display: 'flex', flexDirection: 'column', gap: '9px' } },
@@ -68,7 +68,7 @@ export async function render(mount, { t, i18n }) {
         },
       },
         h('div', { style: { display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' } },
-          h('strong', { style: { color: 'var(--gold-soft)', fontSize: '13px' } }, s.name),
+          h('strong', { style: { color: 'var(--accent)', fontSize: '13px' } }, s.name),
           s.rage_cost != null && h('span', { class: 'kc-badge' }, t('heroes.rage') + ' ' + num(s.rage_cost, lang)),
           s.holistic && h('span', { class: 'kc-badge' }, t('heroes.holistic')),
           s.skill_enhanced && h('span', { class: 'kc-badge is-gold' }, t('heroes.enhanced'))),

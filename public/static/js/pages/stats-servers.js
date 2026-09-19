@@ -27,7 +27,7 @@ export async function render(mount, { t, i18n, link }) {
 
     h('dl', { class: 'kc-kv', style: { marginTop: '12px' } },
       h('dt', {}, t('stats.topPlayer')), h('dd', {}, s.topPlayerName || '—'),
-      h('dt', {}, t('stats.topAlliance')), h('dd', { style: { color: 'var(--gold-soft)' } }, s.topAllianceName || '—')),
+      h('dt', {}, t('stats.topAlliance')), h('dd', { style: { color: 'var(--accent)' } }, s.topAllianceName || '—')),
 
     h('div', { class: 'kc-toolbar', style: { marginTop: '13px' } },
       h('a', { class: 'kc-btn sm', href: `/stats/players?server=${s.serverId}` }, t('stats.players')),

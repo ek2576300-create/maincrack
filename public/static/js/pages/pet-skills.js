@@ -78,7 +78,7 @@ export async function render(mount, { t, i18n }) {
       {
         key: 'petExclusive', label: t('pets.skills.exclusive'),
         render: (s) => (s.petExclusive
-          ? h('span', { class: 'kc-iconcell', style: { color: 'var(--teal-soft)' } },
+          ? h('span', { class: 'kc-iconcell', style: { color: 'var(--info)' } },
             petByName.get(s.petExclusive) && h('img', {
               src: '/static/img/warpets/' + petByName.get(s.petExclusive).portrait, alt: '', loading: 'lazy',
               style: { width: '18px', height: '18px', borderRadius: '4px' },

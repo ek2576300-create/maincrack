@@ -70,7 +70,10 @@ export function videoCard(v, lang, t, { compactCard = false } = {}) {
       'aria-label': t('videos.play') + ': ' + titleOf(v, lang),
     },
     h('img', { src: thumbUrl(v), alt: '', loading: 'lazy', decoding: 'async' }),
-    h('span', { class: 'kc-video-play' }, '▶'),
+    h('span', {
+      class: 'kc-video-play',
+      html: '<svg viewBox="0 0 24 24" width="15" height="15" aria-hidden="true"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></svg>',
+    }),
     dur && h('span', { class: 'kc-video-dur' }, dur),
     v.pinned && h('span', { class: 'kc-video-pin' }, '★')));
 
@@ -81,8 +84,8 @@ export function videoCard(v, lang, t, { compactCard = false } = {}) {
         h('a', { href: watchUrl(v), target: '_blank', rel: 'noopener', 'data-external': '1' }, titleOf(v, lang))),
       h('div', { class: 'kc-video-meta' },
         v.published && h('span', {}, dateTime(v.published, lang)),
-        v.views != null && h('span', {}, '👁 ' + compact(v.views, lang)),
-        v.likes != null && h('span', {}, '👍 ' + compact(v.likes, lang))),
+        v.views != null && h('span', {}, compact(v.views, lang) + ' ' + t('videos.meta.views')),
+        v.likes != null && h('span', {}, compact(v.likes, lang) + ' ' + t('videos.meta.likes'))),
       !compactCard && (v.note?.[lang] || v.description)
         && h('p', { class: 'kc-video-desc' }, v.note?.[lang] || String(v.description).split('\n').filter(Boolean).slice(0, 2).join(' ')),
       !compactCard && !!(v.tags || []).length
@@ -193,7 +196,7 @@ export async function render(mount, { t, i18n, link }) {
         h('a', {
           class: 'kc-btn is-primary', href: ch.url || CHANNEL_URL,
           target: '_blank', rel: 'noopener', 'data-external': '1',
-        }, '▶ ' + t('videos.subscribe'))),
+        }, t('videos.subscribe') + ' ↗')),
       h('div', { class: 'kc-panel-body' },
         h('div', { class: 'kc-statrow is-4' },
           statCell(t('videos.stat.videos'), num(ch.videoCount || all.length, lang)),
