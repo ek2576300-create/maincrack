@@ -88,6 +88,8 @@ export const NAV = [
       { path: '/about', id: 'about', label: { ru: 'О проекте', en: 'About' } },
       { path: '/news', id: 'news', label: { ru: 'Новости', en: 'News' } },
       { path: '/videos', id: 'videos', label: { ru: 'Видео канала', en: 'Channel videos' } },
+      { path: '/accounts', id: 'accounts', label: { ru: 'Каталог аккаунтов', en: 'Account catalogue' } },
+      { path: '/accounts/profile', id: 'accountProfile', label: { ru: 'Аккаунт игрока', en: 'Player account' }, hidden: true },
       { path: '/achievements', id: 'achievements', label: { ru: 'Достижения', en: 'Achievements' } },
       { path: '/team', id: 'team', label: { ru: 'Команда 888', en: 'Team 888' } },
       { path: '/hall-of-fame', id: 'hallOfFame', label: { ru: 'Легенды 888', en: 'Legends of 888' } },
@@ -302,14 +304,35 @@ export const SEO = {
     },
   },
   '/login': { title: { ru: 'Вход и регистрация | Хроники Кракена 888', en: 'Sign in | Kraken Chronicles 888' }, description: { ru: 'Войдите, чтобы сохранять билды питомцев и писать в поддержку.', en: 'Sign in to save pet builds and message support.' }, noindex: true },
+  '/accounts': {
+    title: {
+      ru: 'Каталог аккаунтов сервера 888 — игроки Хроник Кракена',
+      en: 'Server 888 account catalogue — Kraken Chronicles players',
+    },
+    description: {
+      ru: 'Аккаунты сообщества «Хроники Кракена»: сила, ратуша, род войск, альянс, а у каждого игрока — его питомцы, герои и артефакты.',
+      en: 'Accounts of the Kraken Chronicles community: power, town centre, unit class, alliance, plus each player\'s pets, heroes and artifacts.',
+    },
+    keywords: ['каталог аккаунтов call of dragons', 'игроки сервера 888', 'аккаунты кракен 888', 'call of dragons players'],
+  },
+  // Запасной SEO-ключ для /accounts/:id — сам путь собирается из профиля.
+  '/accounts/profile': {
+    title: { ru: 'Аккаунт игрока — Хроники Кракена 888', en: 'Player account — Kraken Chronicles 888' },
+    description: {
+      ru: 'Игровой профиль участника сообщества 888: характеристики аккаунта, питомцы, герои и артефакты.',
+      en: 'The game profile of a server 888 community member: account stats, pets, heroes and artifacts.',
+    },
+  },
   '/profile': { title: { ru: 'Профиль | Хроники Кракена 888', en: 'Profile | Kraken Chronicles 888' }, noindex: true },
   '/admin': { title: { ru: 'Админка | Хроники Кракена 888', en: 'Admin panel | Kraken Chronicles 888' }, noindex: true },
 };
 
 /** All public routes, for sitemap.xml. */
 export function publicRoutes() {
-  // '/news/post' is a fallback SEO key for /news/:slug, not a real path.
-  return Object.keys(SEO).filter((p) => !SEO[p].noindex && p !== '/news/post');
+  // '/news/post' и '/accounts/profile' — запасные SEO-ключи для /news/:slug и
+  // /accounts/:id, сами по себе это не страницы.
+  const fallbackKeys = ['/news/post', '/accounts/profile'];
+  return Object.keys(SEO).filter((p) => !SEO[p].noindex && !fallbackKeys.includes(p));
 }
 
 export function findItem(path) {

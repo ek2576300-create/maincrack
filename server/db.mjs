@@ -76,11 +76,52 @@ CREATE TABLE IF NOT EXISTS visits (
   created_at TEXT NOT NULL
 );
 
+-- Игровой профиль: одна строка на пользователя. Ник и сервер остаются в
+-- users (они были там раньше и используются в админке), здесь — всё
+-- остальное об аккаунте в игре.
+CREATE TABLE IF NOT EXISTS profiles (
+  user_id       INTEGER PRIMARY KEY REFERENCES users(id) ON DELETE CASCADE,
+  listed        INTEGER NOT NULL DEFAULT 0,       -- показывать в каталоге
+  avatar        TEXT    NOT NULL DEFAULT '',      -- имя питомца из pets.json
+  player_id     TEXT    NOT NULL DEFAULT '',
+  alliance_tag  TEXT    NOT NULL DEFAULT '',
+  alliance_name TEXT    NOT NULL DEFAULT '',
+  power         INTEGER,
+  kills         INTEGER,
+  merits        INTEGER,
+  tc_level      INTEGER,
+  vip_level     INTEGER,
+  main_unit     TEXT    NOT NULL DEFAULT '',      -- Infantry|Cavalry|Marksman|Magic
+  play_style    TEXT    NOT NULL DEFAULT '',      -- pvp|pve|farm|support|casual
+  timezone      TEXT    NOT NULL DEFAULT '',
+  contacts      TEXT    NOT NULL DEFAULT '[]',    -- JSON [{kind,value}]
+  about         TEXT    NOT NULL DEFAULT '',
+  updated_at    TEXT    NOT NULL
+);
+
+-- Питомцы, герои и артефакты одной таблицей: набор полей у них один и тот
+-- же, а различия (навыки пета, уровни навыков героя, качество арта) живут
+-- в extra. Так у каталога, API и формы одна общая механика на три вкладки.
+CREATE TABLE IF NOT EXISTS profile_items (
+  id         INTEGER PRIMARY KEY AUTOINCREMENT,
+  user_id    INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
+  kind       TEXT    NOT NULL,                    -- pet | hero | artifact
+  name       TEXT    NOT NULL,
+  level      INTEGER,
+  stars      INTEGER,
+  extra      TEXT    NOT NULL DEFAULT '{}',
+  note       TEXT    NOT NULL DEFAULT '',
+  position   INTEGER NOT NULL DEFAULT 0,
+  created_at TEXT    NOT NULL
+);
+
 CREATE INDEX IF NOT EXISTS idx_msg_thread  ON messages(thread_id);
 CREATE INDEX IF NOT EXISTS idx_thr_updated ON threads(updated_at DESC);
 CREATE INDEX IF NOT EXISTS idx_thr_guest   ON threads(guest_id);
 CREATE INDEX IF NOT EXISTS idx_visit_time  ON visits(created_at DESC);
 CREATE INDEX IF NOT EXISTS idx_sess_user   ON sessions(user_id);
+CREATE INDEX IF NOT EXISTS idx_pitems_user ON profile_items(user_id, kind, position);
+CREATE INDEX IF NOT EXISTS idx_prof_listed ON profiles(listed, power DESC);
 `);
 
 export const now = () => new Date().toISOString();
@@ -188,6 +229,131 @@ export const Messages = {
   },
   forThread: (id) => db.prepare('SELECT * FROM messages WHERE thread_id=? ORDER BY id ASC').all(id),
   count: () => db.prepare('SELECT COUNT(*) c FROM messages').get().c,
+};
+
+/* ------------------------------------------------- profiles and catalogue */
+const EMPTY_PROFILE = {
+  listed: 0, avatar: '', player_id: '', alliance_tag: '', alliance_name: '',
+  power: null, kills: null, merits: null, tc_level: null, vip_level: null,
+  main_unit: '', play_style: '', timezone: '', contacts: '[]', about: '', updated_at: null,
+};
+
+/** Поля, которые владелец может менять через /profile/game. */
+const PROFILE_FIELDS = [
+  'listed', 'avatar', 'player_id', 'alliance_tag', 'alliance_name', 'power', 'kills',
+  'merits', 'tc_level', 'vip_level', 'main_unit', 'play_style', 'timezone', 'contacts', 'about',
+];
+
+export const Profiles = {
+  /** Профиль есть не у всех — для новичка отдаём пустой, а не null. */
+  byUserId(id) {
+    return db.prepare('SELECT * FROM profiles WHERE user_id=?').get(id)
+      || { user_id: id, ...EMPTY_PROFILE };
+  },
+
+  /** Частичное обновление: в patch приходят только те поля, что менялись. */
+  save(id, patch) {
+    const fields = PROFILE_FIELDS.filter((f) => patch[f] !== undefined);
+    db.prepare('INSERT OR IGNORE INTO profiles (user_id, updated_at) VALUES (?,?)').run(id, now());
+    if (fields.length) {
+      db.prepare(`UPDATE profiles SET ${fields.map((f) => `${f}=?`).join(', ')}, updated_at=? WHERE user_id=?`)
+        .run(...fields.map((f) => patch[f]), now(), id);
+    }
+    return Profiles.byUserId(id);
+  },
+
+  /**
+   * Каталог. Показываем только то, что владелец сам открыл (listed=1) и
+   * только активные аккаунты — заблокированный пользователь из каталога
+   * пропадает, не теряя своих данных.
+   */
+  list({ q = '', server = '', unit = '', sort = 'power', limit = 60, offset = 0 } = {}) {
+    const like = `%${q}%`;
+    const order = {
+      power: 'p.power IS NULL, p.power DESC',
+      kills: 'p.kills IS NULL, p.kills DESC',
+      merits: 'p.merits IS NULL, p.merits DESC',
+      name: 'lower(COALESCE(NULLIF(u.game_nick,\'\'), u.name)) ASC',
+      new: 'u.created_at DESC',
+      updated: 'p.updated_at DESC',
+    }[sort] || 'p.power IS NULL, p.power DESC';
+
+    const where = `p.listed=1 AND u.status='active'
+        AND (? = '' OR u.game_nick LIKE ? OR u.name LIKE ? OR p.alliance_tag LIKE ? OR p.alliance_name LIKE ?)
+        AND (? = '' OR u.game_server = ?)
+        AND (? = '' OR p.main_unit = ?)`;
+    const args = [q, like, like, like, like, server, server, unit, unit];
+
+    return {
+      items: db.prepare(
+        `SELECT u.id, u.name, u.game_nick, u.game_server, u.created_at,
+                p.avatar, p.alliance_tag, p.alliance_name, p.power, p.kills, p.merits,
+                p.tc_level, p.vip_level, p.main_unit, p.play_style, p.updated_at,
+                (SELECT COUNT(*) FROM profile_items i WHERE i.user_id=u.id AND i.kind='pet')      AS pets,
+                (SELECT COUNT(*) FROM profile_items i WHERE i.user_id=u.id AND i.kind='hero')     AS heroes,
+                (SELECT COUNT(*) FROM profile_items i WHERE i.user_id=u.id AND i.kind='artifact') AS artifacts
+         FROM profiles p JOIN users u ON u.id=p.user_id
+         WHERE ${where} ORDER BY ${order} LIMIT ? OFFSET ?`
+      ).all(...args, limit, offset),
+      total: db.prepare(`SELECT COUNT(*) c FROM profiles p JOIN users u ON u.id=p.user_id WHERE ${where}`)
+        .get(...args).c,
+    };
+  },
+
+  /** Значения для выпадающих списков каталога — только по видимым профилям. */
+  facets() {
+    return {
+      servers: db.prepare(
+        `SELECT u.game_server AS id, COUNT(*) c FROM profiles p JOIN users u ON u.id=p.user_id
+         WHERE p.listed=1 AND u.status='active' AND u.game_server != ''
+         GROUP BY u.game_server ORDER BY c DESC, u.game_server`
+      ).all(),
+      units: db.prepare(
+        `SELECT p.main_unit AS id, COUNT(*) c FROM profiles p JOIN users u ON u.id=p.user_id
+         WHERE p.listed=1 AND u.status='active' AND p.main_unit != ''
+         GROUP BY p.main_unit ORDER BY c DESC`
+      ).all(),
+      total: db.prepare("SELECT COUNT(*) c FROM profiles p JOIN users u ON u.id=p.user_id WHERE p.listed=1 AND u.status='active'").get().c,
+    };
+  },
+
+  listedCount: () => db.prepare("SELECT COUNT(*) c FROM profiles p JOIN users u ON u.id=p.user_id WHERE p.listed=1 AND u.status='active'").get().c,
+  isListed: (id) => !!db.prepare("SELECT 1 x FROM profiles p JOIN users u ON u.id=p.user_id WHERE p.user_id=? AND p.listed=1 AND u.status='active'").get(id),
+  /** Для sitemap и SSR-заголовков публичных страниц каталога. */
+  listedIds: () => db.prepare("SELECT p.user_id id FROM profiles p JOIN users u ON u.id=p.user_id WHERE p.listed=1 AND u.status='active' ORDER BY p.user_id").all().map((r) => r.id),
+};
+
+/* ------------------------------------------- pets / heroes / artifacts */
+export const ProfileItems = {
+  KINDS: ['pet', 'hero', 'artifact'],
+  MAX_PER_KIND: 60,
+
+  forUser: (id, kind = '') => db.prepare(
+    `SELECT * FROM profile_items WHERE user_id=? AND (? = '' OR kind=?) ORDER BY kind, position, id`
+  ).all(id, kind, kind),
+
+  byId: (itemId, userId) => db.prepare('SELECT * FROM profile_items WHERE id=? AND user_id=?').get(itemId, userId),
+  countOf: (id, kind) => db.prepare('SELECT COUNT(*) c FROM profile_items WHERE user_id=? AND kind=?').get(id, kind).c,
+
+  add({ userId, kind, name, level, stars, extra, note }) {
+    const pos = db.prepare('SELECT COALESCE(MAX(position),0)+1 p FROM profile_items WHERE user_id=? AND kind=?')
+      .get(userId, kind).p;
+    const info = db.prepare(
+      'INSERT INTO profile_items (user_id,kind,name,level,stars,extra,note,position,created_at) VALUES (?,?,?,?,?,?,?,?,?)'
+    ).run(userId, kind, name, level ?? null, stars ?? null, extra || '{}', note || '', pos, now());
+    return db.prepare('SELECT * FROM profile_items WHERE id=?').get(info.lastInsertRowid);
+  },
+
+  update(itemId, userId, { name, level, stars, extra, note }) {
+    db.prepare(
+      `UPDATE profile_items SET name=COALESCE(?,name), level=?, stars=?,
+              extra=COALESCE(?,extra), note=COALESCE(?,note) WHERE id=? AND user_id=?`
+    ).run(name ?? null, level ?? null, stars ?? null, extra ?? null, note ?? null, itemId, userId);
+    return ProfileItems.byId(itemId, userId);
+  },
+
+  remove: (itemId, userId) => db.prepare('DELETE FROM profile_items WHERE id=? AND user_id=?').run(itemId, userId),
+  count: () => db.prepare('SELECT COUNT(*) c FROM profile_items').get().c,
 };
 
 /* ----------------------------------------------------------------- visits */

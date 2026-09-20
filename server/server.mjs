@@ -12,7 +12,7 @@ import { fileURLToPath } from 'node:url';
 
 import { handleApi } from './api.mjs';
 import { ensureAdmin, identify } from './auth.mjs';
-import { Visits } from './db.mjs';
+import { Visits, Profiles } from './db.mjs';
 import { SITE, SEO, NAV, seoFor, publicRoutes } from '../public/static/js/routes.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -92,7 +92,8 @@ function renderShell(pathname, lang) {
   const key = SEO[pathname] ? pathname
     : (pathname.startsWith('/stats/player/') ? '/stats/player'
       : pathname.startsWith('/stats/alliance/') ? '/stats/alliance'
-        : pathname.startsWith('/news/') ? '/news/post' : '/');
+        : /^\/accounts\/\d+$/.test(pathname) ? '/accounts/profile'
+          : pathname.startsWith('/news/') ? '/news/post' : '/');
   const meta = seoFor(SEO[key] ? key : '/', lang);
   const canonical = ORIGIN + (pathname === '/' ? '/' : pathname);
   const alt = lang === 'ru' ? 'en' : 'ru';
@@ -168,7 +169,7 @@ function publishedNewsSlugs() {
 }
 
 function sitemap() {
-  const paths = [...publicRoutes(), ...publishedNewsSlugs()];
+  const paths = [...publicRoutes(), ...publishedNewsSlugs(), ...Profiles.listedIds().map((id) => `/accounts/${id}`)];
   const urls = paths.map((p) => `  <url>
     <loc>${ORIGIN}${p}</loc>
     <changefreq>${p === '/' ? 'daily' : 'weekly'}</changefreq>
@@ -244,7 +245,13 @@ const server = http.createServer(async (req, res) => {
         : url.searchParams.get('lang') === 'ru' ? 'ru'
           : (cookies.kc_lang === 'en' ? 'en' : user?.lang === 'en' ? 'en' : 'ru');
       const html = renderShell(p, lang);
-      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/') || p.startsWith('/news/') ? 200 : 404;
+      // У /accounts/<id> id проверяемый, в отличие от /stats/player/<id>:
+      // отдаём 200 только для опубликованных профилей, иначе поисковик
+      // наберёт пачку страниц «аккаунт не найден». Владелец закрытого
+      // профиля свою страницу всё равно видит — браузер рисует тело и при 404.
+      const listedAccount = /^\/accounts\/\d+$/.test(p) && Profiles.isListed(Number(p.slice(10)));
+      const status = SEO[p] || p === '/' || p.startsWith('/stats/player/') || p.startsWith('/stats/alliance/')
+        || listedAccount || p.startsWith('/news/') ? 200 : 404;
       if (req.method === 'GET' && !p.startsWith('/admin')) {
         try { Visits.add({ path: p, userId: user?.id, guestId: cookies.kc_guest, ip: ctx.ip, ua: req.headers['user-agent'] || '', ref: req.headers.referer || '' }); } catch { /* analytics must never break a page */ }
       }

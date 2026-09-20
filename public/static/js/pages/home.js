@@ -161,6 +161,9 @@ function toolsSection(pets, skills, heroes, lang, t, link) {
     ['/videos', ru ? 'Видео канала' : 'Channel videos',
       ru ? 'Все ролики «Хроник Кракена»: поиск, фильтры и просмотр прямо на сайте.'
         : 'Every Kraken Chronicles video: search, filters and in-page playback.'],
+    ['/accounts', ru ? 'Каталог аккаунтов' : 'Account catalogue',
+      ru ? 'Игроки сообщества: сила, ратуша, род войск, а у каждого — питомцы, герои и артефакты.'
+        : 'Community players: power, town centre, unit class, plus each one\'s pets, heroes and artifacts.'],
   ];
 
   return section('tools', t('home.tools.title'), t('home.tools.desc'), null,

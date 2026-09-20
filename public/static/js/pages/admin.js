@@ -74,6 +74,7 @@ async function overview(host, { t, i18n }) {
       tile(t('admin.unread'), num(d.unread, lang), d.unread > 0 ? (lang === 'ru' ? 'ждут ответа' : 'awaiting reply') : '—'),
       tile(t('admin.visits'), num(d.visits.total, lang)),
       tile(t('admin.uniques'), num(d.visits.uniques, lang)),
+      tile(t('admin.roster'), num(d.rosterListed, lang), `${t('admin.rosterItems')}: ${num(d.profileItems, lang)}`),
       ...d.byRole.map((r) => tile(t('role.' + r.role, r.role), num(r.c, lang)))),
 
     h('section', { class: 'kc-panel' },

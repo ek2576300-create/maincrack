@@ -55,6 +55,8 @@ const PAGES = {
   '/news':               () => import('./pages/news.js'),
   '/news/post':          () => import('./pages/news-post.js'),
   '/videos':             () => import('./pages/videos.js'),
+  '/accounts':           () => import('./pages/accounts.js'),
+  '/accounts/profile':   () => import('./pages/account.js'),
   '/achievements':       () => import('./pages/achievements.js'),
   '/team':               () => import('./pages/team.js'),
   '/hall-of-fame':       () => import('./pages/hall-of-fame.js'),
@@ -71,6 +73,8 @@ function resolve(pathname) {
   if (m) return { key: `/stats/${m[1]}`, params: { id: decodeURIComponent(m[2]) } };
   const n = pathname.match(/^\/news\/([^/]+)$/);
   if (n) return { key: '/news/post', params: { slug: decodeURIComponent(n[1]) } };
+  const a = pathname.match(/^\/accounts\/(\d+)$/);
+  if (a) return { key: '/accounts/profile', params: { id: a[1] } };
   return { key: null, params: {} };
 }
 
