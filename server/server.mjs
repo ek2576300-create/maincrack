@@ -35,7 +35,7 @@ const MIME = {
 const COMPRESSIBLE = /^(text\/|application\/(json|xml|javascript|manifest))/;
 
 /* Paths owned by the mirrored coddb.app build (the War Pet Builder runs from these). */
-const MIRROR_PREFIXES = ['/_next/', '/img/', '/svg/', '/optimizer.js', '/embed.js', '/manifest.json', '/api/heroes.json', '/favicon.ico'];
+const MIRROR_PREFIXES = ['/_next/', '/img/', '/svg/', '/optimizer.js', '/embed.js', '/manifest.json', '/api/heroes.json'];
 
 const clientIp = (req) =>
   (req.headers['x-forwarded-for'] || '').split(',')[0].trim() ||
@@ -137,11 +137,15 @@ function renderShell(pathname, lang) {
   <meta property="og:title" content="${esc(meta.title)}">
   <meta property="og:description" content="${esc(meta.description)}">
   <meta property="og:url" content="${esc(canonical)}">
-  <meta property="og:image" content="${esc(ORIGIN)}/static/img/og-cover.svg">
+  <meta property="og:image" content="${esc(ORIGIN)}/static/img/brand/og-cover.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="${esc(SITE.name[lang])}">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(meta.title)}">
   <meta name="twitter:description" content="${esc(meta.description)}">
-  <meta name="twitter:image" content="${esc(ORIGIN)}/static/img/og-cover.svg">
+  <meta name="twitter:image" content="${esc(ORIGIN)}/static/img/brand/og-cover.jpg">
   <script type="application/ld+json">${jsonld}</script>`;
 
   // Crawlable nav + an H1, so the page carries real text before JS runs.
@@ -195,6 +199,13 @@ const server = http.createServer(async (req, res) => {
       return send(res, 200, `User-agent: *\nAllow: /\nDisallow: /admin\nDisallow: /api/\nDisallow: /profile\n\nSitemap: ${ORIGIN}/sitemap.xml\n`);
     }
     if (p === '/sitemap.xml') return send(res, 200, sitemap(), MIME['.xml']);
+
+    // The tab icon is the site's own, not the mirrored build's — and the
+    // builder in the iframe asks for it too, so it must win over /warpets.
+    if (p === '/favicon.ico') {
+      if (await sendFile(req, res, path.join(PUBLIC, 'favicon.ico'), { cache: 'public, max-age=86400' })) return;
+      return send(res, 404, 'Not found');
+    }
 
     // Static assets of the unified SPA.
     if (p.startsWith('/static/') || p.startsWith('/data/')) {

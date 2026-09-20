@@ -80,6 +80,20 @@ export async function render(mount, { t, i18n, link }) {
 /* ------------------------------------------------------------------- hero */
 function hero(t, lang, link) {
   return h('section', { class: 'kc-hero' },
+    // Баннер — единственная картинка выше первого экрана, поэтому грузим её
+    // сразу и с заданными размерами, чтобы заголовок под ней не прыгал.
+    h('img', {
+      class: 'kc-hero-banner', src: '/static/img/brand/banner.jpg',
+      srcset: '/static/img/brand/banner-800.jpg 800w, '
+        + '/static/img/brand/banner-1200.jpg 1200w, '
+        + '/static/img/brand/banner.jpg 1707w',
+      // Ширина контейнера: --maxw 1320 минус горизонтальные поля .kc-main
+      // (24px, на узких экранах 16px) — иначе браузер берёт файл меньше нужного.
+      sizes: '(max-width: 900px) calc(100vw - 32px), (max-width: 1320px) calc(100vw - 48px), 1272px',
+      width: '1707', height: '282',
+      alt: SITE.name[lang] + ' — Kraken Chronicles',
+      decoding: 'async', fetchpriority: 'high',
+    }),
     h('div', { class: 'kc-hero-kicker' }, 'Call of Dragons · ' + (lang === 'ru' ? 'сервер 888' : 'server 888')),
     h('h1', {}, t('home.hero.h1')),
     h('p', { class: 'kc-hero-lead' }, t('home.hero.sub')),
